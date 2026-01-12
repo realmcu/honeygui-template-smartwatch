@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="app_battery_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+            <hg_arc id="hg_arc_1768201544822_6743" x="86" y="131" width="240" height="240" radius="100" startAngle="0" endAngle="360" strokeWidth="20" color="#495549" useGradient="false" opacity="255" zIndex="1" />
+            <hg_arc id="hg_arc_1768201544822_6743_copy_1768202312078" x="88" y="133" width="236" height="236" radius="100" startAngle="270" endAngle="185" strokeWidth="18" color="#32D74B" useGradient="false" opacity="255" zIndex="1" />
+            <hg_image id="hg_image_1768201691713_mmkg" x="34" y="6" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="1">
+                <events>
+                    <event type="onClick">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_ZOOM" switchInStyle="SWITCH_IN_ANIMATION_ZOOM" />
+                    </event>
+                </events>
+            </hg_image>
+            <hg_label id="hg_label_1768201705164_a9tv" x="276" y="20" width="110" height="44" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="15:11" fontSize="42" fontFile="/sf_compact_text_medium.otf" zIndex="1" />
+            <hg_label id="hg_label_1768201705164_a9tv_copy_1768201975824" x="268" y="74" width="126" height="44" hAlign="RIGHT" vAlign="TOP" color="#4ac21e" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Battery" fontSize="42" fontFile="/sf_compact_text_medium.otf" zIndex="1" />
+            <hg_label id="hg_label_1768201705164_a9tv_copy_1768202379798" x="143" y="214" width="127" height="74" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="77%" fontSize="85" fontFile="/sf_compact_text_medium.otf" zIndex="1" />
+            <hg_label id="hg_label_1768201705164_a9tv_copy_1768202650656" x="89" y="418" width="237" height="44" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Low Power Mode" fontSize="36" fontFile="/sf_compact_text_medium.otf" zIndex="1" />
+            <hg_rect id="hg_rect_1768203813618_f089" x="37" y="400" width="340" height="80" borderRadius="40" fillColor="#c8c8c8" useGradient="false" gradientDirection="horizontal" opacity="200" zIndex="1" />
+        </hg_view>
+    </view>
+</hml>
