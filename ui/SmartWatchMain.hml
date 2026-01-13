@@ -42,9 +42,9 @@
                     <hg_arc id="hg_arc_1768183125777_bzej" x="32" y="31" width="96" height="96" radius="40" startAngle="270" endAngle="30" strokeWidth="8" color="#92ff01" useGradient="false" opacity="255" zIndex="1" />
                     <hg_arc id="hg_arc_1768183158146_qutj" x="42" y="41" width="76" height="76" radius="30" startAngle="0" endAngle="360" strokeWidth="8" color="#16322f" useGradient="false" opacity="255" zIndex="1" />
                     <hg_arc id="hg_arc_1768183198408_5dw5" x="42" y="41" width="76" height="76" radius="30" startAngle="270" endAngle="180" strokeWidth="8" color="#00edff" useGradient="false" opacity="255" zIndex="1" />
-                    <hg_label id="hg_label_1768183414089_6wcz" x="178" y="21" width="165" height="29" hAlign="LEFT" vAlign="TOP" color="#fa114f" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="208/500 kcol" fontFile="/sf_compact_text_medium.otf" fontSize="32" zIndex="1" />
-                    <hg_label id="hg_label_1768183414089_6wcz_copy_1768183821003" x="178" y="53" width="165" height="29" hAlign="LEFT" vAlign="TOP" color="#92ff01" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10/60 min" fontFile="/sf_compact_text_medium.otf" fontSize="32" zIndex="1" />
-                    <hg_label id="hg_label_1768183414089_6wcz_copy_1768183821003_copy_1768183882599" x="178" y="88" width="165" height="29" hAlign="LEFT" vAlign="TOP" color="#00edff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="5/6 h" fontFile="/sf_compact_text_medium.otf" fontSize="32" zIndex="1" />
+                    <hg_label id="hg_label_1768183414089_6wcz" x="178" y="21" width="165" height="50" hAlign="LEFT" vAlign="TOP" color="#fa114f" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="208/500 kcol" fontFile="/sf_compact_text_medium.otf" fontSize="32" zIndex="1" />
+                    <hg_label id="hg_label_1768183414089_6wcz_copy_1768183821003" x="178" y="53" width="165" height="50" hAlign="LEFT" vAlign="TOP" color="#92ff01" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10/60 min" fontFile="/sf_compact_text_medium.otf" fontSize="32" zIndex="1" />
+                    <hg_label id="hg_label_1768183414089_6wcz_copy_1768183821003_copy_1768183882599" x="178" y="88" width="165" height="50" hAlign="LEFT" vAlign="TOP" color="#00edff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="5/6 h" fontFile="/sf_compact_text_medium.otf" fontSize="32" useAccuratePreview="true" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1768181662781_4e4z_item_3" x="0" y="334" width="352" height="157" index="2" locked="true" zIndex="1">
                     <hg_image id="hg_image_1768182235506_6vul" x="0" y="0" width="352" height="157" src="assets/tab_bg/bottom_tab_bg.png" zIndex="1" />
@@ -52,7 +52,14 @@
                     <hg_image id="hg_image_1768184009679_rg6a" x="244" y="29" width="100" height="100" transform="{&quot;scaleX&quot;:0.85,&quot;scaleY&quot;:0.85}" src="assets/UI_app_list/app_message_icon.png" zIndex="1" />
                     <hg_circle id="hg_circle_1768184067471_7e0p" x="134" y="29" width="80" height="80" radius="40" fillColor="#000000" useGradient="false" gradientType="radial" opacity="255" zIndex="1" />
                     <hg_arc id="hg_arc_1768184160265_b289" x="132" y="27" width="84" height="84" radius="34" startAngle="0" endAngle="360" strokeWidth="8" color="#5b7d59" useGradient="false" opacity="255" zIndex="1" />
-                    <hg_arc id="hg_arc_1768184103087_n36y" x="132" y="27" width="84" height="84" radius="34" startAngle="270" endAngle="185" strokeWidth="8" color="#3ac328" useGradient="false" opacity="255" zIndex="1" />
+                    <hg_arc id="hg_arc_1768184103087_n36y" x="132" y="27" width="84" height="84" radius="34" startAngle="270" endAngle="185" strokeWidth="8" color="#3ac328" useGradient="false" opacity="255" zIndex="1">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_battery_view" switchOutStyle="SWITCH_OUT_TO_BOTTOM_USE_TRANSLATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_arc>
+                    <hg_label id="hg_label_1768183414089_6wcz_copy_1768183821003_copy_1768183882599_copy_1768269677167" x="159" y="56" width="50" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="77" fontFile="/sf_compact_text_medium.otf" fontSize="32" useAccuratePreview="true" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1768181662781_4e4z_item_4" x="0" y="501" width="352" height="157" index="3" locked="true" zIndex="1">
                     <hg_image id="hg_image_1768182207336_1oh3" x="47" y="32" width="258" height="76" src="assets/tab_bg/bottom_list_menu_bg.png" zIndex="1">
