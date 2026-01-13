@@ -16,6 +16,9 @@
                 <event type="onSwipeUp">
                     <action type="switchView" target="app_bottom_view" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_FROM_BOTTOM_USE_TRANSLATION" />
                 </event>
+                <event type="onKeyShortClick">
+                    <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
             </events>
             <hg_rect id="hg_rect_1766998925528_70wq" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#de7994" opacity="255" zIndex="1">
                 <events>

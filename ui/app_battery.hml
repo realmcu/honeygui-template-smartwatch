@@ -6,12 +6,17 @@
     </meta>
     <view>
         <hg_view id="app_battery_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+            <events>
+                <event type="onKeyShortClick">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
             <hg_arc id="hg_arc_1768201544822_6743" x="86" y="131" width="240" height="240" radius="100" startAngle="0" endAngle="360" strokeWidth="20" color="#495549" useGradient="false" opacity="255" zIndex="1" />
             <hg_arc id="hg_arc_1768201544822_6743_copy_1768202312078" x="88" y="133" width="236" height="236" radius="100" startAngle="270" endAngle="185" strokeWidth="18" color="#32D74B" useGradient="false" opacity="255" zIndex="1" />
             <hg_image id="hg_image_1768201691713_mmkg" x="34" y="6" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="1">
                 <events>
                     <event type="onClick">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_ZOOM" switchInStyle="SWITCH_IN_ANIMATION_ZOOM" />
+                        <action type="switchView" target="app_bottom_view" switchOutStyle="SWITCH_OUT_ANIMATION_ZOOM" switchInStyle="SWITCH_IN_ANIMATION_ZOOM" />
                     </event>
                 </events>
             </hg_image>
