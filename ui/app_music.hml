@@ -51,13 +51,7 @@
             <hg_image id="hg_image_1768283684092_idby" x="296" y="406" width="72" height="72" src="assets/app_music/music_next.png" zIndex="1" />
             <hg_label id="hg_label_1768278501969_7gr1_copy_1768283745389" x="143" y="23" width="150" height="80" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="12:30" fontSize="60" fontFile="/font/sf_compact_text_medium.otf" zIndex="1" />
             <hg_arc id="hg_arc_1768283890950_hrp0" x="162" y="399" width="86" height="86" radius="40" startAngle="0" endAngle="360" strokeWidth="3" color="#646464" opacity="255" useGradient="false" zIndex="1" />
-            <hg_image id="hg_image_1768284520982_ne4m" x="187" y="422" width="36" height="41" src="assets/app_music/start_button_icon.png" zIndex="1">
-                <events>
-                    <event type="onClick">
-                        <action type="callFunction" functionName="music_ctr_press_cb" />
-                    </event>
-                </events>
-            </hg_image>
+            <hg_button id="hg_button_1768371539788_xb3n" x="187" y="424" width="36" height="36" toggleMode="true" initialState="off" src="assets/pause_button_icon.png" imageOn="assets/pause_button_icon.png" imageOff="assets/start_button_icon.png" zIndex="1" />
         </hg_view>
     </view>
 </hml>

@@ -11,87 +11,126 @@
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                 </event>
             </events>
-            <hg_list id="hg_list_1766648792206_m7zs" x="29" y="0" width="350" height="2935" itemWidth="350" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CIRCLE" noteNum="28" offset="0" outScope="50" autoAlign="true" inertia="true" loop="false" createBar="false" zIndex="1">
+            <hg_list id="hg_list_1766648792206_m7zs" x="27" y="0" width="350" height="502" itemWidth="350" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CIRCLE" noteNum="28" offset="0" outScope="50" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_1" x="0" y="0" width="350" height="100" index="0" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766649235950_h90c" x="0" y="-6" width="100" height="106" src="assets/UI_app_list/app_activity_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb" x="140" y="29" width="130" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Activity" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_2" x="0" y="105" width="350" height="100" index="1" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997222913_68q3" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_heart_rate_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Heart Rate" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_3" x="0" y="210" width="350" height="100" index="2" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997230487_yrdp" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_weather_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768374282947" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Weather" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_4" x="0" y="315" width="350" height="100" index="3" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997236346_95l4" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_reminders_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Reminders" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_5" x="0" y="420" width="350" height="100" index="4" locked="true" zIndex="1">
-                    <hg_image id="hg_image_1766997242674_bw37" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_message_icon.png" zIndex="1" />
+                    <hg_image id="hg_image_1766997242674_bw37" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_message_icon.png" zIndex="1">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_message_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Message" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_6" x="0" y="525" width="350" height="100" index="5" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997251460_wgoz" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_phone_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Phone" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_7" x="0" y="630" width="350" height="100" index="6" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997256912_qqpj" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_noise_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Noise" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_8" x="0" y="735" width="350" height="100" index="7" locked="true" zIndex="1">
-                    <hg_image id="hg_image_1766997263436_j1j0" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_music_icon.png" zIndex="1" />
+                    <hg_image id="hg_image_1766997263436_j1j0" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_music_icon.png" zIndex="1">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_music_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Music" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_9" x="0" y="840" width="350" height="100" index="8" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997276115_kywq" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_map_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Map" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_10" x="0" y="945" width="350" height="100" index="9" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997286123_263r" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_stopwatch_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365098356" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Stopwatch" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_11" x="0" y="1050" width="350" height="100" index="10" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997291073_d8qk" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_timers_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365101299" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Timers" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_12" x="0" y="1155" width="350" height="100" index="11" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997304841_dyi9" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_alarm_clock_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365104827" x="140" y="29" width="197" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alarm Clock" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_13" x="0" y="1260" width="350" height="100" index="12" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997310775_8v5d" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_audio_books_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740" x="140" y="29" width="203" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Audio Books" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_14" x="0" y="1365" width="350" height="100" index="13" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997321655_ab2h" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_workout_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365118076" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Workout" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_15" x="0" y="1470" width="350" height="100" index="14" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997330778_kikg" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_compass_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365120555" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Compass" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_16" x="0" y="1575" width="350" height="100" index="15" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997333608_19bg" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_calendar_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365123571" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Calendar" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_17" x="0" y="1680" width="350" height="100" index="16" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997342134_pyhh" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_home_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365125972" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Home" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_18" x="0" y="1785" width="350" height="100" index="17" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997352181_95r6" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_contacts_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Contacts" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_19" x="0" y="1890" width="350" height="100" index="18" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997358698_flgg" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_cycle_tracking_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365153179" x="110" y="29" width="240" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Cycle Tracking" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_20" x="0" y="1995" width="350" height="100" index="19" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997365087_7959" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_mail_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365155836" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Mail" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_21" x="0" y="2100" width="350" height="100" index="20" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997373065_by77" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_now_playing_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365161404" x="140" y="29" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Now Playing" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_22" x="0" y="2205" width="350" height="100" index="21" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997382728_xzti" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_news_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365164468" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="News" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_23" x="0" y="2310" width="350" height="100" index="22" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997390336_u4nl" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_photo_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365167836" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Photo" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_24" x="0" y="2415" width="350" height="100" index="23" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997396077_p2br" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_podcasts_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365167836_copy_1768365174955" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Podcasts" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_25" x="0" y="2520" width="350" height="100" index="24" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997407159_stbu" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_sleep_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365167836_copy_1768365177605" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sleep" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_26" x="0" y="2625" width="350" height="100" index="25" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997411103_1umq" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_stocks_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365167836_copy_1768365181595" x="140" y="37" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Stocks" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_27" x="0" y="2730" width="350" height="100" index="26" locked="true" zIndex="1">
                     <hg_image id="hg_image_1766997417220_cv1w" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_world_clock_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768361031328_aleb_copy_1768361243612_copy_1768361672193_copy_1768361690626_copy_1768361718653_copy_1768365015267_copy_1768365023916_copy_1768365050325_copy_1768365064045_copy_1768365108740_copy_1768365133638_copy_1768365167836_copy_1768365184275" x="140" y="29" width="197" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="World Clock" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766648792206_m7zs_item_28" x="0" y="2835" width="350" height="100" index="27" locked="true" zIndex="1">
                     <hg_rect id="hg_rect_1766995616332_i9ne" x="40" y="9" width="235" height="56" borderRadius="28" fillColor="#434547" opacity="128" zIndex="1" />
