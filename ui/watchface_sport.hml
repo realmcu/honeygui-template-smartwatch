@@ -27,7 +27,7 @@
             <hg_label id="hg_label_1766558226116_kswi" x="324" y="342" width="86" height="80" color="#73e6e6" align="LEFT" letterSpacing="0" lineSpacing="0" wordWrap="false" fontSize="80" text="07" fontFile="/font/sf_compact_text_medium.otf" useAccuratePreview="false" zIndex="1" />
             <hg_label id="hg_label_1766558284986_myaw" x="324" y="252" width="86" height="80" color="#bdfe4a" align="LEFT" letterSpacing="0" lineSpacing="0" wordWrap="false" fontSize="80" text="02" fontFile="/font/sf_compact_text_medium.otf" fontType="bitmap" zIndex="1" />
             <hg_label id="hg_label_1766558608627_zo66" x="107" y="435" width="250" height="50" align="LEFT" letterSpacing="0" lineSpacing="0" wordWrap="false" color="#ffffff" fontSize="32" text="80 bpm,1m ago" fontFile="/font/sf_compact_text_medium.otf" zIndex="1" />
-            <hg_label id="hg_label_1766558904986_enlc" x="140" y="97" width="270" height="80" align="LEFT" letterSpacing="0" lineSpacing="0" wordWrap="false" color="#ffffff" fontSize="80" text="09:47:11" timeFormat="HH:mm:ss" fontFile="/font/sf_compact_text_medium.otf" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789&quot;}]" zIndex="1" />
+            <hg_time_label id="hg_time_label_1768897114762_8ilu" x="140" y="105" width="270" height="80" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm:ss" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/sf_compact_text_medium.otf" fontSize="80" zIndex="1" />
         </hg_view>
     </view>
 </hml>

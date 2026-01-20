@@ -36,8 +36,8 @@
             </hg_list>
             <hg_window id="hg_window_1768354016343_kf7g" x="0" y="0" width="410" height="100" enableBlur="true" blurDegree="225" zIndex="1">
                 <hg_image id="hg_image_1768355370798_508r" x="27" y="9" width="72" height="72" src="assets/app_message/message_write_icon.png" zIndex="1" />
-                <hg_label id="hg_label_1768355404341_syu8" x="313" y="20" width="80" height="50" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10:09" fontFile="/font/sf_compact_text_medium.otf" fontSize="36" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789&quot;}]" zIndex="1" />
                 <hg_label id="hg_label_1768355404341_syu8_copy_1768355457985" x="249" y="60" width="144" height="50" hAlign="RIGHT" vAlign="TOP" color="#4294F4" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Messages" fontFile="/font/sf_compact_text_medium.otf" fontSize="36" zIndex="1" />
+                <hg_time_label id="hg_time_label_1768896632427_b0c8" x="287" y="20" width="100" height="42" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/sf_compact_text_medium.otf" fontSize="42" zIndex="1" />
             </hg_window>
         </hg_view>
     </view>
