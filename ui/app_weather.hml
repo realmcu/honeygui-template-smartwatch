@@ -35,26 +35,27 @@
                     <hg_arc id="hg_arc_1768546769438_z3jr_copy_1768546889407" x="312" y="406" width="84" height="84" radius="34" startAngle="150" endAngle="30" strokeWidth="8" color="#ffffff" opacity="178" useGradient="false" zIndex="1" />
                     <hg_circle id="hg_circle_1768552575692_0uqc" x="16" y="416" width="10" height="10" radius="5" fillColor="#ffffff" opacity="255" useGradient="false" gradientType="radial" zIndex="1" />
                     <hg_circle id="hg_circle_1768552575692_0uqc_copy_1768552660885" x="328" y="416" width="10" height="10" radius="5" fillColor="#ffffff" opacity="255" useGradient="false" gradientType="radial" zIndex="1" />
+                    <hg_time_label id="hg_time_label_1768897552107_vzdk" x="155" y="34" width="120" height="35" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/sf_compact_text_semibold.otf" fontSize="35" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1768294664982_waoc_item_2" x="0" y="502" width="410" height="502" index="1" locked="true" zIndex="1">
                     <hg_image id="hg_image_1768294824307_eosg" x="0" y="0" width="410" height="502" src="assets/weather/weather_background2.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381646522_fy41" x="22" y="56" width="366" height="361" src="assets/weather/weather_dial.png" zIndex="1" />
-                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381236407_copy_1768381269337_copy_1768381619614" x="130" y="250" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="H:88° L:57°" fontFile="/font/sf_compact_text_medium.otf" fontSize="23" fontType="bitmap" renderMode="2" zIndex="1" />
-                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502_copy_1768381565332" x="130" y="159" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/sf_compact_text_light.otf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="1" />
-                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502_copy_1768381201046_copy_1768381575404" x="187" y="159" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/sf_compact_text_light.otf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="1" />
-                    <hg_image id="hg_image_1768381912415_nkbx" x="183" y="99" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381933649_65qy" x="253" y="113" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381943917_ugvh" x="297" y="154" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381961278_lj8s" x="313" y="220" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381968784_ss6e" x="297" y="291" width="33" height="29" src="assets/weather/weather_condition_windy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381977154_x6ko" x="259" y="329" width="33" height="29" src="assets/weather/weather_condition_windy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768381984299_m11r" x="183" y="342" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768382007751_qco4" x="118" y="328" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768382018378_u3tm" x="86" y="293" width="39" height="26" src="assets/weather/weather_condition_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768382024812_zi9z" x="66" y="224" width="39" height="26" src="assets/weather/weather_condition_cloudy.png" zIndex="1" />
-                    <hg_image id="hg_image_1768382032977_46f9" x="83" y="154" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
-                    <hg_image id="hg_image_1768382047440_dtqp" x="129" y="110" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
-                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381236407_copy_1768382064836" x="129" y="432" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sunny" fontFile="/font/sf_compact_text_medium.otf" fontSize="29" fontType="bitmap" renderMode="2" zIndex="1" />
+                    <hg_image id="hg_image_1768381646522_fy41" x="22" y="72" width="366" height="361" src="assets/weather/weather_dial.png" zIndex="1" />
+                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381236407_copy_1768381269337_copy_1768381619614" x="130" y="266" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="H:88° L:57°" fontFile="/font/sf_compact_text_medium.otf" fontSize="23" fontType="bitmap" renderMode="2" zIndex="1" />
+                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502_copy_1768381565332" x="130" y="175" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/sf_compact_text_light.otf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="1" />
+                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502_copy_1768381201046_copy_1768381575404" x="187" y="175" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/sf_compact_text_light.otf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="1" />
+                    <hg_image id="hg_image_1768381912415_nkbx" x="183" y="115" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381933649_65qy" x="253" y="133" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381943917_ugvh" x="297" y="174" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381961278_lj8s" x="313" y="237" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381968784_ss6e" x="297" y="307" width="33" height="29" src="assets/weather/weather_condition_windy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381977154_x6ko" x="259" y="345" width="33" height="29" src="assets/weather/weather_condition_windy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768381984299_m11r" x="183" y="358" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768382007751_qco4" x="118" y="344" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768382018378_u3tm" x="86" y="309" width="39" height="26" src="assets/weather/weather_condition_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768382024812_zi9z" x="66" y="240" width="39" height="26" src="assets/weather/weather_condition_cloudy.png" zIndex="1" />
+                    <hg_image id="hg_image_1768382032977_46f9" x="83" y="170" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
+                    <hg_image id="hg_image_1768382047440_dtqp" x="129" y="126" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="1" />
+                    <hg_label id="hg_label_1768378493276_3u9s_copy_1768381236407_copy_1768382064836" x="129" y="441" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sunny" fontFile="/font/sf_compact_text_medium.otf" fontSize="29" fontType="bitmap" renderMode="2" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1768294664982_waoc_item_3" x="0" y="1004" width="410" height="502" index="2" locked="true" zIndex="1">
                     <hg_image id="hg_image_1768294838136_pvx2" x="0" y="0" width="410" height="502" src="assets/weather/weather_background3.png" zIndex="1" />
@@ -114,7 +115,6 @@
             <hg_window id="hg_window_1768295553663_yuvn" x="0" y="0" width="410" height="100" enableBlur="false" blurDegree="225" zIndex="1">
                 <hg_image id="hg_image_1768295597921_odwf" x="13" y="14" width="75" height="75" src="assets/weather/weather_left_control.png" zIndex="1" />
                 <hg_image id="hg_image_1768295616519_80cd" x="322" y="14" width="75" height="75" src="assets/weather/weather_right_control.png" zIndex="1" />
-                <hg_label id="hg_label_1768375144165_lc53" x="155" y="34" width="100" height="35" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10:09" timeFormat="HH:mm" fontFile="/font/sf_compact_text_semibold.otf" fontSize="35" fontType="bitmap" renderMode="2" zIndex="1" />
             </hg_window>
         </hg_view>
     </view>
