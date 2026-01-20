@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="app_phone_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+            <hg_list id="hg_list_1768879382294_nr8k" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="180" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="80" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="1" showOverflow="true">
+                <hg_list_item id="hg_list_1768879382294_nr8k_item_1" x="0" y="0" width="352" height="180" index="0" locked="true" zIndex="1">
+                    <hg_rect id="hg_rect_1768882902534_l9aw" x="0" y="0" width="352" height="120" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_image id="hg_image_1768880486175_ycjl" x="10" y="14" width="72" height="72" src="assets/app_message/message_head_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs" x="102" y="32" width="220" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Address Book" fontSize="40" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772" x="10" y="144" width="220" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Address Book" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="hg_list_1768879382294_nr8k_item_2" x="0" y="185" width="352" height="180" index="1" locked="true" zIndex="1">
+                    <hg_rect id="hg_rect_1768889488254_nh5b" x="0" y="0" width="352" height="180" borderRadius="20" fillColor="#2c2c2e" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084" x="10" y="10" width="100" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10000" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_rect id="hg_rect_1768890350266_snwm" x="60" y="48" width="100" height="40" borderRadius="10" fillColor="#c8c8c8" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768890458977_48pn" x="67" y="60" width="85" height="16" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="main account" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768890575068_xklf" x="179" y="52" width="120" height="32" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Unknow" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768890658688" x="10" y="117" width="100" height="36" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="12:30" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_image id="hg_image_1768890872586_a8u7" x="300" y="33" width="50" height="51" src="assets/app_phone/phone_icon.png" zIndex="1" />
+                    <hg_image id="hg_image_1768891332238_ij69" x="10" y="48" width="38" height="38" src="assets/app_phone/call_in_icon.png" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="hg_list_1768879382294_nr8k_item_3" x="0" y="370" width="352" height="180" index="2" locked="true" zIndex="1">
+                    <hg_rect id="hg_rect_1768889488254_nh5b_copy_1768890886113" x="0" y="0" width="352" height="180" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768891162253" x="10" y="10" width="200" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="400 885 9006" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_image id="hg_image_1768890313624_ejad_copy_1768891222561" x="10" y="48" width="38" height="38" src="assets/app_phone/call_in_icon.png" zIndex="1" />
+                    <hg_rect id="hg_rect_1768890350266_snwm_copy_1768891390646" x="60" y="47" width="45" height="40" borderRadius="10" fillColor="#c8c8c8" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768890458977_48pn_copy_1768891437087" x="68" y="59" width="30" height="16" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Data" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768890575068_xklf_copy_1768891483610" x="121" y="51" width="111" height="32" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="China" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
+                    <hg_image id="hg_image_1768891505390_bz2j" x="300" y="33" width="50" height="51" src="assets/app_phone/phone_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768890658688_copy_1768891592148" x="10" y="117" width="100" height="36" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="12:29" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="hg_list_1768879382294_nr8k_item_4" x="0" y="555" width="352" height="180" index="3" locked="true" zIndex="1">
+                    <hg_rect id="hg_rect_1768889488254_nh5b_copy_1768890886113_copy_1768890893095" x="0" y="0" width="352" height="180" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768891162253_copy_1768891783794" x="10" y="10" width="200" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Michelle" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_image id="hg_image_1768891816407_7sd7" x="10" y="48" width="38" height="38" src="assets/app_phone/call_in_icon.png" zIndex="1" />
+                    <hg_rect id="hg_rect_1768890350266_snwm_copy_1768891390646_copy_1768891829002" x="60" y="47" width="45" height="40" borderRadius="10" fillColor="#c8c8c8" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768890458977_48pn_copy_1768891437087_copy_1768891860050" x="68" y="59" width="30" height="16" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Data" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768890658688_copy_1768891592148_copy_1768891878658" x="10" y="117" width="109" height="36" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sunday" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768890575068_xklf_copy_1768891483610_copy_1768891908883" x="121" y="51" width="111" height="32" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Phone" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
+                    <hg_image id="hg_image_1768891958957_ur2m" x="300" y="33" width="50" height="51" src="assets/app_phone/phone_icon.png" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="hg_list_1768879382294_nr8k_item_5" x="0" y="740" width="352" height="180" index="4" locked="true" zIndex="1">
+                    <hg_rect id="hg_rect_1768889488254_nh5b_copy_1768890886113_copy_1768890893095_copy_1768890901287" x="0" y="0" width="352" height="180" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_rect id="hg_rect_1768890350266_snwm_copy_1768891390646_copy_1768891829002_copy_1768891846066" x="60" y="47" width="45" height="40" borderRadius="10" fillColor="#c8c8c8" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+                    <hg_label id="hg_label_1768890458977_48pn_copy_1768891437087_copy_1768891863482" x="68" y="59" width="30" height="16" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Data" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_image id="hg_image_1768891870128_xrsk" x="10" y="48" width="38" height="38" src="assets/app_phone/call_in_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768890658688_copy_1768891592148_copy_1768891887804" x="10" y="117" width="139" height="36" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="2026/1/12" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                    <hg_label id="hg_label_1768890575068_xklf_copy_1768891483610_copy_1768891908883_copy_1768891923995" x="120" y="51" width="111" height="32" hAlign="LEFT" vAlign="TOP" color="#dadada" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Phone" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
+                    <hg_image id="hg_image_1768891969854_fpya" x="300" y="33" width="50" height="51" src="assets/app_phone/phone_icon.png" zIndex="1" />
+                    <hg_label id="hg_label_1768882974311_52fs_copy_1768889617772_copy_1768889890084_copy_1768891162253_copy_1768891783794_copy_1768891984029" x="10" y="8" width="200" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Michelle" fontSize="36" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
+                </hg_list_item>
+            </hg_list>
+            <hg_window id="hg_window_1768892385276_fcs3" x="0" y="0" width="410" height="110" enableBlur="false" blurDegree="225" zIndex="1">
+                <hg_image id="hg_image_1768880138928_x5a0" x="45" y="26" width="36" height="36" src="assets/app_reminder/reminders_icon2.png" zIndex="1" />
+                <hg_image id="hg_image_1768880351960_qgvb" x="27" y="8" width="72" height="72" src="assets/app_phone/icon_bg.png" zIndex="1" />
+                <hg_image id="hg_image_1768880453094_d2rx" x="321" y="8" width="72" height="72" src="assets/app_phone/number_key_icon.png" zIndex="1" />
+                <hg_label id="hg_label_1768879181962_p78q" x="165" y="19" width="80" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="11:20" timeFormat="HH:mm" fontFile="/font/sf_compact_text_medium.otf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789&quot;}]" zIndex="1" />
+                <hg_label id="hg_label_1768879269371_q8re" x="134" y="60" width="160" height="40" hAlign="LEFT" vAlign="TOP" color="#00ff00" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Telephone" fontFile="/font/sf_compact_text_medium.otf" fontSize="40" zIndex="1" />
+            </hg_window>
+        </hg_view>
+    </view>
+</hml>

@@ -6,6 +6,11 @@
     </meta>
     <view>
         <hg_view id="app_reminder_view" x="510" y="232" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+            <events>
+                <event type="onKeyShortClick">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
             <hg_list id="hg_list_1768376200937_b4db" x="0" y="115" width="410" height="502" itemWidth="410" itemHeight="150" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="80" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="hg_list_1768376200937_b4db_item_1" x="0" y="0" width="410" height="150" index="0" locked="true" zIndex="1">
                     <hg_rect id="hg_rect_1768377692400_gf4l" x="0" y="4" width="410" height="150" borderRadius="50" fillColor="#007acc" opacity="255" useGradient="true" gradientDirection="vertical" gradientStops="[{&quot;position&quot;:0,&quot;color&quot;:&quot;#4E92E4&quot;},{&quot;position&quot;:1,&quot;color&quot;:&quot;#316CC2&quot;}]" zIndex="1">
@@ -15,7 +20,7 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_circle id="hg_circle_1768378695800_g5us" x="23" y="12" width="72" height="72" radius="36" fillColor="#FFFFFF" opacity="128" useGradient="false" gradientType="radial" zIndex="1" />
+                    <hg_circle id="hg_circle_1768378695800_g5us" x="23" y="13" width="72" height="72" radius="36" fillColor="#FFFFFF" opacity="128" useGradient="false" gradientType="radial" zIndex="1" />
                     <hg_image id="hg_image_1768378673990_4p6o" x="39" y="30" width="40" height="37" src="assets/app_reminder/reminders_icon0.png" zIndex="1" />
                     <hg_label id="hg_label_1768378942196_18fm" x="39" y="97" width="100" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Today" fontFile="/font/sf_compact_text_medium.otf" fontSize="36" zIndex="1" />
                     <hg_label id="hg_label_1768379934657_dkt4" x="337" y="19" width="50" height="70" hAlign="LEFT" vAlign="TOP" color="#C9C9C9" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="0" fontFile="/font/sf_compact_text_medium.otf" fontSize="70" zIndex="1" />
@@ -46,6 +51,7 @@
                     <hg_label id="hg_label_1768378942196_18fm_copy_1768378990845_copy_1768379028761" x="39" y="97" width="160" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Reminder" fontFile="/font/sf_compact_text_medium.otf" fontSize="36" zIndex="1" />
                     <hg_image id="hg_image_1768378680855_05ey" x="39" y="30" width="36" height="36" src="assets/app_reminder/reminders_icon2.png" zIndex="1" />
                     <hg_label id="hg_label_1768380068543_kz2a_copy_1768380153587_copy_1768380157594_copy_1768380161650" x="337" y="19" width="50" height="70" hAlign="LEFT" vAlign="TOP" color="#C9C9C9" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="0" fontSize="70" fontFile="/font/sf_compact_text_medium.otf" zIndex="1" />
+                    <hg_arc id="hg_arc_1768818938459_fgw1" x="201" y="19" width="96" height="96" radius="40" startAngle="0" endAngle="270" strokeWidth="8" color="#007acc" opacity="255" useGradient="false" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="hg_window_1768375945225_5zqu" x="0" y="0" width="410" height="100" enableBlur="true" blurDegree="225" zIndex="1">

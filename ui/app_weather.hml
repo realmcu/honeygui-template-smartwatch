@@ -6,9 +6,18 @@
     </meta>
     <view>
         <hg_view id="app_weatherMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true">
+            <events>
+                <event type="onKeyShortClick">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
             <hg_list id="hg_list_1768294664982_waoc" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" showOverflow="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="hg_list_1768294664982_waoc_item_1" x="0" y="0" width="410" height="502" index="0" locked="true" zIndex="1">
-                    <hg_image id="hg_image_1768294809757_5m7u" x="0" y="0" width="410" height="502" src="assets/weather/weather_background1.png" zIndex="1" />
+                    <hg_image id="hg_image_1768294809757_5m7u" x="0" y="0" width="410" height="502" src="assets/weather/weather_background1.png" zIndex="1">
+                        <events>
+                            <event type="onClick" />
+                        </events>
+                    </hg_image>
                     <hg_label id="hg_label_1768378493276_3u9s" x="130" y="145" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sonoma" fontFile="/font/sf_compact_text_semibold.otf" fontSize="43" fontType="bitmap" renderMode="2" zIndex="1" />
                     <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502" x="130" y="187" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/sf_compact_text_light.otf" fontSize="103" fontType="bitmap" renderMode="2" zIndex="1" />
                     <hg_label id="hg_label_1768378493276_3u9s_copy_1768381138502_copy_1768381201046" x="189" y="179" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/sf_compact_text_light.otf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="1" />
