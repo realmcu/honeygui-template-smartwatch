@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="app_noise_view" x="-1603" y="-1343" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="1">
+            <hg_image id="Noise_ok_bg" x="0" y="0" width="410" height="502" src="assets/app_noise/Noise_ok_bg.png" zIndex="1" />
+            <hg_image id="hg_image_1769151866129_h3az" x="25" y="11" width="72" height="72" src="assets/heart/icon_information.png" name="image_6129" zIndex="1" />
+            <hg_time_label id="hg_time_label_1769151874591_kcfw" x="287" y="21" width="100" height="36" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontSize="36" fontFile="/font/sf_compact_regular.otf" name="hg_time_label_4592" zIndex="1" />
+            <hg_circle id="hg_circle_1769152469992_f1ol" x="34" y="324" width="60" height="60" radius="30" fillColor="#68E171" opacity="255" useGradient="false" gradientType="radial" name="hg_circle_9992" zIndex="1" />
+            <hg_image id="hg_image_1769152465296_qrr0" x="46" y="343" width="36" height="23" src="assets/app_reminder/reminders_icon4.png" name="image_5296" zIndex="1" />
+            <hg_label id="app_noise_ok_text" x="114" y="343" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="OK" fontFile="/font/sf_compact_regular.otf" fontSize="32" zIndex="1" />
+            <hg_label id="app_noise_data_text" x="35" y="409" width="120" height="48" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="50 dB" fontFile="/font/sf_compact_regular.otf" fontSize="48" zIndex="1" />
+            <hg_image id="Nois_Level_Meter_bg" x="30" y="140" width="342" height="100" src="assets/app_noise/Nois_Level_Meter.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;定时动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_image_1769153023062_7oqr_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[{&quot;duration&quot;:1000,&quot;actions&quot;:[{&quot;type&quot;:&quot;opacity&quot;,&quot;from&quot;:255,&quot;to&quot;:128}]}]}]" zIndex="1" />
+            <hg_rect id="Nois_Level_Meter0" x="30" y="147" width="12" height="86" borderRadius="2" fillColor="#68E171" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+            <hg_rect id="Nois_Level_Meter1" x="49" y="147" width="12" height="86" borderRadius="2" fillColor="#68E171" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+            <hg_rect id="Nois_Level_Meter2" x="68" y="147" width="12" height="86" borderRadius="2" fillColor="#68E171" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+            <hg_rect id="Nois_Level_Meter3" x="88" y="147" width="12" height="86" borderRadius="2" fillColor="#68E171" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
+            <hg_label id="app_noise_x30_text" x="29" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="30" fontFile="/font/sf_compact_regular.otf" fontSize="32" zIndex="1" />
+            <hg_label id="app_noise_x80_text" x="215" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="80" fontFile="/font/sf_compact_regular.otf" fontSize="32" zIndex="1" />
+            <hg_label id="app_noise_x120_text" x="337" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="120" fontFile="/font/sf_compact_regular.otf" fontSize="32" zIndex="1" />
+        </hg_view>
+    </view>
+</hml>
