@@ -101,19 +101,19 @@
                 <hg_list_item id="hg_list_1768893241078_ejkw_item_1" x="0" y="0" width="380" height="100" index="0" locked="true" zIndex="1">
                     <hg_label id="hg_label_1768893464362_0jwa" x="17" y="48" width="113" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Look-up" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768893241078_ejkw_item_6" x="0" y="105" width="380" height="100" index="1">
+                <hg_list_item id="hg_list_1768893241078_ejkw_item_6" x="0" y="105" width="380" height="100" index="1" zIndex="0">
                     <hg_rect id="hg_rect_1768894816540_1p9i" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_label id="hg_label_call" x="100" y="35" width="113" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Call" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
                     <hg_image id="hg_image_1768893648060_p6w9" x="10" y="25" width="50" height="51" src="assets/app_phone/phone_icon.png" zIndex="1" />
                     <hg_image id="hg_image_1768893689762_ssyx" x="320" y="41" width="36" height="23" src="assets/app_reminder/reminders_icon4.png" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768893241078_ejkw_item_7" x="0" y="210" width="380" height="100" index="2">
+                <hg_list_item id="hg_list_1768893241078_ejkw_item_7" x="0" y="210" width="380" height="100" index="2" zIndex="0">
                     <hg_rect id="hg_rect_02" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_image id="hg_image_miss_call" x="10" y="25" width="55" height="54" src="assets/app_phone/missed_call_icon.png" zIndex="1" />
                     <hg_label id="hg_label_miss_call" x="100" y="34" width="170" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Missed Call" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
                     <hg_image id="hg_image_1768894590813_lpco" x="320" y="41" width="36" height="23" src="assets/app_reminder/reminders_icon4.png" visible="false" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768893241078_ejkw_item_5" x="0" y="315" width="380" height="100" index="3">
+                <hg_list_item id="hg_list_1768893241078_ejkw_item_5" x="0" y="315" width="380" height="100" index="3" zIndex="0">
                     <hg_rect id="hg_rect_1768894816540_1p9i_copy_1768894861615_copy_1768894913592" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_image id="hg_image_1768893879589_mj52" x="12" y="34" width="72" height="32" src="assets/app_phone/voice_message_phone_icon.png" zIndex="1" />
                     <hg_label id="hg_label_voicemail" x="100" y="32" width="170" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Voicemail" fontFile="/font/sf_compact_regular.otf" fontSize="36" zIndex="1" />
@@ -162,16 +162,16 @@
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                 </event>
             </events>
-            <hg_rect id="hg_rect_num0_bg" x="145" y="393" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num9_bg" x="278" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num8_bg" x="145" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num7_bg" x="12" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num6_bg" x="278" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num5_bg" x="145" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num4_bg" x="12" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num3_bg" x="278" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num2_bg" x="145" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
-            <hg_rect id="hg_rect_num1_bg" x="12" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="blink" buttonBlinkOpacityMin="50" buttonBlinkOpacityMax="255" zIndex="1" />
+            <hg_rect id="hg_rect_num0_bg" x="145" y="393" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num9_bg" x="278" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num8_bg" x="145" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num7_bg" x="12" y="301" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num6_bg" x="278" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num5_bg" x="145" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num4_bg" x="12" y="211" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num3_bg" x="278" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num2_bg" x="145" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
+            <hg_rect id="hg_rect_num1_bg" x="12" y="122" width="120" height="80" borderRadius="10" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" buttonMode="opacity" buttonPressedOpacity="128" buttonReleasedOpacity="255" zIndex="1" />
             <hg_image id="hg_image_add" x="53" y="413" width="40" height="40" src="assets/app_workout/workout_start_add_icon.png" zIndex="1" />
             <hg_label id="hg_label_num1" x="63" y="138" width="30" height="48" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1" fontSize="48" fontFile="/font/sf_compact_text_bold.otf" zIndex="1" />
             <hg_label id="hg_label_num2" x="197" y="138" width="30" height="48" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="2" fontSize="48" fontFile="/font/sf_compact_text_bold.otf" zIndex="1" />
@@ -222,15 +222,15 @@
                 <hg_list_item id="hg_list_address_book_item_1" x="0" y="0" width="380" height="100" index="0" locked="true" zIndex="1">
                     <hg_label id="hg_label_B_text" x="10" y="51" width="100" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="B" fontFile="/font/sf_compact_regular.otf" fontSize="40" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_address_book_item_5" x="0" y="105" width="380" height="100" index="1">
+                <hg_list_item id="hg_list_address_book_item_5" x="0" y="105" width="380" height="100" index="1" zIndex="0">
                     <hg_rect id="hg_rect_B_bg1" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_label id="hg_label_B_text_name0" x="10" y="30" width="100" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Book" fontFile="/font/sf_compact_regular.otf" fontSize="40" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_address_book_item_6" x="0" y="210" width="380" height="100" index="2">
+                <hg_list_item id="hg_list_address_book_item_6" x="0" y="210" width="380" height="100" index="2" zIndex="0">
                     <hg_rect id="hg_rect_B_bg0" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_label id="hg_label_B_text_name1" x="10" y="22" width="100" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Book" fontFile="/font/sf_compact_regular.otf" fontSize="40" zIndex="1" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_address_book_item_7" x="0" y="315" width="380" height="100" index="3">
+                <hg_list_item id="hg_list_address_book_item_7" x="0" y="315" width="380" height="100" index="3" zIndex="0">
                     <hg_rect id="hg_rect_B_bg3" x="0" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
                     <hg_label id="hg_label_B_text_name2" x="10" y="30" width="100" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Book" fontFile="/font/sf_compact_regular.otf" fontSize="40" zIndex="1" />
                 </hg_list_item>
