@@ -160,6 +160,11 @@
                     <hg_label id="hg_label_workout" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Workout" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="app_menu_list_item_15" x="0" y="1470" width="350" height="100" index="14" locked="true" zIndex="14">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" target="app_compass_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        </event>
+                    </events>
                     <hg_image id="hg_image_1766997330778_kikg" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_compass_icon.png" zIndex="0" />
                     <hg_label id="hg_label_compass" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Compass" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
@@ -200,6 +205,11 @@
                     <hg_label id="hg_label_podcasts" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Podcasts" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="app_menu_list_item_25" x="0" y="2520" width="350" height="100" index="24" locked="true" zIndex="24">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" target="app_sleep_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        </event>
+                    </events>
                     <hg_image id="hg_image_1766997407159_stbu" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_sleep_icon.png" zIndex="0" />
                     <hg_label id="hg_label_sleep" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sleep" fontSize="42" fontFile="/font/sf_compact_regular.otf" zIndex="1" />
                 </hg_list_item>
