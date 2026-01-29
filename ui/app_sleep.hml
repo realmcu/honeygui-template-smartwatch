@@ -5,6 +5,8 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="hg_view_1769505918068_gszl" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0" />
+        <hg_view id="app_sleep_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+            <hg_arc id="hg_arc_1769650019668_u8fx" x="157" y="213" width="96" height="96" radius="40" startAngle="0" endAngle="270" strokeWidth="8" color="#007acc" opacity="255" useGradient="false" zIndex="0" />
+        </hg_view>
     </view>
 </hml>

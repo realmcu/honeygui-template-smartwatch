@@ -5,6 +5,6 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="hg_view_1769507142261_43jq" x="-13" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0" />
+        <hg_view id="app_alarm_view" x="-13" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0" />
     </view>
 </hml>

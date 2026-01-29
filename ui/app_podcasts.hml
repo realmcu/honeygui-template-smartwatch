@@ -88,7 +88,7 @@
             <hg_time_label id="app_podcast_homepage_time_text" x="140" y="22" width="140" height="60" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/sf_compact_text_medium.otf" fontSize="61" zIndex="2" />
             <hg_list id="podcast_homepage_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="250" space="5" direction="VERTICAL" style="LIST_ZOOM_CYLINDER" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="3" showOverflow="true">
                 <hg_list_item id="podcast_homepage_list_item_1" x="0" y="0" width="410" height="250" index="0" locked="true" zIndex="0">
-                    <hg_rect id="hg_rect_1769592366392_pck6" x="26" y="-9" width="352" height="250" borderRadius="30" fillColor="#d0cccb" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0">
+                    <hg_rect id="hg_rect_1769592366392_pck6" x="29" y="0" width="352" height="250" borderRadius="30" fillColor="#d0cccb" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0">
                         <events>
                             <event type="onClick">
                                 <action type="switchView" target="app_podcast_ctr_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
@@ -112,7 +112,7 @@
                     <hg_image id="podcast_homepage_list1_iconbg" x="295" y="10" width="72" height="72" src="assets/app_phone/icon_bg.png" zIndex="1" />
                     <hg_image id="podcast_homepage_list1_icon" x="313" y="42" width="36" height="9" src="assets/app_phone/phone_etc_icon.png" zIndex="2" />
                     <hg_image id="podcast_homepage_list1_covert" x="42" y="9" width="213" height="213" transform="{&quot;scaleX&quot;:0.5,&quot;scaleY&quot;:0.5}" src="assets/app_podcast/Cover_Art.png" zIndex="3" />
-                    <hg_label id="podcast_homepage_list1_text0" x="42" y="127" width="320" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Tim Cook: what it ..." fontFile="/font/sf_compact_text_medium.otf" fontSize="40" zIndex="4" />
+                    <hg_label id="podcast_homepage_list1_text0" x="42" y="127" width="320" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Tim Cook: what it ..." fontFile="/font/sf_compact_text_medium.otf" fontSize="40" fontType="bitmap" zIndex="4" />
                     <hg_label id="podcast_homepage_list1_text1" x="42" y="166" width="320" height="40" hAlign="LEFT" vAlign="TOP" color="#a8a8a8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="12:34 left" fontFile="/font/sf_compact_text_medium.otf" fontSize="40" zIndex="5" />
                 </hg_list_item>
                 <hg_list_item id="podcast_homepage_list_item_3" x="0" y="510" width="410" height="250" index="2" locked="true" zIndex="2">
