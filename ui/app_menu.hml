@@ -185,7 +185,7 @@
                 <hg_list_item id="app_menu_list_item_17" x="0" y="1680" width="350" height="100" index="16" locked="true" zIndex="16">
                     <events>
                         <event type="onClick">
-                            <action type="switchView" switchOutStyle="SWITCH_OUT_TO_LEFT_USE_TRANSLATION" switchInStyle="SWITCH_IN_FROM_RIGHT_USE_TRANSLATION" />
+                            <action type="switchView" target="app_home_view" switchOutStyle="SWITCH_OUT_ANIMATION_ZOOM" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                     <hg_image id="hg_image_1766997342134_pyhh" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_home_icon.png" zIndex="0" />
