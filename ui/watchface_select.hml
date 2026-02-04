@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="watchface_select_view" x="387" y="271" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+            <events>
+                <event type="onKeyShortClick">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
+            <hg_list id="watchface_select_list" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="5" direction="HORIZONTAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="4" offset="0" outScope="0" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+                <hg_list_item id="watchface_select_list_item_1" x="0" y="0" width="410" height="502" index="0" locked="true" zIndex="0">
+                    <hg_label id="hg_label_1770016204700_sw1h" x="105" y="50" width="200" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Big Number" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="0" />
+                    <hg_image id="hg_image_1770016357532_9lx9" x="105" y="129" width="200" height="245" src="assets/app_home_list/watchface_big_number.png" zIndex="1">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_image>
+                </hg_list_item>
+                <hg_list_item id="watchface_select_list_item_2" x="415" y="0" width="410" height="502" index="1" locked="true" zIndex="1">
+                    <hg_label id="hg_label_1770016204700_sw1h_copy_1770016369560" x="105" y="50" width="200" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sport" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="0" />
+                    <hg_image id="hg_image_1770016385884_x9w0" x="105" y="129" width="200" height="245" src="assets/app_home_list/watchface_sport.png" zIndex="1">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="sportView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_image>
+                </hg_list_item>
+                <hg_list_item id="watchface_select_list_item_3" x="830" y="0" width="410" height="502" index="2" locked="true" zIndex="2">
+                    <hg_image id="hg_image_1770016418312_kzc4" x="105" y="129" width="200" height="245" src="assets/app_home_list/watchface_video.png" zIndex="0" />
+                    <hg_label id="hg_label_1770016204700_sw1h_copy_1770016369560_copy_1770016431992" x="105" y="50" width="200" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Video" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="watchface_select_list_item_4" x="1245" y="0" width="410" height="502" index="3" locked="true" zIndex="3">
+                    <hg_image id="hg_image_1770016451702_4n00" x="105" y="129" width="200" height="245" src="assets/app_home_list/add_watchface.png" zIndex="0" />
+                    <hg_label id="hg_label_1770016204700_sw1h_copy_1770016369560_copy_1770016431992_copy_1770016460768" x="80" y="50" width="251" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Add Watchface" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                </hg_list_item>
+            </hg_list>
+            <hg_window id="watchface_select_window" x="0" y="390" width="410" height="100" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="1">
+                <hg_rect id="hg_rect_1770016833554_0smr" x="131" y="15" width="150" height="70" borderRadius="35" fillColor="#626562" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />
+                <hg_label id="hg_label_1770016960792_xl9q" x="174" y="34" width="65" height="32" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Edite" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+            </hg_window>
+        </hg_view>
+    </view>
+</hml>

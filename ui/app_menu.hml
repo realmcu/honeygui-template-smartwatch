@@ -152,6 +152,11 @@
                     <hg_label id="hg_labelalarm_clock" x="140" y="29" width="197" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alarm Clock" fontSize="42" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="app_menu_list_item_13" x="0" y="1260" width="350" height="100" index="12" locked="true" zIndex="12">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" target="audioBook_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        </event>
+                    </events>
                     <hg_image id="hg_image_1766997310775_8v5d" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_audio_books_icon.png" zIndex="0" />
                     <hg_label id="hg_label_audio_books" x="140" y="29" width="203" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Audio Books" fontSize="42" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="1" />
                 </hg_list_item>
@@ -178,6 +183,11 @@
                     <hg_label id="hg_label_calendar" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Calendar" fontSize="42" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="app_menu_list_item_17" x="0" y="1680" width="350" height="100" index="16" locked="true" zIndex="16">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" switchOutStyle="SWITCH_OUT_TO_LEFT_USE_TRANSLATION" switchInStyle="SWITCH_IN_FROM_RIGHT_USE_TRANSLATION" />
+                        </event>
+                    </events>
                     <hg_image id="hg_image_1766997342134_pyhh" x="0" y="0" width="100" height="100" src="assets/UI_app_list/app_home_icon.png" zIndex="0" />
                     <hg_label id="hg_label_home" x="140" y="29" width="177" height="42" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Home" fontSize="42" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="1" />
                 </hg_list_item>

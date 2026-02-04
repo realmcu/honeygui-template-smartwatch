@@ -16,6 +16,9 @@
                 <event type="onKeyShortClick">
                     <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                 </event>
+                <event type="onLongPress">
+                    <action type="switchView" target="watchface_select_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
             </events>
             <hg_rect id="hg_rect_1766998925528_70wq" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#de7994" opacity="255" visible="false" zIndex="0" />
             <hg_time_label id="hg_time_label_1768896234329_v8yi" x="35" y="20" width="340" height="462" hAlign="LEFT" vAlign="TOP" color="#FEF974" letterSpacing="2" lineSpacing="0" wordWrap="true" timeFormat="HH:mm-split" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="242" zIndex="1" />
