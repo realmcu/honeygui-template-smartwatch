@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="app_recording_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+            <events>
+                <event type="onClick">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
+            <hg_button id="hg_button_1770257701239_o7o1" x="189" y="278" width="32" height="32" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_music/pause_button_icon.png" imageOff="assets/app_music/start_button_icon.png" controlTarget="hg_label_1770360943376_39o2" zIndex="1">
+                <events>
+                    <event type="onClick">
+                        <action type="controlTimer" timerTargets="[{&quot;componentId&quot;:&quot;recording_timer_text&quot;,&quot;timerIndex&quot;:0,&quot;action&quot;:&quot;stop&quot;}]" />
+                    </event>
+                </events>
+            </hg_button>
+        </hg_view>
+    </view>
+</hml>
