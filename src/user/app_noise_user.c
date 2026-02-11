@@ -197,8 +197,9 @@ void update_noise_status(int noise_db)
     // 更新状态图标
     if (hg_image_1769156756841_h11r != NULL) {
         gui_img_t *icon_img = (gui_img_t *)hg_image_1769156756841_h11r;
-        gui_img_set_attribute(icon_img, icon_img->base.name, (void*)icon_path, 
-                            icon_img->base.x, icon_img->base.y);
+        // 使用新的 API 替代废弃的 gui_img_set_attribute
+        gui_img_set_src(icon_img, (void*)icon_path, IMG_SRC_FILESYS);
+        gui_img_refresh_size(icon_img);
     }
 }
 

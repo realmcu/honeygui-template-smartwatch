@@ -10,7 +10,7 @@
                 <event type="onKeyShortPress" keyName="Home" />
             </events>
             <hg_button id="hg_button_recording" x="105" y="126" width="200" height="200" text="Button" toggleMode="true" initialState="off" controlTarget="recording_timer_label_text" imageOn="assets/app_recording/recording_start.png" imageOff="assets/app_recording/recording_stop.png" zIndex="3" />
-            <hg_timer_label id="recording_timer_label_text" x="130" y="369" width="150" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" text="00:00:00" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" timerAutoStart="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" timerFormat="MM:SS:MS" zIndex="1" />
+            <hg_timer_label id="recording_timer_label_text" x="141" y="369" width="144" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" text="00:00:00" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" timerAutoStart="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" timerFormat="MM:SS:MS" zIndex="1" />
             <hg_window id="app_recording_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
