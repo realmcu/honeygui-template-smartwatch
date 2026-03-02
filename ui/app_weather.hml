@@ -6,7 +6,7 @@
     </meta>
     <view>
         <hg_view id="app_weatherMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
-            <hg_list id="hg_list_1768294664982_waoc" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="false" inertia="false" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+            <hg_list id="hg_list_1768294664982_waoc" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_1768294664982_waoc_item_1" x="0" y="0" width="410" height="502" index="0" locked="true" zIndex="0">
                     <hg_image id="hg_image_1768294809757_5m7u" x="0" y="0" width="410" height="502" src="assets/weather/weather_background1.png" zIndex="0">
                         <events>
