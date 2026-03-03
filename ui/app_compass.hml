@@ -15,7 +15,7 @@
                     </event>
                 </events>
                 <hg_image id="compass_info_icon" x="20" y="10" width="72" height="73" src="assets/app_compass/compass_infor_icon.png" zIndex="3" />
-                <hg_time_label id="compass_time_label" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                <hg_time_label id="compass_time_label" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" useAccuratePreview="true" />
             </hg_window>
         </hg_view>
     </view>
