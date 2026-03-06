@@ -16,6 +16,9 @@
                 <event type="onLongPress">
                     <action type="switchView" target="watchface_select_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                 </event>
+                <event type="onKeyShortPress" keyName="Menu">
+                    <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
             </events>
             <hg_window id="samrtWatch_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="0">
                 <events>
@@ -33,8 +36,16 @@
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_TO_BOTTOM_USE_TRANSLATION" switchInStyle="SWITCH_INIT_STATE" />
                 </event>
             </events>
-            <hg_list id="hg_list_1768181662781_4e4z" x="29" y="0" width="352" height="502" itemWidth="352" itemHeight="157" space="10" direction="VERTICAL" style="LIST_CARD" cardStackLocation="20" noteNum="4" offset="250" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" zIndex="0">
-                <hg_list_item id="hg_list_1768181662781_4e4z_item_1" x="0" y="0" width="352" height="157" index="0" locked="true" zIndex="0">
+            <hg_rect id="hg_rect" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#de7994" opacity="255" zIndex="0" />
+            <hg_window id="win_clock_big" x="38" y="30" width="372" height="190" showBackground="false" backgroundColor="#808080" enableBlur="false" blurDegree="225" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;win_clock_big_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="1">
+                <hg_image id="hg_image_1772764949914_bwov" x="163" y="0" width="190" height="190" src="assets/others/ui_card_clockcircle.png" zIndex="1" />
+                <hg_time_label id="hg_time_label_1772765275313_pgx4" x="163" y="0" width="190" height="190" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="3" lineSpacing="0" wordWrap="false" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontSize="60" timeFormat="HH:mm" fontFile="/font/Inter24pt-Medium.ttf" zIndex="1" />
+                <hg_label id="text_date_big" x="0" y="22" width="200" height="168" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="10" wordWrap="true" wordBreak="false" text="FRI
+MAR
+6" fontFile="/font/Inter24pt-Medium.ttf" fontSize="48" fontType="vector" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;text_date_big_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="1" />
+            </hg_window>
+            <hg_list id="list_card" x="29" y="0" width="352" height="502" itemWidth="352" itemHeight="157" space="10" direction="VERTICAL" style="LIST_CARD" cardStackLocation="20" noteNum="4" offset="250" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" zIndex="2">
+                <hg_list_item id="list_card_item_1" x="0" y="0" width="352" height="157" index="0" locked="true" zIndex="0">
                     <hg_image id="bottom_View_weather" x="0" y="0" width="352" height="157" src="assets/weather/ui_card_weather.png" zIndex="0">
                         <events>
                             <event type="onClick">
@@ -43,7 +54,7 @@
                         </events>
                     </hg_image>
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768181662781_4e4z_item_2" x="0" y="167" width="352" height="157" index="1" locked="true" zIndex="1">
+                <hg_list_item id="list_card_item_2" x="0" y="167" width="352" height="157" index="1" locked="true" zIndex="1">
                     <hg_image id="hg_image_1769134788793_og20" x="0" y="0" width="352" height="157" src="assets/tab_bg/bottom_tab_bg.png" zIndex="0">
                         <events>
                             <event type="onClick">
@@ -61,7 +72,7 @@
                     <hg_label id="bottomView_ext_text" x="178" y="21" width="165" height="32" hAlign="LEFT" vAlign="TOP" color="#fa114f" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="208/500 kcol" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="8" />
                     <hg_label id="bottomView_work_text" x="178" y="53" width="165" height="32" hAlign="LEFT" vAlign="TOP" color="#92ff01" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10/60 min" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="9" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768181662781_4e4z_item_3" x="0" y="334" width="352" height="157" index="2" locked="true" zIndex="2">
+                <hg_list_item id="list_card_item_3" x="0" y="334" width="352" height="157" index="2" locked="true" zIndex="2">
                     <hg_image id="bottom_View_tag_bg1" x="0" y="0" width="352" height="157" src="assets/tab_bg/bottom_tab_bg.png" zIndex="0" />
                     <hg_image id="hg_image_1768183941920_4wxc" x="21" y="29" width="100" height="100" transform="{&quot;scaleX&quot;:0.85,&quot;scaleY&quot;:0.85}" src="assets/UI_app_list/app_music_icon.png" zIndex="1">
                         <events>
@@ -88,7 +99,7 @@
                     </hg_arc>
                     <hg_label id="bottomView_charge_text" x="159" y="56" width="40" height="32" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="77" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" useAccuratePreview="true" zIndex="6" />
                 </hg_list_item>
-                <hg_list_item id="hg_list_1768181662781_4e4z_item_4" x="0" y="501" width="352" height="157" index="3" locked="true" zIndex="3">
+                <hg_list_item id="list_card_item_4" x="0" y="501" width="352" height="157" index="3" locked="true" zIndex="3">
                     <hg_image id="bottom_View_tag_bg_menu" x="47" y="32" width="258" height="76" src="assets/tab_bg/bottom_list_menu_bg.png" zIndex="0">
                         <events>
                             <event type="onClick">
@@ -97,9 +108,14 @@
                         </events>
                     </hg_image>
                     <hg_image id="hg_image_1768197237671_qmtd" x="79" y="46" width="48" height="49" src="assets/UI_app_list/cellular_icon.png" zIndex="1" />
-                    <hg_label id="bottomView_menu_text" x="140" y="58" width="100" height="24" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="APP MENU" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
+                    <hg_label id="bottomView_menu_text" x="140" y="60" width="100" height="24" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="APP MENU" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
                 </hg_list_item>
             </hg_list>
+            <hg_window id="win_clock_small" x="0" y="0" width="410" height="60" showBackground="false" backgroundColor="#808080" enableBlur="true" blurDegree="225" visible="false" zIndex="3">
+                <hg_image id="round_rect_bg" x="35" y="0" width="340" height="60" src="assets/others/win_clock_small_bg.png" zIndex="0" />
+                <hg_time_label id="hg_time_label_1772765275313_pgx4_copy_1772765661189_2" x="-10" y="20" width="375" height="32" hAlign="RIGHT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontSize="32" timeFormat="HH:mm" fontFile="/font/Inter24pt-Medium.ttf" zIndex="1" />
+                <hg_label id="text_date_small" x="50" y="20" width="410" height="32" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="10" wordWrap="true" wordBreak="false" text="FRI 6" fontFile="/font/Inter24pt-Medium.ttf" fontSize="32" fontType="vector" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;text_date_small_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="2" />
+            </hg_window>
         </hg_view>
         <hg_view id="app_top_view" x="-3776" y="-1506" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="2">
             <events>
@@ -107,23 +123,22 @@
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_TO_TOP_USE_TRANSLATION" switchInStyle="SWITCH_IN_STILL_USE_BLUR" />
                 </event>
             </events>
-            <hg_rect id="hg_rect_1767003360110_1aep" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#4e464a" opacity="128" visible="false" zIndex="0" />
-            <hg_list id="hg_list_1766999250662_ne76" x="29" y="0" width="352" height="491" itemWidth="352" itemHeight="157" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" zIndex="1">
+            <hg_list id="hg_list_1766999250662_ne76" x="29" y="0" width="352" height="491" itemWidth="352" itemHeight="157" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" zIndex="1">
                 <hg_list_item id="hg_list_1766999250662_ne76_item_1" x="0" y="0" width="352" height="157" index="0" locked="true" zIndex="0">
-                    <hg_image id="hg_image_1769134855916_3bru" x="24" y="39" width="305" height="80" src="assets/tab_bg/top_list_clean_bg.png" zIndex="0" />
+                    <hg_rect id="hg_rect_1772778302433_yeu0" x="46" y="35" width="260" height="80" borderRadius="50" fillColor="#7F7F7F" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />
                     <hg_label id="hg_label_1768961345159_3hp5" x="125" y="63" width="103" height="32" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Clear All" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766999250662_ne76_item_2" x="0" y="167" width="352" height="157" index="1" locked="true" zIndex="1">
                     <hg_image id="hg_image_1769134863025_7s7k" x="0" y="25" width="352" height="120" src="assets/tab_bg/top_tab_bg.png" zIndex="0" />
                     <hg_image id="hg_image_1766999553786_6n5b" x="18" y="0" width="100" height="106" transform="{&quot;scaleX&quot;:0.8,&quot;scaleY&quot;:0.8}" src="assets/UI_app_list/app_activity_icon.png" zIndex="1" />
                     <hg_label id="hg_label_activity" x="30" y="95" width="130" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Come On" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="2" />
-                    <hg_label id="hg_label_activity_time" x="198" y="29" width="142" height="30" hAlign="LEFT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1 hour ago" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="3" />
+                    <hg_label id="hg_label_activity_time" x="-10" y="29" width="352" height="30" hAlign="RIGHT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="45 minute ago" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="3" />
                 </hg_list_item>
                 <hg_list_item id="hg_list_1766999250662_ne76_item_3" x="0" y="334" width="352" height="157" index="2" locked="true" zIndex="2">
                     <hg_image id="hg_image_1769134886591_ma8n" x="0" y="25" width="352" height="120" src="assets/tab_bg/top_tab_bg.png" zIndex="0" />
                     <hg_image id="hg_image_1767000056743_qysv" x="18" y="0" width="100" height="100" transform="{&quot;scaleX&quot;:0.8,&quot;scaleY&quot;:0.8}" src="assets/UI_app_list/app_music_icon.png" zIndex="1" />
                     <hg_label id="hg_label_music" x="30" y="92" width="108" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Music" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="2" />
-                    <hg_label id="hg_label_activity_time_copy_1768961794007" x="142" y="35" width="190" height="30" hAlign="LEFT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="45 minute ago" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="3" />
+                    <hg_label id="hg_label_activity_time_copy_1768961794007" x="-10" y="35" width="352" height="30" hAlign="RIGHT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1 hour ago" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="3" />
                 </hg_list_item>
             </hg_list>
         </hg_view>
