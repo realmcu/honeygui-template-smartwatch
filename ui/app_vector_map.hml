@@ -6,6 +6,14 @@
     </meta>
     <view>
         <hg_view id="app_vector_mapMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
+            <events>
+                <event type="onKeyShortPress" keyName="Home">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+                <event type="onKeyShortPress" keyName="Menu">
+                    <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
             <hg_map id="hg_map_1773027333563_p7tt" x="0" y="0" width="410" height="502" mapFile="/app_vector_map/sip.trmap" fontFile="/app_vector_map/NotoSansSC-Medium_subset.ttf" zIndex="1" />
         </hg_view>
     </view>

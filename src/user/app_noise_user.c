@@ -1,18 +1,40 @@
 #include "app_noise_user.h"
-#include "../ui/app_noise_ui.h"
-#include "../callbacks/app_noise_callbacks.h"
-#include "gui_api.h"
-#include "gui_rect.h"
-#include "gui_text.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
 
 /**
  * 用户自定义实现
  * 此文件只生成一次，可自由修改
  */
+
+// 在此添加自定义实现
+
+/***
+ * Template function
+ * Distinguish development environments
+ */
+// void user_defined_func_called_by_event(void *obj, gui_event_t *e)
+// {
+//     GUI_UNUSED(obj);
+//     GUI_UNUSED(e);
+// #ifdef _HONEYGUI_SIMULATOR_
+//     // TODO
+// #else
+//     // TODO
+// #endif
+// }
+
+// void user_defined_func_called_by_msg(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
+// {
+//     GUI_UNUSED(obj);
+//     GUI_UNUSED(topic);
+//     GUI_UNUSED(data);
+//     GUI_UNUSED(len);
+// #ifdef _HONEYGUI_SIMULATOR_
+//     // TODO
+// #else
+//     // TODO
+// #endif
+// }
+
 
 // 噪音级别相关变量
 static int current_noise_level = 50;  // 当前噪音级别 (dB)

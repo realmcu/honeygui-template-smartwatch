@@ -6,8 +6,7 @@
     </meta>
     <view>
         <hg_view id="app_photo_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
-            
-            <hg_list id="photo_main_list" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="320" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="1" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+            <hg_list id="photo_main_list" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="320" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="1" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="photo_main_list_item_1" x="0" y="0" width="352" height="320" index="0" locked="true" zIndex="0">
                     <hg_image id="hg_image_1770628433295_aqnj" x="0" y="0" width="352" height="320" src="assets/app_photo/photo_demo.jpg" zIndex="0" />
                     <hg_label id="app_photos_total_num_text" x="19" y="276" width="20" height="24" hAlign="LEFT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
@@ -15,12 +14,15 @@
                     <hg_label id="app_photos_total_u_text" x="43" y="276" width="80" height="24" hAlign="LEFT" vAlign="TOP" color="#c8c8c8" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Photos" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                 </hg_list_item>
             </hg_list>
-            <hg_window id="photo_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1"><events>
-<event type="onKeyShortPress" keyName="Home">
-                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                </event>
-</events>
-
+            <hg_window id="photo_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
+                <events>
+                    <event type="onKeyShortPress" keyName="Home">
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                </events>
                 <hg_time_label id="app_photos_tital_time_text" x="305" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 <hg_label id="app_photos_tital" x="285" y="60" width="100" height="24" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="My photos" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
             </hg_window>

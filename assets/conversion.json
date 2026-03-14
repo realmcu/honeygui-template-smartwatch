@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "defaultSettings": {
+    "format": "adaptive16",
+    "compression": "adaptive",
+    "dither": false,
+    "videoFormat": "MJPEG",
+    "videoQuality": 5
+  },
+  "items": {
+    "UI_app_list": {
+      "compression": "rle"
+    },
+    "app_reminder": {
+      "compression": "rle"
+    },
+    "app_sleep": {
+      "compression": "rle"
+    },
+    "app_vector_map": {
+      "compression": "rle"
+    },
+    "app_workout": {
+      "compression": "rle"
+    },
+    "font": {
+      "compression": "rle"
+    },
+    "heart": {
+      "compression": "rle"
+    },
+    "others": {
+      "compression": "rle"
+    },
+    "scrollbar": {
+      "compression": "rle"
+    },
+    "stopwatch": {
+      "compression": "rle"
+    },
+    "tab_bg": {
+      "compression": "rle"
+    },
+    "video": {
+      "compression": "rle"
+    },
+    "weather": {
+      "compression": "rle"
+    },
+    "app_noise": {
+      "compression": "rle"
+    },
+    "app_home_list": {
+      "compression": "rle"
+    },
+    "activity": {
+      "compression": "rle"
+    },
+    "app_alarms": {
+      "compression": "rle"
+    },
+    "app_audio_book": {
+      "compression": "rle"
+    },
+    "app_compass": {
+      "compression": "rle"
+    },
+    "app_contacts": {
+      "compression": "rle"
+    },
+    "app_home": {
+      "compression": "rle"
+    },
+    "app_message": {
+      "compression": "rle"
+    },
+    "app_music": {
+      "compression": "rle"
+    },
+    "app_now_playing": {
+      "compression": "rle"
+    },
+    "app_phone": {
+      "compression": "rle"
+    },
+    "app_photo": {
+      "compression": "rle"
+    },
+    "app_podcast": {
+      "compression": "rle"
+    },
+    "app_recording": {
+      "compression": "rle"
+    }
+  }
+}

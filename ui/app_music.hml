@@ -4,7 +4,7 @@
     </meta>
     <view>
         <hg_view id="app_music_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
-            <hg_list id="hg_list_1768278317813_ni8t" x="29" y="115" width="352" height="385" itemWidth="352" itemHeight="115" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" zIndex="0">
+            <hg_list id="hg_list_1768278317813_ni8t" x="29" y="115" width="352" height="385" itemWidth="352" itemHeight="115" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0">
                 <hg_list_item id="hg_list_1768278317813_ni8t_item_1" x="0" y="0" width="352" height="115" index="0" locked="true" zIndex="0">
                     <hg_rect id="hg_rect_1768278391413_rzwv" x="0" y="0" width="352" height="115" borderRadius="30" fillColor="#626562" opacity="200" useGradient="false" gradientDirection="horizontal" zIndex="0" />
                     <hg_image id="hg_image_1768278459365_n8mq" x="0" y="14" width="100" height="87" src="assets/app_music/music_homepage.png" zIndex="1" />
@@ -24,7 +24,10 @@
             <hg_window id="hg_window_1768286822421_xea9" x="0" y="2" width="410" height="115" enableBlur="true" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="hg_image_window_music_ctr" x="308" y="7" width="72" height="73" src="assets/app_music/music_ctr_icon.png" zIndex="0">
@@ -42,8 +45,11 @@
             <hg_image id="hg_image_1768283633747_exth" x="88" y="104" width="300" height="300" transform="{&quot;scaleX&quot;:0.7,&quot;scaleY&quot;:0.7}" src="assets/app_music/Rectangle86.png" zIndex="0" />
             <hg_image id="hg_image_1768283673697_8ra5" x="25" y="15" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="1">
                 <events>
-                    <event type="onClick">
-                        <action type="switchView" target="app_music_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    <event type="onKeyShortPress" keyName="Home">
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
             </hg_image>

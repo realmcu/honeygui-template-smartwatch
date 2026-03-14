@@ -6,9 +6,8 @@
     </meta>
     <view>
         <hg_view id="app_workout_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="0">
-            
             <hg_rect id="app_workout_bg" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#202411" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />
-            <hg_list id="app_workout_menu_list" x="0" y="127" width="410" height="502" itemWidth="410" itemHeight="300" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="18" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="1" showOverflow="true">
+            <hg_list id="app_workout_menu_list" x="0" y="127" width="410" height="375" itemWidth="410" itemHeight="300" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="18" offset="0" outScope="80" autoAlign="true" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="1" showOverflow="true">
                 <hg_list_item id="app_workout_menu_list_item_1" x="0" y="0" width="410" height="300" index="0" locked="true" zIndex="0">
                     <hg_image id="workout_badminton_icon" x="140" y="85" width="130" height="130" src="assets/app_workout/workout_badminton_icon.png" zIndex="0" />
                     <hg_label id="workout_badminton_text" x="130" y="208" width="150" height="31" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="badminton" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
@@ -82,12 +81,15 @@
                     <hg_image id="hg_image_1769492435275_x96q" x="192" y="41" width="40" height="40" src="assets/app_workout/workout_mode_add_icon.png" zIndex="1" />
                 </hg_list_item>
             </hg_list>
-            <hg_window id="app_workout_menu_topwindow" x="0" y="0" width="410" height="100" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="2"><events>
-<event type="onKeyShortPress" keyName="Home">
-                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                </event>
-</events>
-
+            <hg_window id="app_workout_menu_topwindow" x="0" y="0" width="410" height="100" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="2">
+                <events>
+                    <event type="onKeyShortPress" keyName="Home">
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                </events>
                 <hg_image id="app_workout_icon_bg0" x="25" y="10" width="72" height="72" src="assets/app_workout/workout_Left_Control.png" zIndex="0" />
                 <hg_image id="app_workout_icon0" x="43" y="28" width="36" height="36" src="assets/app_workout/workout_view_icon.png" zIndex="1" />
                 <hg_image id="app_workout_icon_bg1" x="323" y="10" width="72" height="72" src="assets/app_workout/workout_Left_Control.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;定时动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;hg_image_1769161039267_t63r_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]},{&quot;id&quot;:&quot;timer_1&quot;,&quot;name&quot;:&quot;定时动画 2&quot;,&quot;enabled&quot;:false,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_image_1769161039267_t63r_timer_1_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[{&quot;duration&quot;:1000,&quot;actions&quot;:[{&quot;type&quot;:&quot;opacity&quot;,&quot;from&quot;:255,&quot;to&quot;:128}]}]}]" zIndex="2" />
@@ -114,7 +116,7 @@
                     <event type="onClick" />
                 </events>
             </hg_rect>
-            <hg_arc id="workout_countdown_arc" x="25" y="81" width="340" height="340" radius="150" startAngle="-90" endAngle="270" strokeWidth="20" color="#b8fa4f" opacity="255" useGradient="false" arcProgress="{&quot;enabled&quot;:true,&quot;startAngle&quot;:-90,&quot;endAngle&quot;:270,&quot;stepAngle&quot;:90,&quot;intervalMs&quot;:1000,&quot;isDecreasing&quot;:true}" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;定时动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_arc_1769392341888_dqdk_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;segmentsBackup&quot;:[{&quot;duration&quot;:1000,&quot;actions&quot;:[]}]}]" zIndex="1">
+            <hg_arc id="workout_countdown_arc" x="35" y="81" width="340" height="340" radius="150" startAngle="-90" endAngle="270" strokeWidth="20" color="#b8fa4f" opacity="255" useGradient="false" arcProgress="{&quot;enabled&quot;:true,&quot;startAngle&quot;:-90,&quot;endAngle&quot;:270,&quot;stepAngle&quot;:90,&quot;intervalMs&quot;:1000,&quot;isDecreasing&quot;:true}" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;定时动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_arc_1769392341888_dqdk_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;segmentsBackup&quot;:[{&quot;duration&quot;:1000,&quot;actions&quot;:[]}]}]" zIndex="1">
                 <events>
                     <event type="onClick">
                         <action type="switchView" target="app_workout_view" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_NONE_ANIMATION" />

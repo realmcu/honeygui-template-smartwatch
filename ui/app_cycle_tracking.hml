@@ -47,6 +47,9 @@
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
+					<event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
                 </events>
                 <hg_image id="hg_image_1769761296861_2c5p" x="20" y="10" width="72" height="72" src="assets/heart/icon_information.png" zIndex="3" />
                 <hg_time_label id="app_cycle_tracking_time_text" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="2" />
@@ -87,15 +90,15 @@
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
+					<event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
                 </events>
                 <hg_time_label id="cycle_tracking_record_time_text" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 <hg_image id="cycle_tracking_record_back_icon_bg" x="20" y="10" width="72" height="72" src="assets/app_phone/icon_bg.png" zIndex="1">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_cycle_tracking_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                        <event type="onKeyShortPress" keyName="Home">
-                            <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                 </hg_image>
@@ -136,15 +139,15 @@
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
+					<event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
                 </events>
                 <hg_time_label id="cycle_tracking_record_time_text_copy_1769762411269_1" x="300" y="18" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 <hg_image id="hg_image_1769762439225_63oo" x="20" y="10" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="1">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="cycle_tracking_record_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                        <event type="onKeyShortPress" keyName="Home">
-                            <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                 </hg_image>
@@ -270,6 +273,9 @@
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+					<event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_time_label id="cycle_tracking_symptom_time_text" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />

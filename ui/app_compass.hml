@@ -14,7 +14,7 @@
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                     <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="compass_info_icon" x="20" y="10" width="72" height="73" src="assets/app_compass/compass_infor_icon.png" zIndex="3" />

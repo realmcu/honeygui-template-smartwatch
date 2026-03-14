@@ -16,7 +16,10 @@
             <hg_image id="hg_image_1769151866129_h3az" x="25" y="11" width="72" height="72" src="assets/heart/icon_information.png" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
             </hg_image>
@@ -42,7 +45,7 @@
             <hg_label id="app_noise_x30_text" x="29" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="30" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="21" />
             <hg_label id="app_noise_x80_text" x="215" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="80" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="22" />
             <hg_label id="app_noise_x120_text" x="337" y="247" width="50" height="32" hAlign="LEFT" vAlign="TOP" color="#68E171" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="120" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="23" />
-            <hg_image id="hg_image_1769156756841_h11r" x="40" y="315" width="60" height="60" src="assets/app_noise/Noise_ok_icon.png" zIndex="24" />
+            <hg_image id="hg_image_1769156756841_h11r" x="40" y="315" width="60" height="60" src="assets/app_noise/Noise_ok_icon.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:false,&quot;interval&quot;:1000,&quot;reload&quot;:false,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_image_1769156756841_h11r_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[{&quot;duration&quot;:1000,&quot;actions&quot;:[{&quot;type&quot;:&quot;changeImage&quot;,&quot;from&quot;:255,&quot;to&quot;:128,&quot;imagePath&quot;:&quot;assets/app_noise/Noise_warning_icon.png&quot;}]}]}]" zIndex="24" />
         </hg_view>
     </view>
 </hml>

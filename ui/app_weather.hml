@@ -6,7 +6,7 @@
     </meta>
     <view>
         <hg_view id="app_weatherMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
-            <hg_list id="hg_list_weather" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" zIndex="0" showOverflow="true">
+            <hg_list id="hg_list_weather" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_weather_item_1" x="0" y="0" width="410" height="502" index="0" locked="true" zIndex="0">
                     <hg_image id="hg_image_weather_bg1" x="0" y="0" width="410" height="502" src="assets/weather/weather_background1.png" zIndex="0" />
                     <hg_label id="hg_label_city" x="130" y="145" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sonoma" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="43" fontType="bitmap" renderMode="2" zIndex="1" />
@@ -105,10 +105,10 @@
             <hg_window id="hg_window_weather_top" x="0" y="0" width="410" height="100" enableBlur="false" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="hg_image_weather_function" x="13" y="14" width="75" height="75" src="assets/weather/weather_left_control.png" zIndex="0" />

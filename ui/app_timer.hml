@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hml>
+    <meta>
+        <project name="app_timer" appId="com.honeygui.smartwatch" resolution="410X502" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="RGB565" />
+        <author name="Anonymous" />
+    </meta>
+    <view>
+        <hg_view id="app_timer_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
+            <hg_label id="timer_dev" x="0" y="220" width="410" height="87" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Developing..." fontFile="/font/Inter24pt-Medium.ttf" fontSize="40" zIndex="1">
+                <events>
+                    <event type="onKeyShortPress" keyName="Home">
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                </events>
+            </hg_label>
+        </hg_view>
+    </view>
+</hml>

@@ -6,7 +6,7 @@
     </meta>
     <view>
         <hg_view id="app_phone_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
-            <hg_list id="hg_list_1768879382294_nr8k" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="180" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+            <hg_list id="hg_list_1768879382294_nr8k" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="180" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_1768879382294_nr8k_item_1" x="0" y="0" width="352" height="180" index="0" locked="true" zIndex="0">
                     <hg_rect id="hg_rect_1768882902534_l9aw" x="0" y="0" width="352" height="120" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0">
                         <events>
@@ -69,7 +69,10 @@
             <hg_window id="hg_window_1768892385276_fcs3" x="0" y="0" width="410" height="110" enableBlur="true" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="hg_image_1768880138928_x5a0" x="45" y="26" width="36" height="36" src="assets/app_reminder/reminders_icon2.png" zIndex="0" />
@@ -77,9 +80,6 @@
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_phone_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                        <event type="onKeyShortPress" keyName="Home">
-                            <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                 </hg_image>
@@ -95,7 +95,7 @@
             </hg_window>
         </hg_view>
         <hg_view id="app_phone_menu_view" x="-458" y="-16" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="1">
-            <hg_list id="hg_list_1768893241078_ejkw" x="15" y="80" width="380" height="502" itemWidth="380" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="8" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+            <hg_list id="hg_list_1768893241078_ejkw" x="15" y="80" width="380" height="502" itemWidth="380" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="8" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_1768893241078_ejkw_item_1" x="0" y="0" width="380" height="100" index="0" locked="true" zIndex="0">
                     <hg_label id="hg_label_1768893464362_0jwa" x="17" y="48" width="113" height="36" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Look-up" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="0" />
                 </hg_list_item>
@@ -147,16 +147,16 @@
             <hg_window id="hg_window_1768893185252_8qce" x="0" y="0" width="410" height="110" enableBlur="true" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="hg_image_1768893228619_ugou" x="20" y="20" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="0">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_phone_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                        <event type="onKeyShortPress" keyName="Home">
-                            <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                 </hg_image>
@@ -197,7 +197,10 @@
             <hg_image id="hg_image_1768901454596_wa4e" x="349" y="77" width="45" height="35" src="assets/app_phone/number_delete_icon.png" zIndex="24">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
             </hg_image>
@@ -215,7 +218,10 @@
                         <action type="switchView" target="app_phone_view" switchOutStyle="SWITCH_OUT_TO_LEFT_USE_TRANSLATION" switchInStyle="SWITCH_IN_FROM_RIGHT_USE_TRANSLATION" />
                     </event>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
             </hg_image>
@@ -224,7 +230,7 @@
             <hg_image id="hg_image_1768964289998_gnqz" x="318" y="425" width="36" height="9" src="assets/app_phone/phone_etc_icon.png" zIndex="9" />
         </hg_view>
         <hg_view id="app_phone_address_book_view" x="590" y="-16" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="4">
-            <hg_list id="hg_list_address_book" x="15" y="87" width="380" height="502" itemWidth="380" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="8" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
+            <hg_list id="hg_list_address_book" x="15" y="87" width="380" height="502" itemWidth="380" itemHeight="100" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="8" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_address_book_item_1" x="0" y="0" width="380" height="100" index="0" locked="true" zIndex="0">
                     <hg_label id="hg_label_B_text" x="10" y="51" width="100" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="B" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="0" />
                 </hg_list_item>
@@ -256,16 +262,16 @@
             <hg_window id="hg_window_1768969096489_0ioq" x="0" y="0" width="410" height="100" enableBlur="true" blurDegree="225" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
                 <hg_image id="hg_image_1768969450817_vmxv" x="32" y="20" width="72" height="72" src="assets/app_phone/icon_bg.png" zIndex="0">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_phone_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                        <event type="onKeyShortPress" keyName="Home">
-                            <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
                 </hg_image>
