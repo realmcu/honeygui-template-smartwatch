@@ -10,5 +10,10 @@
  */
 
 // 在此添加自定义声明
+void app_music_play_next(void *obj, gui_event_t *e);
+void app_music_play_prev(void *obj, gui_event_t *e);
+void app_music_play(void *obj, gui_event_t *e);
+void app_music_pause(void *obj, gui_event_t *e);
+
 
 #endif // APP_MUSIC_USER_H
