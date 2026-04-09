@@ -6,7 +6,7 @@
     </meta>
     <view>
         <hg_view id="app_timer_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="false" zIndex="0">
-            <hg_label id="timer_dev" x="0" y="220" width="410" height="87" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Developing..." fontFile="/font/Inter24pt-Medium.ttf" fontSize="40" zIndex="1">
+            <hg_label id="timer_dev" x="0" y="220" width="410" height="87" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Developing..." fontFile="/font/Inter24pt-Medium.ttf" fontSize="40" locked="true" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
