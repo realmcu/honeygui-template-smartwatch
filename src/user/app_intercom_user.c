@@ -39,10 +39,14 @@ void intercom_toggle_on(void *obj, gui_event_t *e)
     intercom_toggle_state = true;
 
     /* Expand scroll range to show all 5 items */
-    gui_list_set_note_num(toggle_list, 5);
+    gui_list_set_note_num(toggle_list, 3);
 
-    /* Show items 1~4 */
-    set_list_items_visible((gui_obj_t *)toggle_list, 1, 4, true);
+    /* Show items 0~2 */
+    set_list_items_visible((gui_obj_t *)toggle_list, 0, 2, true);
+
+    gui_obj_show((gui_obj_t *)toggle_list, true);
+
+    gui_obj_show((gui_obj_t *)available_devices_label, true);
 
     gui_fb_change();
 }
@@ -57,12 +61,9 @@ void intercom_toggle_off(void *obj, gui_event_t *e)
     GUI_UNUSED(e);
     intercom_toggle_state = false;
 
-    /* Hide items 1~4 */
-    set_list_items_visible((gui_obj_t *)toggle_list, 1, 4, false);
+    gui_obj_show((gui_obj_t *)toggle_list, false);
 
-    /* Shrink scroll range back to toggle item only, reset scroll */
-    gui_list_set_note_num(toggle_list, 1);
-    gui_list_set_offset(toggle_list, 0);
+    gui_obj_show((gui_obj_t *)available_devices_label, false);
 
     gui_fb_change();
 }

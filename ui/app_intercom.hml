@@ -6,51 +6,40 @@
     </meta>
     <view>
         <hg_view id="app_intercomMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto"  zIndex="0">
-            <hg_list id="toggle_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="60" space="8" direction="VERTICAL" style="LIST_CLASSIC" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="0" showOverflow="true">
-                <hg_list_item id="toggle_btn_item" x="0" y="0" width="410" height="60" index="0" locked="true" zIndex="0">
-                    <hg_button id="intercom_toggle_btn" x="105" y="4" width="200" height="56" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_intercom/toggle_btn_on.png" imageOff="assets/app_intercom/toggle_btn_off.png" onCallback="intercom_toggle_on" offCallback="intercom_toggle_off" zIndex="0">
-                        <events>
-                            <event type="onLongPress">
-                                <action type="callFunction" target="app_intercomTalkView" functionName="intercom_toggle_on" />
-                            </event>
-                        </events>
-                    </hg_button>
-                </hg_list_item>
-                <hg_list_item id="devices_title_item" x="0" y="68" width="410" height="60" index="1" locked="true" zIndex="1">
-                    <hg_label id="available_devices_label" x="41" y="40" width="200" height="20" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="14" zIndex="0" />
-                </hg_list_item>
-                <hg_list_item id="device1_item" x="0" y="136" width="410" height="60" index="2" locked="true" zIndex="2">
+            <hg_label id="available_devices_label" x="30" y="161" width="200" height="30" hAlign="LEFT" vAlign="MID" color="#F2F2F2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" visible="false" zIndex="0" />
+            <hg_list id="toggle_list" x="-2" y="192" width="410" height="300" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" visible="false" zIndex="2" showOverflow="true">
+                <hg_list_item id="device1_item" x="0" y="0" width="410" height="84" index="0" zIndex="0">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_intercomTalkView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
-                    <hg_rect id="device1_item_bg" x="40" y="0" width="330" height="52" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
-                    <hg_image id="device1_status_dot" x="56" y="21" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="1" />
-                    <hg_label id="device1_name_label" x="78" y="14" width="200" height="24" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="16" zIndex="1" />
+                    <hg_rect id="device1_item_bg" x="15" y="1" width="380" height="84" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
+                    <hg_label id="device1_name_label" x="78" y="27" width="200" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_image id="device1_status_dot" x="58" y="38" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="device2_item" x="0" y="204" width="410" height="60" index="3" locked="true" zIndex="3">
+                <hg_list_item id="device2_item" x="0" y="89" width="410" height="84" index="1" locked="true" zIndex="1">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_intercomTalkView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
-                    <hg_rect id="device2_item_bg" x="40" y="0" width="330" height="52" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
-                    <hg_image id="device2_status_dot" x="56" y="21" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="1" />
-                    <hg_label id="device2_name_label" x="78" y="14" width="200" height="24" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Jordan&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="16" zIndex="1" />
+                    <hg_rect id="device2_item_bg" x="15" y="0" width="380" height="84" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
+                    <hg_label id="device2_name_label" x="78" y="25" width="300" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Jordan&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_image id="device2_status_dot" x="59" y="42" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="device3_item" x="0" y="272" width="410" height="60" index="4" locked="true" zIndex="4">
+                <hg_list_item id="device3_item" x="0" y="178" width="410" height="84" index="2" locked="true" zIndex="2">
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_intercomTalkView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                         </event>
                     </events>
-                    <hg_rect id="device3_item_bg" x="40" y="0" width="330" height="52" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
-                    <hg_image id="device3_status_dot" x="56" y="21" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="1" />
-                    <hg_label id="device3_name_label" x="78" y="14" width="200" height="24" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sam&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="16" zIndex="1" />
+                    <hg_rect id="device3_item_bg" x="15" y="0" width="380" height="84" borderRadius="16" fillColor="#1E1E1E" opacity="255" zIndex="0" />
+                    <hg_label id="device3_name_label" x="78" y="25" width="200" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sam&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_image id="device3_status_dot" x="56" y="40" width="10" height="10" src="assets/app_intercom/status_dot.png" zIndex="2" />
                 </hg_list_item>
             </hg_list>
-            <hg_window id="toggle_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
+            <hg_window id="toggle_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="3">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
@@ -67,8 +56,15 @@
                         </event>
                     </events>
                 </hg_image>
-                <hg_label id="toggle_page_title" x="105" y="76" width="200" height="28" hAlign="CENTER" vAlign="TOP" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Walkie-Talkie" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
+                <hg_label id="toggle_page_title" x="256" y="57" width="140" height="28" hAlign="CENTER" vAlign="TOP" color="#42d30d" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Walkie-Talkie" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
             </hg_window>
+            <hg_button id="intercom_toggle_btn" x="105" y="91" width="200" height="56" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_intercom/toggle_btn_on.png" imageOff="assets/app_intercom/toggle_btn_off.png" onCallback="intercom_toggle_on" offCallback="intercom_toggle_off" zIndex="3">
+                <events>
+                    <event type="onLongPress">
+                        <action type="callFunction" target="app_intercomTalkView" functionName="intercom_toggle_on" />
+                    </event>
+                </events>
+            </hg_button>
         </hg_view>
         <hg_view id="app_intercomTalkView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
             <hg_window id="talk_window" x="0" y="0" width="410" height="502" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="0">
@@ -88,12 +84,12 @@
                         </event>
                     </events>
                 </hg_image>
-                <hg_image id="connection_dot" x="155" y="82" width="8" height="8" src="assets/app_intercom/status_dot.png" zIndex="1" />
-                <hg_label id="connection_label" x="171" y="76" width="100" height="20" hAlign="LEFT" vAlign="MID" color="#808080" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="14" useAccuratePreview="true" zIndex="1" />
-                <hg_label id="intercom_device_name_label" x="105" y="100" width="200" height="28" hAlign="CENTER" vAlign="TOP" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
-                <hg_image id="waveform_image" x="165" y="132" width="81" height="40" src="assets/app_intercom/waveform/idle/idle_frame_00.png" zIndex="1" />
-                <hg_label id="status_text_label" x="130" y="176" width="150" height="18" hAlign="CENTER" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Hold to Talk" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="12" zIndex="1" />
-                <hg_image id="talk_btn" x="145" y="198" width="120" height="120" src="assets/app_intercom/talk_btn_normal.png" zIndex="1">
+                <hg_image id="connection_dot" x="145" y="115" width="8" height="8" src="assets/app_intercom/status_dot.png" zIndex="1" />
+                <hg_label id="connection_label" x="165" y="109" width="100" height="20" hAlign="LEFT" vAlign="MID" color="#808080" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" useAccuratePreview="true" zIndex="1" />
+                <hg_label id="intercom_device_name_label" x="59" y="140" width="300" height="36" hAlign="CENTER" vAlign="TOP" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex&#39;s Watch" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                <hg_image id="waveform_image" x="165" y="192" width="81" height="40" src="assets/app_intercom/waveform/idle/idle_frame_00.png" zIndex="1" />
+                <hg_label id="status_text_label" x="134" y="232" width="150" height="18" hAlign="CENTER" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Hold to Talk" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
+                <hg_image id="talk_btn" x="149" y="261" width="120" height="120" transform="{&quot;scaleX&quot;:1,&quot;scaleY&quot;:1}" src="assets/app_intercom/talk_btn_normal.png" zIndex="1">
                     <events>
                         <event type="onTouchDown">
                             <action type="callFunction" functionName="talk_btn_press" />
@@ -103,7 +99,7 @@
                         </event>
                     </events>
                 </hg_image>
-                <hg_button id="mute_btn" x="179" y="338" width="52" height="52" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_intercom/mute_btn_active.png" imageOff="assets/app_intercom/mute_btn_normal.png" onCallback="mute_btn_on" offCallback="mute_btn_off" zIndex="1">
+                <hg_button id="mute_btn" x="183" y="396" width="52" height="52" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_intercom/mute_btn_active.png" imageOff="assets/app_intercom/mute_btn_normal.png" onCallback="mute_btn_on" offCallback="mute_btn_off" zIndex="1">
                     <events>
                         <event type="onToggleOn">
                             <action type="callFunction" functionName="mute_btn_on" />

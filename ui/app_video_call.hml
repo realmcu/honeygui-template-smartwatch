@@ -6,11 +6,10 @@
     </meta>
     <view>
         <hg_view id="app_video_callIdleView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto"  zIndex="0">
-            <hg_image id="video_call_idle_bg" x="0" y="0" width="410" height="502" src="assets/app_video_call/video_call_bg.png" zIndex="0" />
-            <hg_image id="video_call_idle_avatar" x="125" y="80" width="160" height="160" src="assets/app_video_call/avatar_large.png" zIndex="1" />
-            <hg_label id="video_call_idle_name" x="0" y="256" width="410" height="26" hAlign="CENTER" vAlign="MID" color="#E0E0E0" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex Johnson" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="22" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
-            <hg_label id="video_call_idle_subtitle" x="0" y="286" width="410" height="18" hAlign="CENTER" vAlign="MID" color="#64D2FF" opacity="153" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Video Call" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="14" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
-            <hg_image id="video_call_btn" x="173" y="340" width="64" height="64" src="assets/app_video_call/video_call_btn.png" zIndex="1">
+            <hg_image id="video_call_idle_avatar" x="125" y="123" width="160" height="160" src="assets/app_video_call/avatar_large.png" zIndex="1" />
+            <hg_label id="video_call_idle_name" x="0" y="295" width="410" height="40" hAlign="CENTER" vAlign="MID" color="#E0E0E0" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex Johnson" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
+            <hg_label id="video_call_idle_subtitle" x="0" y="339" width="410" height="24" hAlign="CENTER" vAlign="MID" color="#64D2FF" opacity="153" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Video Call" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
+            <hg_image id="video_call_btn" x="173" y="388" width="64" height="64" src="assets/app_video_call/video_call_btn.png" zIndex="1">
                 <events>
                     <event type="onClick">
                         <action type="switchView" target="app_video_callCallingView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
@@ -18,14 +17,6 @@
                 </events>
             </hg_image>
             <hg_window id="video_call_idle_window" x="0" y="0" width="410" height="80" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="2">
-                <events>
-                    <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                    <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                </events>
                 <hg_image id="video_call_idle_back_icon" x="32" y="28" width="32" height="32" src="assets/app_video_call/back_icon.png" zIndex="1">
                     <events>
                         <event type="onClick">
@@ -37,29 +28,20 @@
             </hg_window>
         </hg_view>
         <hg_view id="app_video_callCallingView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
-            <hg_image id="video_call_calling_bg" x="0" y="0" width="410" height="502" src="assets/app_video_call/video_call_bg.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;video_call_calling_view_init&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;video_call_calling_view_init_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="0" />
-            <hg_image id="video_call_ring_pulse_img" x="105" y="40" width="200" height="200" src="assets/app_video_call/ring_pulse/frame_00.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;ring_pulse&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:33,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;ring_pulse_timer_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:false,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="1" />
-            <hg_image id="video_call_calling_avatar" x="145" y="80" width="120" height="120" src="assets/app_video_call/avatar_small.png" zIndex="2" />
-            <hg_label id="video_call_calling_name" x="0" y="212" width="410" height="26" hAlign="CENTER" vAlign="MID" color="#E0E0E0" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex Johnson" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="22" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
-            <hg_label id="video_call_calling_status" x="0" y="242" width="410" height="18" hAlign="CENTER" vAlign="MID" color="#30D158" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Calling..." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="14" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
-            <hg_button id="mic_btn" x="85" y="288" width="64" height="64" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_video_call/mic_btn_active.png" imageOff="assets/app_video_call/mic_btn_normal.png" onCallback="mic_toggle" offCallback="mic_toggle" zIndex="2" />
-            <hg_image id="video_call_hangup_btn" x="173" y="288" width="64" height="64" src="assets/app_video_call/hangup_btn.png" zIndex="2">
+            <hg_image id="video_call_ring_pulse_img" x="105" y="103" width="200" height="200" src="assets/app_video_call/ring_pulse/frame_00.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;ring_pulse&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:33,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;ring_pulse_timer_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:false,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="1" />
+            <hg_image id="video_call_calling_avatar" x="145" y="143" width="120" height="120" src="assets/app_video_call/avatar_small.png" zIndex="2" />
+            <hg_label id="video_call_calling_name" x="0" y="295" width="410" height="40" hAlign="CENTER" vAlign="MID" color="#E0E0E0" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex Johnson" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
+            <hg_label id="video_call_calling_status" x="0" y="339" width="410" height="24" hAlign="CENTER" vAlign="MID" color="#30D158" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Calling..." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
+            <hg_button id="mic_btn" x="76" y="388" width="64" height="64" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_video_call/mic_btn_active.png" imageOff="assets/app_video_call/mic_btn_normal.png" onCallback="mic_toggle" offCallback="mic_toggle" zIndex="2" />
+            <hg_image id="video_call_hangup_btn" x="173" y="388" width="64" height="64" src="assets/app_video_call/hangup_btn.png" zIndex="2">
                 <events>
                     <event type="onClick">
                         <action type="callFunction" functionName="hangup_reset" />
                     </event>
                 </events>
             </hg_image>
-            <hg_button id="speaker_btn" x="261" y="288" width="64" height="64" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_video_call/speaker_btn_active.png" imageOff="assets/app_video_call/speaker_btn_normal.png" onCallback="speaker_toggle" offCallback="speaker_toggle" zIndex="2" />
+            <hg_button id="speaker_btn" x="266" y="388" width="64" height="64" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_video_call/speaker_btn_active.png" imageOff="assets/app_video_call/speaker_btn_normal.png" onCallback="speaker_toggle" offCallback="speaker_toggle" zIndex="2" />
             <hg_window id="video_call_calling_window" x="0" y="0" width="410" height="80" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="3">
-                <events>
-                    <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                    <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                </events>
                 <hg_image id="video_call_calling_back_icon" x="32" y="28" width="32" height="32" src="assets/app_video_call/back_icon.png" zIndex="1">
                     <events>
                         <event type="onClick">
