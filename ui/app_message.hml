@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_message_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_message_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_list id="hg_list_1768285628248_uckn" x="10" y="110" width="390" height="502" itemWidth="390" itemHeight="218" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" zIndex="0">
                 <hg_list_item id="hg_list_1768285628248_uckn_item_1" x="0" y="0" width="390" height="218" index="0" locked="true" zIndex="0">
                     <hg_rect id="app_message_list_bg1" x="0" y="0" width="390" height="218" borderRadius="20" fillColor="#2C2C2E" opacity="230" useGradient="false" gradientDirection="horizontal" zIndex="0" />

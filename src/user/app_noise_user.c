@@ -1,4 +1,5 @@
 #include "app_noise_user.h"
+#include "time.h"
 
 /**
  * 用户自定义实现

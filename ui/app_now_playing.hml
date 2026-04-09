@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_now_play_view" x="313" y="290" width="410" height="502" backgroundColor="#000000" borderRadius="20" padding="12" overflow="auto" entry="true" zIndex="1">
+        <hg_view id="app_now_play_view" x="313" y="290" width="410" height="502" backgroundColor="#000000" borderRadius="20" padding="12" overflow="auto"  zIndex="1">
             <hg_list id="now_play_list" x="10" y="110" width="390" height="502" itemWidth="390" itemHeight="290" space="5" direction="VERTICAL" style="LIST_ZOOM_CYLINDER" cardStackLocation="0" noteNum="2" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="now_play_list_item_1" x="0" y="0" width="390" height="290" index="0" locked="true" zIndex="1">
                     <hg_rect id="now_paly_list_bg1" x="0" y="0" width="390" height="290" borderRadius="40" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />

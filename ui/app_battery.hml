@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_battery_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_battery_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_arc id="hg_arc_1768201544822_6743" x="86" y="131" width="240" height="240" radius="100" startAngle="0" endAngle="360" strokeWidth="20" color="#495549" useGradient="false" opacity="255" zIndex="0" />
             <hg_arc id="hg_arc_1768201544822_6743_copy_1768202312078" x="88" y="133" width="236" height="236" radius="100" startAngle="270" endAngle="185" strokeWidth="18" color="#32D74B" useGradient="false" opacity="255" zIndex="1" />
             <hg_label id="hg_label_1768201705164_a9tv_copy_1768202379798" x="138" y="213" width="140" height="85" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="77%" fontSize="85" fontFile="/font/Inter_24pt_Regular.ttf" useAccuratePreview="true" zIndex="4" />

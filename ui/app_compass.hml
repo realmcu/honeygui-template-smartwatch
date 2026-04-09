@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_compass_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_compass_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_rect id="compass_view_bg" x="0" y="0" width="410" height="502" borderRadius="0" fillColor="#dedede" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />
             <hg_image id="compass_image" x="136" y="179" width="138" height="183" transform="{&quot;translateX&quot;:69,&quot;translateY&quot;:92,&quot;skewX&quot;:0,&quot;focusX&quot;:69,&quot;focusY&quot;:92}" src="assets/app_compass/compass_icon.png" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;compass_sim&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;preset&quot;,&quot;callback&quot;:&quot;hg_image_1769500407352_g3oy_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:false,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[{&quot;duration&quot;:36000,&quot;actions&quot;:[{&quot;type&quot;:&quot;rotation&quot;,&quot;from&quot;:255,&quot;to&quot;:128,&quot;angleOrigin&quot;:0,&quot;angleTarget&quot;:360}]}]}]" zIndex="2" />
             <hg_window id="compass_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="1">

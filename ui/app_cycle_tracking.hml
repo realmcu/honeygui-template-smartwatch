@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_cycle_tracking_view" x="-1" y="-16" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_cycle_tracking_view" x="-1" y="-16" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_list id="cycle_track_list" x="0" y="110" width="410" height="150" itemWidth="54" itemHeight="150" space="5" direction="HORIZONTAL" style="LIST_ZOOM" cardStackLocation="0" noteNum="7" offset="0" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" zIndex="0" showOverflow="true">
                 <hg_list_item id="cycle_track_list_item_1" x="0" y="0" width="54" height="150" index="0" locked="true" zIndex="0">
                     <hg_rect id="cycle_track_record0" x="2" y="38" width="50" height="80" borderRadius="40" fillColor="#ffffff" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />

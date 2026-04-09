@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_photo_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_photo_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_list id="photo_main_list" x="29" y="115" width="352" height="502" itemWidth="352" itemHeight="320" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="1" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="photo_main_list_item_1" x="0" y="0" width="352" height="320" index="0" locked="true" zIndex="0">
                     <hg_image id="hg_image_1770628433295_aqnj" x="0" y="0" width="352" height="320" src="assets/app_photo/photo_demo.jpg" zIndex="0" />

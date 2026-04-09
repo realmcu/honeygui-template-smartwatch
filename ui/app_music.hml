@@ -3,7 +3,7 @@
     <meta>
     </meta>
     <view>
-        <hg_view id="app_music_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_music_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="0">
             <hg_list id="hg_list_1768278317813_ni8t" x="29" y="115" width="352" height="385" itemWidth="352" itemHeight="115" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0">
                 <hg_list_item id="hg_list_1768278317813_ni8t_item_1" x="0" y="0" width="352" height="115" index="0" locked="true" zIndex="0">
                     <hg_rect id="hg_rect_1768278391413_rzwv" x="0" y="0" width="352" height="115" borderRadius="30" fillColor="#626562" opacity="200" useGradient="false" gradientDirection="horizontal" zIndex="0" />
@@ -46,10 +46,13 @@
             <hg_image id="hg_image_1768283673697_8ra5" x="25" y="15" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="1">
                 <events>
                     <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_INIT_STATE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                     <event type="onKeyShortPress" keyName="Menu">
                         <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onClick">
+                        <action type="switchView" target="app_music_view" switchOutStyle="SWITCH_OUT_TO_LEFT_USE_TRANSLATION" switchInStyle="SWITCH_IN_FROM_RIGHT_USE_TRANSLATION" />
                     </event>
                 </events>
             </hg_image>
@@ -75,7 +78,7 @@
                     </event>
                 </events>
             </hg_time_label>
-            <hg_button id="hg_button_1768981147980_ml83" x="189" y="426" width="32" height="32" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_music/pause_button_icon.png" imageOff="assets/app_music/start_button_icon.png" onCallback="app_music_play" offCallback="app_music_pause" zIndex="6" />
+            <hg_button id="hg_button_1768981147980_ml83" x="189" y="426" width="36" height="41" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_music/pause_button_icon.png" imageOff="assets/app_music/start_button_icon.png" onCallback="app_music_play" offCallback="app_music_pause" zIndex="6" />
         </hg_view>
     </view>
 </hml>

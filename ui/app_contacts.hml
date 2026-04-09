@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_contacts_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="1">
+        <hg_view id="app_contacts_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="1">
             <hg_list id="contact_main_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="102" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="contact_main_list_item_1" x="0" y="0" width="410" height="102" index="0" locked="true" zIndex="0">
                     <hg_label id="contact_name1" x="42" y="42" width="30" height="32" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="T" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />

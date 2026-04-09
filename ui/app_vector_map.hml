@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_vector_mapMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
+        <hg_view id="app_vector_mapMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000"  zIndex="0">
             <events>
                 <event type="onKeyShortPress" keyName="Home">
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />

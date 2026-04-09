@@ -9,7 +9,8 @@
   },
   "items": {
     "UI_app_list": {
-      "compression": "rle"
+      "compression": "rle",
+      "format": "ARGB8565"
     },
     "app_reminder": {
       "compression": "rle"
@@ -97,6 +98,9 @@
     "app_recording": {
       "compression": "rle"
     },
+    "music_scan_icon": {
+      "compression": "rle"
+    },
     "app_camera": {
       "compression": "rle",
       "format": "adaptive16"
@@ -145,5 +149,15 @@
     "app_control_center/headphones_icon_connected.png": {
       "format": "inherit"
     }
+  },
+  "alwaysConvert": {
+    "images": [
+      "app_walkie_talkie/green_circle.png",
+      "app_walkie_talkie/red_circle.png",
+      "app_walkie_talkie/yellow_circle.png"
+    ],
+    "videos": [],
+    "models": [],
+    "fonts": []
   }
 }

@@ -7,6 +7,8 @@ src/ui
 src/gui_vector_map
 src/SConscript
 src/SmartWatchTemplateEntry.c
+src/gui_openclaw
+HML-Spec.md
 
 
 # Compiled object files

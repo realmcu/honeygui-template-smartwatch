@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto"  zIndex="0">
             <hg_list id="main_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="16" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="main_bt_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="bluetooth_item_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="0">

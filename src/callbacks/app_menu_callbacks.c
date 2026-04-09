@@ -326,33 +326,21 @@ void hg_image_1773813146142_x7xd_clicked_cb(void *obj, gui_event_t *e)
     gui_view_switch_direct(gui_view_get_current(), "app_menu_cellular_view", SWITCH_OUT_NONE_ANIMATION, SWITCH_IN_ANIMATION_FADE);
 }
 
-// Preset timer callback functions
-
-/**
- * 动画 1
- * Component: app_menu_list
- */
+/* @protected start custom_functions */
+static int16_t list_offset_rec = 0;
 void app_menu_list_timer_0_cb(void *obj)
 {
     GUI_UNUSED(obj);
-    // Call the implementation function in protected area (if exists)
-    // Define app_menu_list_timer_0_cb_impl() in custom_functions protected area for custom logic
-#ifdef __cplusplus
-    extern "C" {
-#endif
-    extern void app_menu_list_timer_0_cb_impl(void) __attribute__((weak));
-#ifdef __cplusplus
+    gui_list_t *list = obj;
+    app_menu_list_timer_cnt++;
+    gui_view_t *view_next = gui_view_get_next();
+    if (view_next && strcmp("SmartWatchTemplateMainView", gui_view_get_current()->base.name))
+    {
+        gui_list_set_offset(list, list_offset_rec);
     }
-#endif
-    
-    if (app_menu_list_timer_0_cb_impl) {
-        app_menu_list_timer_0_cb_impl();
-    } else {
-        // TODO: Implement timer callback logic
-        // Or define app_menu_list_timer_0_cb_impl() in custom_functions protected area
+    else
+    {
+        list_offset_rec = list->offset;
     }
 }
-
-/* @protected start custom_functions */
-// 自定义函数
 /* @protected end custom_functions */

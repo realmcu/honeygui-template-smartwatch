@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hml>
-    <meta>
-        <project name="untitled" description="HoneyGUI Project" version="1.0.0" resolution="480X272" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
-        <author name="Anonymous" />
-    </meta>
     <view>
-        <hg_view id="app_activity_view" x="54" y="91" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_activity_view" x="54" y="91" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="0">
             <hg_image id="hg_image_1768547548984_alny" x="17" y="12" width="72" height="72" src="assets/activity/activity_Left_Control0.png" zIndex="0" />
             <hg_image id="hg_image_1768547556733_4p1o" x="17" y="414" width="72" height="72" src="assets/activity/activity_Left_Control.png" zIndex="1" />
             <hg_image id="hg_image_1768547565671_dhz0" x="328" y="414" width="72" height="72" src="assets/activity/activity_Right_Control0.png" zIndex="2" />

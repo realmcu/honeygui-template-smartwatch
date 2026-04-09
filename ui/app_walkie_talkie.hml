@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_walkie_talkieMainView" x="-44" y="-14" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
+        <hg_view id="app_walkie_talkieMainView" x="-44" y="-14" width="410" height="502" backgroundColor="#000000"  zIndex="0">
             <hg_rect id="rect_1" x="29" y="48" width="352" height="80" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0" />
             <hg_label id="lbl_1" x="50" y="76" width="160" height="24" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Walkie talkie" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
             <hg_button id="btn_1" x="267" y="72" width="72" height="37" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_alarms/Switch_on_icon.png" imageOff="assets/app_alarms/Switch_off_icon.png" zIndex="2" />

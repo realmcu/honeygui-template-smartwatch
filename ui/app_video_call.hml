@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="app_video_callIdleView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_video_callIdleView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto"  zIndex="0">
             <hg_image id="video_call_idle_bg" x="0" y="0" width="410" height="502" src="assets/app_video_call/video_call_bg.png" zIndex="0" />
             <hg_image id="video_call_idle_avatar" x="125" y="80" width="160" height="160" src="assets/app_video_call/avatar_large.png" zIndex="1" />
             <hg_label id="video_call_idle_name" x="0" y="256" width="410" height="26" hAlign="CENTER" vAlign="MID" color="#E0E0E0" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Alex Johnson" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="22" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />

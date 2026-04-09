@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_reminder_view" x="510" y="232" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="true" zIndex="0">
+        <hg_view id="app_reminder_view" x="510" y="232" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto"  zIndex="0">
             <hg_list id="hg_list_1768376200937_b4db" x="0" y="115" width="410" height="502" itemWidth="410" itemHeight="150" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_1768376200937_b4db_item_1" x="0" y="0" width="410" height="150" index="0" locked="true" zIndex="0">
                     <hg_rect id="hg_rect_1768377692400_gf4l" x="0" y="0" width="410" height="150" borderRadius="50" fillColor="#007acc" opacity="255" useGradient="true" gradientDirection="vertical" gradientStops="[{&quot;position&quot;:0,&quot;color&quot;:&quot;#4E92E4&quot;},{&quot;position&quot;:1,&quot;color&quot;:&quot;#316CC2&quot;}]" zIndex="0">
