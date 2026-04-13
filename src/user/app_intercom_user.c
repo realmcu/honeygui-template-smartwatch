@@ -2,7 +2,7 @@
 #include "../ui/app_intercom_ui.h"
 #include "gui_list.h"
 #include "app_intercom_callbacks.h"
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
 #include "walkie_talkie_app.h"
 #endif
 
@@ -14,8 +14,10 @@ static bool intercom_receiving = false;
 static int receive_timer_count = 0;
 static int waveform_frame_index = 0;
 
+#ifdef CONFIG_WALKIE_TALKIE
 /* Intercom dev info */
 static T_WALKIE_TALKIE_DEV *intercom_dev_info;
+#endif
 
 /*
  * Helper: show/hide list notes by index range.
@@ -47,7 +49,7 @@ void intercom_toggle_on(void *obj, gui_event_t *e)
 
     gui_obj_show((gui_obj_t *)available_devices_label, true);
 
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
     walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_ON);
 #endif
 
@@ -70,14 +72,18 @@ void intercom_toggle_off(void *obj, gui_event_t *e)
 
     gui_fb_change();
 
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
     walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_OFF);
 #endif
 }
 
 void intercom_update_scan_result(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
 {
-#if CONFIG_WALKIE_TALKIE
+    GUI_UNUSED(obj);
+    GUI_UNUSED(topic);
+    GUI_UNUSED(len);
+    GUI_UNUSED(data);
+#ifdef CONFIG_WALKIE_TALKIE
     intercom_dev_info = (T_WALKIE_TALKIE_DEV *)data;
 
     /* Expand scroll range to show all 5 items */
@@ -107,7 +113,7 @@ void walkie_talkie_list_note_design(gui_obj_t *obj, void *param)
         device1_item_bg = gui_rect_create((gui_obj_t *)note, "device1_item_bg", 15, 1, 380, 84, 16, gui_rgb(30, 30, 30));
         // Create device1_name_label (hg_label)
         device1_name_label = gui_text_create((gui_obj_t *)note, "device1_name_label", 78, 27, 200, 40);
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
         gui_text_set((gui_text_t *)device1_name_label, (char *)intercom_dev_info->dev_info[0].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
 #else
         gui_text_set((gui_text_t *)device1_name_label, "Alex's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
@@ -129,7 +135,7 @@ void walkie_talkie_list_note_design(gui_obj_t *obj, void *param)
         device2_item_bg = gui_rect_create((gui_obj_t *)note, "device2_item_bg", 15, 0, 380, 84, 16, gui_rgb(30, 30, 30));
         // Create device2_name_label (hg_label)
         device2_name_label = gui_text_create((gui_obj_t *)note, "device2_name_label", 78, 25, 300, 40);
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
         gui_text_set((gui_text_t *)device2_name_label, (char *)intercom_dev_info->dev_info[1].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 14, 40);
 #else
         gui_text_set((gui_text_t *)device2_name_label, "Jordan's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 14, 40);
@@ -151,7 +157,7 @@ void walkie_talkie_list_note_design(gui_obj_t *obj, void *param)
         device3_item_bg = gui_rect_create((gui_obj_t *)note, "device3_item_bg", 15, 0, 380, 84, 16, gui_rgb(30, 30, 30));
         // Create device3_name_label (hg_label)
         device3_name_label = gui_text_create((gui_obj_t *)note, "device3_name_label", 78, 25, 200, 40);
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
         gui_text_set((gui_text_t *)device3_name_label, (char *)intercom_dev_info->dev_info[2].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 11, 40);
 #else
         gui_text_set((gui_text_t *)device3_name_label, "Sam's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 11, 40);
@@ -183,7 +189,7 @@ void intercom_connect_dev(void *obj, gui_event_t *e)
     gui_list_note_t *note = (gui_list_note_t *)obj;
     uint16_t index = note->index;
     gui_log("Connect to device index: %d", index);
-#if CONFIG_WALKIE_TALKIE
+#ifdef CONFIG_WALKIE_TALKIE
     switch (index)
     {
         case 0:
@@ -201,7 +207,10 @@ void intercom_connect_dev(void *obj, gui_event_t *e)
 
 void intercom_update_connect_status(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
 {
-
+    GUI_UNUSED(obj);
+    GUI_UNUSED(topic);
+    GUI_UNUSED(data);
+    GUI_UNUSED(len);
 }
 
 /**

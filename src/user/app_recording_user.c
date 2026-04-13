@@ -29,7 +29,7 @@ static int selected_recording_index = -1;
 static char recording_timer_text[8] = "00:00";
 static char recording_file_duration_texts[MAX_RECORDING_FILES][8];
 static char playback_current_time_text[8] = "00:00";
-static char playback_total_time_text[12] = "/ 00:00";
+static char playback_total_time_text[32] = "/ 00:00";
 
 static bool recording_active = false;
 static int recording_elapsed_seconds = 0;
