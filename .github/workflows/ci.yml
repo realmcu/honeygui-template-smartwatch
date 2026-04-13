@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    name: E2E with HoneyGUI Designer
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libsdl2-dev xvfb python3-pip cmake
+          pip install scons kconfiglib
+
+      - name: Clone HoneyGUI Designer extension
+        run: git clone --depth 1 https://github.com/realmcu/honeygui-design.git /tmp/honeygui-design
+
+      - name: Install extension dependencies
+        run: cd /tmp/honeygui-design && npm ci
+
+      - name: Compile extension
+        run: cd /tmp/honeygui-design && npm run compile
+
+      - name: Clone HoneyGUI SDK
+        run: git clone --depth 1 https://github.com/realmcu/HoneyGUI.git /tmp/HoneyGUI
+
+      - name: Get HoneyGUI commit hash
+        id: honeygui-hash
+        run: echo "sha=$(git -C /tmp/HoneyGUI rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache libgui.a build
+        id: cache-libgui
+        uses: actions/cache@v4
+        with:
+          path: /tmp/HoneyGUI/lib/gcc/install
+          key: libgui-${{ steps.honeygui-hash.outputs.sha }}
+
+      - name: Build libgui.a from source
+        if: steps.cache-libgui.outputs.cache-hit != 'true'
+        run: |
+          cd /tmp/HoneyGUI/lib/gcc
+          mkdir -p build && cd build
+          cmake ..
+          make -j$(nproc)
+          make install
+
+      - name: Update lib/sim with freshly built library
+        run: |
+          cp /tmp/HoneyGUI/lib/gcc/install/lib/libgui.a /tmp/honeygui-design/lib/sim/linux/libgui.a
+          rm -rf /tmp/honeygui-design/lib/sim/include/*
+          cp -r /tmp/HoneyGUI/lib/gcc/install/include/* /tmp/honeygui-design/lib/sim/include/
+
+      - name: Run E2E tests
+        env:
+          TEST_WORKSPACE: ${{ github.workspace }}
+        run: cd /tmp/honeygui-design && xvfb-run -a npm run test:e2e
