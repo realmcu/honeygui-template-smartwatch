@@ -21,7 +21,7 @@ static void update_progress_ui(void)
     gui_text_t *pct_label = ota_updating_percent;
     if (pct_label)
     {
-        static char buf[8];
+        static char buf[16];
         snprintf(buf, sizeof(buf), "%d", pct);
         // gui_text_set(pct_label, buf, GUI_FONT_SRC_BMP, gui_rgb(0xFF, 0xFF, 0xFF),
         //              strlen(buf), 54);

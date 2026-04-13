@@ -11,7 +11,7 @@
 #define INCOMING_FRAME_COUNT 30
 
 static char phone_number[PHONE_MAX_DIGITS + 1] = "";
-static char call_timer_text[8] = "00:00";
+static char call_timer_text[16] = "00:00";
 static char phone_volume_text[4] = "5";
 static int phone_number_len = 0;
 static char current_call_number[32] = "Unknown";
