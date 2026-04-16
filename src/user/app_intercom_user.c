@@ -112,71 +112,86 @@ void walkie_talkie_list_note_design(gui_obj_t *obj, void *param)
     switch (index)
     {
     case 0:
-    {
-        // Create device1_item_bg (hg_rect)
-        device1_item_bg = gui_rect_create((gui_obj_t *)note, "device1_item_bg", 15, 1, 380, 84, 16, gui_rgb(30, 30, 30));
-        // Create device1_name_label (hg_label)
-        device1_name_label = gui_text_create((gui_obj_t *)note, "device1_name_label", 78, 27, 200, 40);
+        {
+            // Create device1_item_bg (hg_rect)
+            device1_item_bg = gui_rect_create((gui_obj_t *)note, "device1_item_bg", 15, 1, 380, 84, 16,
+                                              gui_rgb(30, 30, 30));
+            // Create device1_name_label (hg_label)
+            device1_name_label = gui_text_create((gui_obj_t *)note, "device1_name_label", 78, 27, 200, 40);
 #if CONFIG_WALKIE_TALKIE
-        gui_text_set((gui_text_t *)device1_name_label, (char *)intercom_dev_info->dev_info[0].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
+            gui_text_set((gui_text_t *)device1_name_label, (char *)intercom_dev_info->dev_info[0].dev_name,
+                         GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
 #else
-        gui_text_set((gui_text_t *)device1_name_label, "Alex's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
+            gui_text_set((gui_text_t *)device1_name_label, "Alex's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242,
+                         242), 12, 40);
 #endif
-        gui_text_type_set((gui_text_t *)device1_name_label, "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
-        gui_text_mode_set((gui_text_t *)device1_name_label, MID_LEFT);
-        gui_text_extra_letter_spacing_set((gui_text_t *)device1_name_label, 0);
-        gui_text_extra_line_spacing_set((gui_text_t *)device1_name_label, 0);
-        // Create device1_status_dot (hg_image)
-        device1_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device1_status_dot", "/app_intercom/status_dot.bin", 58, 38, 10, 10);
-        gui_img_scale((gui_img_t *)device1_status_dot, 1.250000f, 1.250000f);
-        gui_obj_show((gui_obj_t *)device1_status_dot, true);
-        gui_obj_add_event_cb(obj, device1_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
-        break;
-    }
+            gui_text_type_set((gui_text_t *)device1_name_label,
+                              "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
+            gui_text_mode_set((gui_text_t *)device1_name_label, MID_LEFT);
+            gui_text_extra_letter_spacing_set((gui_text_t *)device1_name_label, 0);
+            gui_text_extra_line_spacing_set((gui_text_t *)device1_name_label, 0);
+            // Create device1_status_dot (hg_image)
+            device1_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device1_status_dot",
+                                                        "/app_intercom/status_dot.bin", 58, 38, 10, 10);
+            gui_img_scale((gui_img_t *)device1_status_dot, 1.250000f, 1.250000f);
+            gui_obj_show((gui_obj_t *)device1_status_dot, true);
+            gui_obj_add_event_cb(obj, device1_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
+            break;
+        }
     case 1:
-    {
-        // Create device2_item_bg (hg_rect)
-        device2_item_bg = gui_rect_create((gui_obj_t *)note, "device2_item_bg", 15, 0, 380, 84, 16, gui_rgb(30, 30, 30));
-        // Create device2_name_label (hg_label)
-        device2_name_label = gui_text_create((gui_obj_t *)note, "device2_name_label", 78, 25, 300, 40);
+        {
+            // Create device2_item_bg (hg_rect)
+            device2_item_bg = gui_rect_create((gui_obj_t *)note, "device2_item_bg", 15, 0, 380, 84, 16,
+                                              gui_rgb(30, 30, 30));
+            // Create device2_name_label (hg_label)
+            device2_name_label = gui_text_create((gui_obj_t *)note, "device2_name_label", 78, 25, 300, 40);
 #if CONFIG_WALKIE_TALKIE
-        gui_text_set((gui_text_t *)device2_name_label, (char *)intercom_dev_info->dev_info[1].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 14, 40);
+            gui_text_set((gui_text_t *)device2_name_label, (char *)intercom_dev_info->dev_info[1].dev_name,
+                         GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 14, 40);
 #else
-        gui_text_set((gui_text_t *)device2_name_label, "Jordan's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 14, 40);
+            gui_text_set((gui_text_t *)device2_name_label, "Jordan's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242,
+                         242), 14, 40);
 #endif
-        gui_text_type_set((gui_text_t *)device2_name_label, "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
-        gui_text_mode_set((gui_text_t *)device2_name_label, MID_LEFT);
-        gui_text_extra_letter_spacing_set((gui_text_t *)device2_name_label, 0);
-        gui_text_extra_line_spacing_set((gui_text_t *)device2_name_label, 0);
-        // Create device2_status_dot (hg_image)
-        device2_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device2_status_dot", "/app_intercom/status_dot.bin", 59, 42, 10, 10);
-        gui_img_scale((gui_img_t *)device2_status_dot, 1.250000f, 1.250000f);
-        gui_obj_show((gui_obj_t *)device2_status_dot, true);
-        gui_obj_add_event_cb(obj, device2_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
-        break;
-    }
+            gui_text_type_set((gui_text_t *)device2_name_label,
+                              "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
+            gui_text_mode_set((gui_text_t *)device2_name_label, MID_LEFT);
+            gui_text_extra_letter_spacing_set((gui_text_t *)device2_name_label, 0);
+            gui_text_extra_line_spacing_set((gui_text_t *)device2_name_label, 0);
+            // Create device2_status_dot (hg_image)
+            device2_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device2_status_dot",
+                                                        "/app_intercom/status_dot.bin", 59, 42, 10, 10);
+            gui_img_scale((gui_img_t *)device2_status_dot, 1.250000f, 1.250000f);
+            gui_obj_show((gui_obj_t *)device2_status_dot, true);
+            gui_obj_add_event_cb(obj, device2_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
+            break;
+        }
     case 2:
-    {
-        // Create device3_item_bg (hg_rect)
-        device3_item_bg = gui_rect_create((gui_obj_t *)note, "device3_item_bg", 15, 0, 380, 84, 16, gui_rgb(30, 30, 30));
-        // Create device3_name_label (hg_label)
-        device3_name_label = gui_text_create((gui_obj_t *)note, "device3_name_label", 78, 25, 200, 40);
+        {
+            // Create device3_item_bg (hg_rect)
+            device3_item_bg = gui_rect_create((gui_obj_t *)note, "device3_item_bg", 15, 0, 380, 84, 16,
+                                              gui_rgb(30, 30, 30));
+            // Create device3_name_label (hg_label)
+            device3_name_label = gui_text_create((gui_obj_t *)note, "device3_name_label", 78, 25, 200, 40);
 #if CONFIG_WALKIE_TALKIE
-        gui_text_set((gui_text_t *)device3_name_label, (char *)intercom_dev_info->dev_info[2].dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 11, 40);
+            gui_text_set((gui_text_t *)device3_name_label, (char *)intercom_dev_info->dev_info[2].dev_name,
+                         GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 11, 40);
 #else
-        gui_text_set((gui_text_t *)device3_name_label, "Sam's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 11, 40);
+            gui_text_set((gui_text_t *)device3_name_label, "Sam's Watch", GUI_FONT_SRC_BMP, gui_rgb(242, 242,
+                         242), 11, 40);
 #endif
-        gui_text_type_set((gui_text_t *)device3_name_label, "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
-        gui_text_mode_set((gui_text_t *)device3_name_label, MID_LEFT);
-        gui_text_extra_letter_spacing_set((gui_text_t *)device3_name_label, 0);
-        gui_text_extra_line_spacing_set((gui_text_t *)device3_name_label, 0);
-        // Create device3_status_dot (hg_image)
-        device3_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device3_status_dot", "/app_intercom/status_dot.bin", 56, 40, 10, 10);
-        gui_img_scale((gui_img_t *)device3_status_dot, 1.250000f, 1.250000f);
-        gui_obj_show((gui_obj_t *)device3_status_dot, true);
-        gui_obj_add_event_cb(obj, device3_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
-        break;
-    }
+            gui_text_type_set((gui_text_t *)device3_name_label,
+                              "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin", FONT_SRC_FILESYS);
+            gui_text_mode_set((gui_text_t *)device3_name_label, MID_LEFT);
+            gui_text_extra_letter_spacing_set((gui_text_t *)device3_name_label, 0);
+            gui_text_extra_line_spacing_set((gui_text_t *)device3_name_label, 0);
+            // Create device3_status_dot (hg_image)
+            device3_status_dot = gui_img_create_from_fs((gui_obj_t *)note, "device3_status_dot",
+                                                        "/app_intercom/status_dot.bin", 56, 40, 10, 10);
+            gui_img_scale((gui_img_t *)device3_status_dot, 1.250000f, 1.250000f);
+            gui_obj_show((gui_obj_t *)device3_status_dot, true);
+            gui_obj_add_event_cb(obj, device3_item_bg_clicked_cb, GUI_EVENT_TOUCH_CLICKED, NULL);
+            break;
+        }
     default:
         break;
     }
@@ -196,15 +211,15 @@ void intercom_connect_dev(void *obj, gui_event_t *e)
 #if CONFIG_WALKIE_TALKIE
     switch (index)
     {
-        case 0:
-            walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV1);
-            break;
-        case 1:
-            walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV2);
-            break;
-        case 2:
-            walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV3);
-            break;
+    case 0:
+        walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV1);
+        break;
+    case 1:
+        walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV2);
+        break;
+    case 2:
+        walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_CONNECT_DEV3);
+        break;
     }
 #endif
 }
@@ -226,7 +241,8 @@ void intercom_update_user_name(gui_obj_t *obj, const char *topic, void *data, ui
 
 #if CONFIG_WALKIE_TALKIE
     T_WALKIE_TALKIE_DEV *dev_info = (T_WALKIE_TALKIE_DEV *)data;
-    gui_text_set((gui_text_t *)intercom_device_name_label, dev_info->connected_dev.dev_name, GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
+    gui_text_set((gui_text_t *)intercom_device_name_label, dev_info->connected_dev.dev_name,
+                 GUI_FONT_SRC_BMP, gui_rgb(242, 242, 242), 12, 40);
 #endif
 }
 
@@ -237,7 +253,7 @@ void intercom_update_receive_status(gui_obj_t *obj, const char *topic, void *dat
     GUI_UNUSED(data);
     GUI_UNUSED(len);
 
-    if(strcmp(topic, "walkie_talkie_receive_start") == 0)
+    if (strcmp(topic, "walkie_talkie_receive_start") == 0)
     {
         intercom_receiving = true;
         //receive_timer_count = 0; // Reset receive timer count when receiving starts
@@ -257,7 +273,7 @@ void intercom_update_receive_status(gui_obj_t *obj, const char *topic, void *dat
         /* RX-3: Status text */
         gui_text_content_set((gui_text_t *)status_text_label, "Receiving...", 12);
     }
-    else if(strcmp(topic, "walkie_talkie_receive_stop") == 0)
+    else if (strcmp(topic, "walkie_talkie_receive_stop") == 0)
     {
         intercom_receiving = false;
         // receive_timer_count = 0; // Reset receive timer count when receiving stops
@@ -291,7 +307,7 @@ void talk_btn_press(void *obj, gui_event_t *e)
     GUI_UNUSED(obj);
     GUI_UNUSED(e);
 
-    if(intercom_receiving)
+    if (intercom_receiving)
     {
         return;
     }
@@ -310,7 +326,8 @@ void talk_btn_press(void *obj, gui_event_t *e)
 
     /* TK-2: Switch waveform to transmitting frame 0 */
     waveform_frame_index = 0;
-    gui_img_set_src((gui_img_t *)waveform_image, "/app_intercom/waveform/transmitting/transmitting_frame_00.bin",
+    gui_img_set_src((gui_img_t *)waveform_image,
+                    "/app_intercom/waveform/transmitting/transmitting_frame_00.bin",
                     IMG_SRC_FILESYS);
     gui_img_refresh_size((gui_img_t *)waveform_image);
 
@@ -333,7 +350,7 @@ void talk_btn_release(void *obj, gui_event_t *e)
     GUI_UNUSED(obj);
     GUI_UNUSED(e);
 
-    if(intercom_receiving)
+    if (intercom_receiving)
     {
         return;
     }
@@ -390,6 +407,20 @@ void mute_btn_off(void *obj, gui_event_t *e)
     gui_fb_change();
 }
 
+/**
+ * intercom_disconnect: Disconnect from connected device.
+ * Called when intercom_talk_back_win is clicked.
+ */
+void intercom_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+
+#if CONFIG_WALKIE_TALKIE
+    walkie_talkie_gui_to_app(WALKIE_TALKIE_GUI_DISCONNECT);
+#endif
+}
+
 
 void talking_timer_cb(void *obj)
 {
@@ -401,7 +432,8 @@ void talking_timer_cb(void *obj)
     if (intercom_talking)
     {
         waveform_frame_index = (waveform_frame_index + 1) % 30;
-        sprintf(frame_path, "/app_intercom/waveform/transmitting/transmitting_frame_%02d.bin", waveform_frame_index);
+        sprintf(frame_path, "/app_intercom/waveform/transmitting/transmitting_frame_%02d.bin",
+                waveform_frame_index);
         gui_img_set_src((gui_img_t *)waveform_image, frame_path, IMG_SRC_FILESYS);
         gui_img_refresh_size((gui_img_t *)waveform_image);
         gui_fb_change();
@@ -426,7 +458,8 @@ void receive_timer_cb(void *obj)
         if (!intercom_muted)
         {
             waveform_frame_index = (waveform_frame_index + 1) % 30;
-            sprintf(frame_path, "/app_intercom/waveform/receiving/receiving_frame_%02d.bin", waveform_frame_index);
+            sprintf(frame_path, "/app_intercom/waveform/receiving/receiving_frame_%02d.bin",
+                    waveform_frame_index);
             gui_img_set_src((gui_img_t *)waveform_image, frame_path, IMG_SRC_FILESYS);
             gui_img_refresh_size((gui_img_t *)waveform_image);
         }

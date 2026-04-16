@@ -91,6 +91,7 @@
                     <events>
                         <event type="onClick">
                             <action type="switchView" target="app_intercomMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            <action type="callFunction" functionName="intercom_disconnect" />
                         </event>
                     </events>
                 </hg_window>

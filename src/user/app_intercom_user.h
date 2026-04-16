@@ -18,6 +18,7 @@ void talk_btn_press(void *obj, gui_event_t *e);
 void talk_btn_release(void *obj, gui_event_t *e);
 void mute_btn_on(void *obj, gui_event_t *e);
 void mute_btn_off(void *obj, gui_event_t *e);
+void intercom_disconnect(void *obj, gui_event_t *e);
 void talking_timer_cb(void *obj);
 void receive_timer_cb(void *obj);
 void walkie_talkie_list_note_design(gui_obj_t *obj, void *param);
