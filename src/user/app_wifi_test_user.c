@@ -559,16 +559,12 @@ static void update_numeric_label(gui_text_t *label, char *buffer, size_t bufferS
 
 static void sync_iperf_download_ui(void)
 {
-    gui_obj_show((gui_obj_t *)iperf_dl_initial_win, !iperfDownloadState.running);
     gui_obj_show((gui_obj_t *)iperf_dl_running_win, iperfDownloadState.running);
-    set_text_color_safe(iperf_dl_start_btn, color_confirmed());
 }
 
 static void sync_file_download_ui(void)
 {
-    gui_obj_show((gui_obj_t *)file_dl_initial_win, !fileDownloadState.running);
     gui_obj_show((gui_obj_t *)file_dl_running_win, fileDownloadState.running);
-    set_text_color_safe(file_dl_start_btn, color_file_download());
 }
 
 void wifi_home_view_init(void *obj)

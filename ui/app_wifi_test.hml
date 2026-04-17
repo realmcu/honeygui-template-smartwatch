@@ -98,12 +98,14 @@
                     <hg_label id="iperf_menu_upload_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="iperf_menu_download_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
-                    <events>
-                        <event type="onClick">
-                            <action type="switchView" target="app_wifi_testIperfDownloadView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                    </events>
-                    <hg_rect id="iperf_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
+                    <hg_rect id="iperf_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_wifi_testIperfDownloadView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="iperf_download_start" />
+                            </event>
+                        </events>
+                    </hg_rect>
                     <hg_image id="iperf_menu_download_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_download_green.png" zIndex="1" />
                     <hg_label id="iperf_menu_download_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
@@ -390,17 +392,6 @@
             <hg_label id="iperf_download_title" x="0" y="80" width="410" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Download" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_rect id="iperf_download_soc_ip_bg" x="24" y="140" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
             <hg_label id="iperf_download_soc_ip" x="24" y="140" width="362" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
-            <hg_window id="iperf_dl_initial_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" visible="false" zIndex="1">
-                <hg_label id="iperf_dl_waiting_text" x="80" y="0" width="250" height="30" hAlign="CENTER" vAlign="MID" color="#999999" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Waiting to start test..." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="18" zIndex="1" />
-                <hg_rect id="iperf_dl_start_btn_bg" x="85" y="40" width="240" height="72" borderRadius="16" fillColor="#4CD964" opacity="255" zIndex="0" />
-                <hg_label id="iperf_dl_start_btn" x="85" y="40" width="240" height="72" hAlign="CENTER" vAlign="MID" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Start" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="22" zIndex="1">
-                    <events>
-                        <event type="onClick">
-                            <action type="callFunction" functionName="iperf_download_start" />
-                        </event>
-                    </events>
-                </hg_label>
-            </hg_window>
             <hg_window id="iperf_dl_running_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="3">
                 <hg_arc id="iperf_dl_ring_bg" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#4CD964" opacity="40" zIndex="0" />
                 <hg_arc id="iperf_dl_ring" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#4CD964" opacity="255" zIndex="1" />
@@ -441,12 +432,14 @@
                     <hg_label id="file_menu_upload_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="file_menu_download_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
-                    <events>
-                        <event type="onClick">
-                            <action type="switchView" target="app_wifi_testFileDownloadView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                        </event>
-                    </events>
-                    <hg_rect id="file_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
+                    <hg_rect id="file_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_wifi_testFileDownloadView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="file_download_start" />
+                            </event>
+                        </events>
+                    </hg_rect>
                     <hg_image id="file_menu_download_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_file_download.png" zIndex="1" />
                     <hg_label id="file_menu_download_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
@@ -493,7 +486,7 @@
                     </event>
                 </events>
             </hg_rect>
-            <hg_label id="file_key_1" x="24" y="210" width="86" height="52" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1">
+            <hg_label id="file_key_1" x="24" y="210" width="86" height="52" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="1" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="4" zIndex="1">
                 <events>
                     <event type="onClick">
                         <action type="callFunction" functionName="file_key_num" />
@@ -733,17 +726,6 @@
             <hg_label id="file_download_title" x="0" y="80" width="410" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Download" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_rect id="file_download_soc_ip_bg" x="24" y="140" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
             <hg_label id="file_download_soc_ip" x="24" y="140" width="362" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-            <hg_window id="file_dl_initial_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" visible="false" zIndex="1">
-                <hg_label id="file_dl_waiting_text" x="80" y="0" width="250" height="30" hAlign="CENTER" vAlign="MID" color="#999999" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Waiting to start test..." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="18" zIndex="1" />
-                <hg_rect id="file_dl_start_btn_bg" x="85" y="40" width="240" height="72" borderRadius="16" fillColor="#5856D6" opacity="255" zIndex="0" />
-                <hg_label id="file_dl_start_btn" x="85" y="40" width="240" height="72" hAlign="CENTER" vAlign="MID" color="#FFFFFF" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Start" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="22" zIndex="1">
-                    <events>
-                        <event type="onClick">
-                            <action type="callFunction" functionName="file_download_start" />
-                        </event>
-                    </events>
-                </hg_label>
-            </hg_window>
             <hg_window id="file_dl_running_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="3">
                 <hg_arc id="file_dl_ring_bg" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#5856D6" opacity="40" zIndex="0" />
                 <hg_arc id="file_dl_ring" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#5856D6" opacity="255" zIndex="1" />
