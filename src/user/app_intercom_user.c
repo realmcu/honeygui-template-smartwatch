@@ -227,9 +227,19 @@ void intercom_connect_dev(void *obj, gui_event_t *e)
 void intercom_update_connect_status(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
 {
     GUI_UNUSED(obj);
-    GUI_UNUSED(topic);
     GUI_UNUSED(data);
     GUI_UNUSED(len);
+
+    if (strcmp(topic, "walkie_talkie_conn") == 0)
+    {
+        gui_text_content_set((gui_text_t *)connection_label, "Connected", 9);
+    }
+    else if (strcmp(topic, "walkie_talkie_disconn") == 0)
+    {
+        gui_text_content_set((gui_text_t *)connection_label, "Disconnected", 11);
+    }
+    
+    gui_fb_change();
 }
 
 void intercom_update_user_name(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
