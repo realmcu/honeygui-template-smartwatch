@@ -51,7 +51,6 @@
         </hg_view>
         <hg_view id="view_3" x="1303" y="441" width="410" height="502" backgroundColor="#000000" borderRadius="20" padding="12" overflow="auto" entry="false" zIndex="1">
             <hg_label id="lbl_3" x="51" y="116" width="220" height="32" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="中文 40" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;codepage&quot;,&quot;value&quot;:&quot;assets/codepage/CP936&quot;}]" zIndex="1" />
-            <hg_label id="lbl_4" x="51" y="76" width="220" height="32" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="中文 28" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="28" characterSets="[{&quot;type&quot;:&quot;codepage&quot;,&quot;value&quot;:&quot;assets/codepage/CP936&quot;}]" zIndex="1" />
         </hg_view>
     </view>
 </hml>
