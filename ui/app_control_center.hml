@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto"  zIndex="0">
+        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" zIndex="0">
             <hg_list id="main_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="16" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="main_bt_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="bluetooth_item_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="0">
@@ -63,7 +63,7 @@
             </hg_window>
         </hg_view>
         <hg_view id="app_control_centerBluetoothView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
-            <hg_list id="bt_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="11" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="0" showOverflow="true">
+            <hg_list id="bt_list" x="0" y="110" width="410" height="1100" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="12" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="0" showOverflow="true">
                 <hg_list_item id="bt_toggle_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="bt_toggle_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
                     <hg_label id="bt_toggle_label" x="44" y="22" width="200" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
@@ -73,7 +73,17 @@
                     <hg_label id="phone_section_label" x="29" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="PHONE" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 </hg_list_item>
                 <hg_list_item id="bt_phone_item" x="0" y="178" width="410" height="84" index="2" locked="true" zIndex="2">
-                    <hg_rect id="phone_item_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
+                    <hg_rect id="phone_item_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="phone_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="phone_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
                     <hg_label id="phone_name_label" x="40" y="15" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPhone 15 Pro" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                     <hg_label id="phone_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
                     <hg_image id="phone_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/smartphone_icon.png" zIndex="2" />
@@ -82,46 +92,127 @@
                     <hg_label id="headphones_section_label" x="28" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="HEADPHONES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphones1_item" x="0" y="356" width="410" height="84" index="4" locked="true" zIndex="4">
-                    <hg_rect id="headphones_item1_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
+                    <hg_rect id="headphones_item1_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone1_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone1_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
                     <hg_label id="headphones1_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="AirPods Pro" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                     <hg_label id="headphones1_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#4CD964" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
                     <hg_image id="headphones1_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_connected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphones2_item" x="0" y="445" width="410" height="84" index="5" locked="true" zIndex="5">
-                    <hg_rect id="headphones_item2_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="headphones2_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sony WH-1000XM5" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
+                    <hg_rect id="headphones_item2_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone2_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone2_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="headphones2_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sony WH-1000" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                     <hg_label id="headphones2_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
                     <hg_image id="headphones2_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphones3_item" x="0" y="534" width="410" height="84" index="6" locked="true" zIndex="6">
-                    <hg_rect id="headphones_item3_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
+                    <hg_rect id="headphones_item3_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone3_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone3_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
                     <hg_label id="headphones3_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Galaxy Buds2" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                     <hg_label id="headphones3_status_label" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
                     <hg_image id="headphones3_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="bt_search_item" x="0" y="623" width="410" height="84" index="7" locked="true" zIndex="7">
-                    <hg_rect id="search_item_bg" x="24" y="4" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                <hg_list_item id="bt_headphone4_item" x="0" y="623" width="410" height="84" index="7" locked="true" zIndex="7">
+                    <hg_rect id="headphones_item4_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
                         <events>
                             <event type="onClick">
-                                <action type="callFunction" functionName="bluetooth_search_devices" />
+                                <action type="callFunction" functionName="headphone4_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone4_remove_paired_device" />
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_image id="search_icon" x="24" y="4" width="18" height="18" src="assets/app_control_center/search_icon.png" zIndex="1" />
-                    <hg_label id="search_label" x="42" y="26" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#5AC8FA" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Search Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="headphones4_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Beats Studio3" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="headphones4_status_label" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_image id="headphones4_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="bt_found_section_item" x="0" y="712" width="410" height="84" index="8" locked="true" zIndex="8">
-                    <hg_label id="found_devices_section_label" x="30" y="52" width="260" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="FOUND DEVICES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="33" zIndex="0" />
+                <hg_list_item id="bt_headphone5_item" x="0" y="712" width="410" height="84" index="8" locked="true" zIndex="8">
+                    <hg_rect id="headphones_item5_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone5_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone5_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="headphones5_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Jabra Elite 85h" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="headphones5_status_label" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_image id="headphones5_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="bt_found1_item" x="0" y="801" width="410" height="84" index="9" locked="true" zIndex="9">
-                    <hg_rect id="found_device1_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="found_device1_name" x="40" y="22" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JBL Tune 510BT" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="found_device1_status" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                <hg_list_item id="bt_headphone6_item" x="0" y="801" width="410" height="84" index="9" locked="true" zIndex="9">
+                    <hg_rect id="headphones_item6_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone6_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone6_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="headphones6_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC35 II" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="headphones6_status_label" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_image id="headphones6_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
-                <hg_list_item id="bt_found2_item" x="0" y="890" width="410" height="84" index="10" locked="true" zIndex="10">
-                    <hg_rect id="found_device2_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="found_device2_name" x="40" y="22" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC45" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="found_device2_status" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                <hg_list_item id="bt_headphone7_item" x="0" y="890" width="410" height="84" index="10" locked="true" zIndex="10">
+                    <hg_rect id="headphones_item7_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone7_linkback_and_disconnect" />
+                            </event>
+                            <event type="onLongPress">
+                                <action type="switchView" target="app_control_centerBtUnbindView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                                <action type="callFunction" functionName="headphone7_remove_paired_device" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="headphones7_name_label" x="40" y="19" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sennheiser HD 450BT" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="headphones7_status_label" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_image id="headphones7_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
+                </hg_list_item>
+                <hg_list_item id="bt_search_btn_item" x="0" y="979" width="410" height="84" index="11" locked="true" zIndex="11">
+                    <hg_rect id="search_item_bg" x="24" y="4" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="switchView" target="app_control_centerBtSearchView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_image id="search_icon" x="44" y="26" width="32" height="32" src="assets/app_control_center/search_icon.png" zIndex="1" />
+                    <hg_label id="search_label" x="88" y="26" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#5AC8FA" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Search Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="bt_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
@@ -145,8 +236,84 @@
                 <hg_label id="bt_title_label" x="245" y="63" width="135" height="24" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerWifiView" x="820" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
-            <hg_list id="wifi_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
+        <hg_view id="app_control_centerBtUnbindView" x="820" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="hidden" entry="false" zIndex="0">
+            <hg_image id="unbind_bt_icon" x="183" y="72" width="44" height="44" src="assets/app_control_center/bluetooth_icon.png" zIndex="0" />
+            <hg_label id="unbind_title_label" x="0" y="148" width="410" height="52" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove Device Pairing?" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+            <hg_label id="unbind_sub_label" x="24" y="210" width="362" height="64" hAlign="CENTER" vAlign="TOP" color="#8E8E93" letterSpacing="0" lineSpacing="8" wordWrap="true" wordBreak="false" text="This device will be removed from your paired devices list." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+            <hg_rect id="unbind_divider" x="24" y="298" width="362" height="1" fillColor="#3A3A3C" opacity="255" zIndex="1" />
+            <hg_rect id="unbind_confirm_bg" x="24" y="318" width="362" height="80" borderRadius="16" fillColor="#FF3B30" opacity="255" zIndex="1">
+                <events>
+                    <event type="onClick">
+                        <action type="callFunction" />
+                    </event>
+                    <event type="onClick">
+                        <action type="switchView" target="app_control_centerBluetoothView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="callFunction" functionName="remove_paired_device_confirm" />
+                    </event>
+                </events>
+            </hg_rect>
+            <hg_label id="unbind_confirm_label" x="24" y="338" width="362" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="2" />
+            <hg_rect id="unbind_cancel_bg" x="24" y="414" width="362" height="80" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="1">
+                <events>
+                    <event type="onClick">
+                        <action type="switchView" target="app_control_centerBluetoothView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        <action type="callFunction" functionName="remove_paired_device_cancel" />
+                    </event>
+                </events>
+            </hg_rect>
+            <hg_label id="unbind_cancel_label" x="24" y="434" width="362" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Cancel" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="2" />
+        </hg_view>
+        <hg_view id="app_control_centerBtSearchView" x="1230" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+            <hg_list id="bt_search_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="0" showOverflow="true">
+                <hg_list_item id="bt_found_section_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
+                    <hg_label id="found_devices_section_label" x="30" y="52" width="260" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="FOUND DEVICES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="33" zIndex="0" />
+                </hg_list_item>
+                <hg_list_item id="bt_found1_item" x="0" y="89" width="410" height="84" index="1" locked="true" zIndex="1">
+                    <hg_rect id="found_device1_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone1_connect" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="found_device1_name" x="40" y="22" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JBL Tune 510BT" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="found_device1_status" x="40" y="56" width="200" height="28" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="bt_found2_item" x="0" y="178" width="410" height="84" index="2" locked="true" zIndex="2">
+                    <hg_rect id="found_device2_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="headphone2_connect" />
+                            </event>
+                        </events>
+                    </hg_rect>
+                    <hg_label id="found_device2_name" x="40" y="22" width="260" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC45" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="found_device2_status" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                </hg_list_item>
+            </hg_list>
+            <hg_window id="bt_search_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
+                <events>
+                    <event type="onKeyShortPress" keyName="Home">
+                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                    <event type="onKeyShortPress" keyName="Menu">
+                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    </event>
+                </events>
+                <hg_window id="win_search_back" x="0" y="-3" width="90" height="90" showBackground="false" backgroundColor="#808080" enableBlur="false" blurDegree="225" zIndex="0">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" target="app_control_centerBluetoothView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        </event>
+                    </events>
+                    <hg_image id="img_search_back" x="31" y="28" width="32" height="32" src="assets/app_control_center/back_icon.png" zIndex="0" />
+                </hg_window>
+                <hg_time_label id="bt_search_time_label" x="305" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                <hg_label id="bt_search_title_label" x="230" y="63" width="155" height="24" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Found Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
+            </hg_window>
+        </hg_view>
+        <hg_view id="app_control_centerWifiView" x="1640" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+            <hg_list id="wifi_list" x="-16" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="wifi_toggle_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="wifi_toggle_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
                     <hg_label id="wifi_toggle_label" x="40" y="22" width="200" height="40" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
@@ -183,7 +350,7 @@
                 </hg_window>
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerSettingsView" x="1230" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+        <hg_view id="app_control_centerSettingsView" x="2050" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
             <hg_list id="settings_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="settings_device_name_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="device_name_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />

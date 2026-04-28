@@ -12,7 +12,26 @@ void bluetooth_toggle_off(void *obj, gui_event_t *e);
 void bluetooth_search_devices(void *obj, gui_event_t *e);
 void wifi_toggle_on(void *obj, gui_event_t *e);
 void wifi_toggle_off(void *obj, gui_event_t *e);
-
+void phone_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone1_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone2_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone3_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone4_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone5_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone6_linkback_and_disconnect(void *obj, gui_event_t *e);
+void headphone7_linkback_and_disconnect(void *obj, gui_event_t *e);
+void phone_remove_paired_device(void *obj, gui_event_t *e);
+void headphone1_remove_paired_device(void *obj, gui_event_t *e);
+void headphone2_remove_paired_device(void *obj, gui_event_t *e);
+void headphone3_remove_paired_device(void *obj, gui_event_t *e);
+void headphone4_remove_paired_device(void *obj, gui_event_t *e);
+void headphone5_remove_paired_device(void *obj, gui_event_t *e);
+void headphone6_remove_paired_device(void *obj, gui_event_t *e);
+void headphone7_remove_paired_device(void *obj, gui_event_t *e);
+void remove_paired_device_confirm(void *obj, gui_event_t *e);
+void remove_paired_device_cancel(void *obj, gui_event_t *e);
+void headphone1_connect(void *obj, gui_event_t *e);
+void headphone2_connect(void *obj, gui_event_t *e);
 #ifdef __cplusplus
 }
 #endif
