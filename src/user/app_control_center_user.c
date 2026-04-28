@@ -2,9 +2,6 @@
 #include "../ui/app_control_center_ui.h"
 #include "gui_list.h"
 
-/* Bluetooth searching state flag */
-static bool bt_searching = false;
-
 /*
  * Helper: show/hide list notes by index range.
  * Iterates children of the given list, casts each to gui_list_note_t,
@@ -29,12 +26,12 @@ void bluetooth_toggle_on(void *obj, gui_event_t *e)
     GUI_UNUSED(e);
 
     /* Update scroll range: items 0~7 visible (8 items) */
-    gui_list_set_note_num(bt_list, 8);
+    gui_list_set_note_num(bt_list, 12);
 
     /* Show bt_list items index 1~7:
      * 1: phone section, 2: phone item, 3: headphones section,
-     * 4~6: headphones 1-3, 7: search button */
-    set_list_items_visible((gui_obj_t *)bt_list, 1, 7, true);
+     * 4~10: headphones 1-7, 11: search button */
+    set_list_items_visible((gui_obj_t *)bt_list, 1, 11, true);
 
     gui_fb_change();
 }
@@ -51,8 +48,6 @@ void bluetooth_toggle_off(void *obj, gui_event_t *e)
     gui_list_set_note_num(bt_list, 1);
     gui_list_set_offset(bt_list, 0);
 
-    bt_searching = false;
-
     gui_fb_change();
 }
 
@@ -61,23 +56,9 @@ void bluetooth_search_devices(void *obj, gui_event_t *e)
     GUI_UNUSED(obj);
     GUI_UNUSED(e);
 
-    bt_searching = !bt_searching;
-
-    if (bt_searching)
-    {
-        /* Expand scroll range to include found devices (11 items) */
-        gui_list_set_note_num(bt_list, 11);
-        set_list_items_visible((gui_obj_t *)bt_list, 8, 10, true);
-    }
-    else
-    {
-        /* Hide found devices and shrink scroll range back to 8 items */
-        set_list_items_visible((gui_obj_t *)bt_list, 8, 10, false);
-        gui_list_set_note_num(bt_list, 8);
-    }
-
     gui_fb_change();
 }
+
 
 void wifi_toggle_on(void *obj, gui_event_t *e)
 {
@@ -105,5 +86,148 @@ void wifi_toggle_off(void *obj, gui_event_t *e)
     gui_list_set_note_num(wifi_list, 1);
     gui_list_set_offset(wifi_list, 0);
 
+    gui_fb_change();
+}
+
+void phone_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone1_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone2_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone3_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone4_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone5_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone6_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone7_linkback_and_disconnect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void phone_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone1_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone2_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone3_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone4_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone5_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone6_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void headphone7_remove_paired_device(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* remember the index */
+    gui_fb_change();
+}
+void remove_paired_device_confirm(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+
+void remove_paired_device_cancel(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+
+void headphone1_connect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
+    gui_fb_change();
+}
+void headphone2_connect(void *obj, gui_event_t *e)
+{
+    GUI_UNUSED(obj);
+    GUI_UNUSED(e);
+    /* send msg to app */
     gui_fb_change();
 }
