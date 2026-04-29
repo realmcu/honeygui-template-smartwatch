@@ -37,7 +37,8 @@
       "compression": "rle"
     },
     "stopwatch": {
-      "compression": "rle"
+      "compression": "rle",
+      "format": "A8"
     },
     "tab_bg": {
       "compression": "rle",
@@ -148,6 +149,32 @@
     },
     "app_control_center/headphones_icon_connected.png": {
       "format": "inherit"
+    },
+    "app_timer": {
+      "format": "A8",
+      "compression": "rle"
+    },
+    "app_timer/timer_stroke_bg.png": {
+      "format": "RGB565",
+      "compression": "rle"
+    },
+    "stopwatch/stopwatch_milsec_container.png": {
+      "format": "RGB565"
+    },
+    "stopwatch/stopwatch_min_container.png": {
+      "format": "ARGB8565"
+    },
+    "stopwatch/stopwatch_sec_container.png": {
+      "format": "RGB565"
+    },
+    "stopwatch/stopwatch_sec_container_big.png": {
+      "format": "RGB565"
+    },
+    "stopwatch/stopwatch_button_bg.png": {
+      "compression": "inherit"
+    },
+    "scrollbar/scrollbar_s.png": {
+      "format": "A8"
     }
   },
   "alwaysConvert": {

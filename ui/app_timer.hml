@@ -6,16 +6,125 @@
     </meta>
     <view>
         <hg_view id="app_timer_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="false" zIndex="0">
-            <hg_label id="timer_dev" x="0" y="220" width="410" height="87" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Developing..." fontFile="/font/Inter24pt-Medium.ttf" fontSize="40" locked="true" zIndex="1">
+            <events>
+                <event type="onKeyShortPress" keyName="Home">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+                <event type="onKeyShortPress" keyName="Menu">
+                    <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
+            <hg_list id="lst_all_timers" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="172" space="10" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="5" offset="0" outScope="0" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" showOverflow="true" useUserNoteDesign="false" zIndex="0" showOverflow="true">
+                <hg_list_item id="lst_all_timers_item_0" x="0" y="0" width="410" height="172" index="0" zIndex="0">
+                    <hg_label id="lbl_5" x="28" y="125" width="300" height="30" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="All Timers" fontFile="/font/Inter24pt_SemiBold.ttf" fontSize="30" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="lst_all_timers_item_1" x="0" y="182" width="410" height="172" index="1" zIndex="1">
+                    <hg_image id="img_15" x="28" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="lbl_6" x="28" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="01:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_image id="img_16" x="210" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="2">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="lbl_7" x="210" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="03:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="3" />
+                </hg_list_item>
+                <hg_list_item id="lst_all_timers_item_2" x="0" y="364" width="410" height="172" index="2" zIndex="2">
+                    <hg_image id="img_17" x="28" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_image id="img_18" x="210" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="lbl_8" x="28" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="05:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="lbl_9" x="210" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="10:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="lst_all_timers_item_3" x="0" y="546" width="410" height="172" index="3" zIndex="3">
+                    <hg_image id="img_19" x="28" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_image id="img_20" x="210" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="lbl_10" x="28" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="15:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="lbl_11" x="210" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="30:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                </hg_list_item>
+                <hg_list_item id="lst_all_timers_item_4" x="0" y="728" width="410" height="172" index="4" zIndex="4">
+                    <hg_image id="img_21" x="28" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_image id="img_22" x="210" y="0" width="172" height="172" src="assets/app_timer/timer_stroke_bg.png" zIndex="0">
+                        <events>
+                            <event type="onClick">
+                                <action type="callFunction" functionName="click_button_page_all_timers" />
+                            </event>
+                        </events>
+                    </hg_image>
+                    <hg_label id="lbl_12" x="28" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="01:00:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="lbl_13" x="210" y="0" width="172" height="172" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="02:00:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                </hg_list_item>
+            </hg_list>
+            <hg_window id="win_top" x="0" y="0" width="410" height="100" showBackground="false" backgroundColor="#808080" enableBlur="true" blurDegree="225" zIndex="1">
+                <hg_time_label id="tm_lbl_1" x="0" y="30" width="382" height="34" hAlign="RIGHT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter24pt_SemiBold.ttf" fontSize="34" timeFormat="HH:mm" zIndex="1" />
+                <hg_label id="lbl_timer_app" x="0" y="70" width="382" height="34" hAlign="RIGHT" vAlign="MID" color="#F19A38" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Timers" fontFile="/font/Inter24pt_SemiBold.ttf" fontSize="32" zIndex="1" />
+                <hg_image id="bg_cancel" x="28" y="25" width="72" height="72" src="assets/app_timer/bg_circle_72.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF1f1f1f" zIndex="2">
+                    <events>
+                        <event type="onClick">
+                            <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                        </event>
+                    </events>
+                </hg_image>
+                <hg_image id="icon_cancel" x="49" y="46" width="30" height="30" src="assets/app_timer/timer_button_cancel.png" blendMode="IMG_2D_SW_FIX_A8_FG" zIndex="3" />
+            </hg_window>
+        </hg_view>
+        <hg_view id="timer_running_view" x="507" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="20" padding="12" overflow="auto" entry="false" zIndex="1">
+            <hg_image id="img_25" x="28" y="401" width="72" height="72" src="assets/app_timer/bg_circle_72.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF1f1f1f" zIndex="2">
                 <events>
-                    <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                    <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    <event type="onClick">
+                        <action type="switchView" target="app_timer_view" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_NONE_ANIMATION" />
                     </event>
                 </events>
-            </hg_label>
+            </hg_image>
+            <hg_image id="img_26" x="49" y="423" width="30" height="30" src="assets/app_timer/timer_button_cancel.png" blendMode="IMG_2D_SW_FIX_A8_FG" zIndex="3" />
+            <hg_image id="bg_play" x="310" y="402" width="72" height="72" src="assets/app_timer/bg_circle_72.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFf19a38" zIndex="2">
+                <events>
+                    <event type="onClick">
+                        <action type="callFunction" functionName="click_button_play_stop" />
+                    </event>
+                </events>
+            </hg_image>
+            <hg_image id="icon_play" x="333" y="422" width="26" height="32" src="assets/app_timer/timer_button_stop.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF000000" zIndex="4" />
+            <hg_time_label id="tm_lbl_2" x="0" y="30" width="410" height="34" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter24pt_SemiBold.ttf" fontSize="34" timeFormat="HH:mm" zIndex="1" />
+            <hg_label id="active_preset_text" x="0" y="300" width="410" height="26" hAlign="CENTER" vAlign="MID" color="#F19A38" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="01:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="26" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;\&quot;1234567890:\&quot;&quot;}]" zIndex="1" />
+            <hg_label id="active_timer_text" x="0" y="0" width="410" height="502" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="01:00" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="72" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;active timer update&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;active_timer_update_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;\&quot;1234567890:DONE\&quot;&quot;}]" zIndex="1" />
+            <hg_arc id="active_arc" x="33" y="79" width="354" height="354" radius="167" startAngle="-89" endAngle="270" strokeWidth="10" color="#F19A38" opacity="255" useGradient="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;active arc update&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;active_arc_update_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="1" />
         </hg_view>
     </view>
 </hml>
