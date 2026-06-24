@@ -16,7 +16,7 @@
                         </events>
                     </hg_rect>
                     <hg_image id="bluetooth_icon" x="44" y="20" width="44" height="44" src="assets/app_control_center/bluetooth_icon.png" zIndex="1" />
-                    <hg_label id="bluetooth_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="bluetooth_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="main_wifi_item" x="0" y="100" width="410" height="84" index="1" locked="true" zIndex="1">
                     <hg_rect id="wifi_item_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="0">
@@ -27,7 +27,7 @@
                         </events>
                     </hg_rect>
                     <hg_image id="wifi_icon" x="44" y="20" width="44" height="44" src="assets/app_control_center/wifi_icon.png" zIndex="1" />
-                    <hg_label id="wifi_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="wifi_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="main_settings_item" x="0" y="200" width="410" height="84" index="2" locked="true" zIndex="2">
                     <hg_rect id="settings_item_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="0">
@@ -38,7 +38,7 @@
                         </events>
                     </hg_rect>
                     <hg_image id="settings_icon" x="44" y="20" width="44" height="44" src="assets/app_control_center/settings_icon.png" zIndex="1" />
-                    <hg_label id="settings_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Settings" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="settings_label" x="104" y="0" width="200" height="84" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Settings" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="main_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
@@ -64,7 +64,7 @@
         </hg_view>
         <hg_view id="app_control_centerBluetoothView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:100,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;app_control_centerBluetoothView_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="0">
             <hg_rect id="bt_toggle_bg" x="24" y="110" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-            <hg_label id="bt_toggle_label" x="44" y="132" width="200" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" locked="true" zIndex="1" />
+            <hg_label id="bt_toggle_label" x="44" y="132" width="200" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" locked="true" zIndex="1" />
             <hg_button id="bt_toggle_btn" x="300" y="136" width="56" height="32" text="Button" toggleMode="true" initialState="on" imageOn="assets/app_control_center/toggle_on.png" imageOff="assets/app_control_center/toggle_off.png" onCallback="bluetooth_toggle_on" offCallback="bluetooth_toggle_off" zIndex="2" />
             <hg_rect id="bt_headphones_entry_bg" x="24" y="199" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
                 <events>
@@ -74,8 +74,8 @@
                 </events>
             </hg_rect>
             <hg_image id="headphones_entry_icon" x="44" y="219" width="44" height="44" src="assets/app_control_center/headphones_icon_connected.png" zIndex="1" />
-            <hg_label id="headphones_entry_label" x="104" y="221" width="258" height="50" hAlign="LEFT" vAlign="TOP" color="#5AC8FA" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Headphones" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
-            <hg_label id="phone_section_label" x="29" y="293" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="PHONE" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="0" />
+            <hg_label id="headphones_entry_label" x="104" y="221" width="258" height="50" hAlign="LEFT" vAlign="TOP" color="#5AC8FA" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Headphones" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
+            <hg_label id="phone_section_label" x="29" y="293" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="PHONE" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
             <hg_list id="bt_list" x="0" y="330" width="410" height="172" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="1" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="true" useUserNoteDesign="true" userNoteDesignFunc="bt_phone_list_note_design" zIndex="0" showOverflow="true">
                 <events>
                     <event type="onMessage" message="bt/phone_conn">
@@ -97,8 +97,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="phone_name_label" x="40" y="15" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPhone 15 Pro" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="32" zIndex="1" />
-                    <hg_label id="phone_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
+                    <hg_label id="phone_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPhone 15 Pro" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="34" zIndex="1" />
+                    <hg_label id="phone_status_label" x="40" y="56" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="phone_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/smartphone_icon.png" zIndex="2" />
                 </hg_list_item>
             </hg_list>
@@ -136,7 +136,7 @@
             </hg_rect>
             <hg_image id="search_icon" x="44" y="130" width="32" height="32" src="assets/app_control_center/search_icon.png" zIndex="1" />
             <hg_label id="search_label" x="88" y="130" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#5AC8FA" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Search Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-            <hg_label id="headphones_section_label" x="28" y="251" width="300" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="HEADPHONES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+            <hg_label id="headphones_section_label" x="28" y="240" width="300" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="HEADPHONES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
             <hg_list id="headphone_list" x="0" y="283" width="410" height="219" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="7" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="true" useUserNoteDesign="true" userNoteDesignFunc="bt_headphone_list_note_design" zIndex="0" showOverflow="true">
                 <events>
                     <event type="onMessage" message="bt/headphone_conn">
@@ -158,8 +158,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones1_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="AirPods Pro" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones1_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#4CD964" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones1_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="AirPods Pro" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="34" zIndex="1" />
+                    <hg_label id="headphones1_status_label" x="40" y="56" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#4CD964" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones1_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_connected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphones2_item" x="0" y="89" width="410" height="84" index="1" locked="true" zIndex="1">
@@ -174,8 +174,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones2_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sony WH-1000" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones2_status_label" x="40" y="52" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones2_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sony WH-1000" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" zIndex="1" />
+                    <hg_label id="headphones2_status_label" x="40" y="56" width="200" height="32" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones2_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphones3_item" x="0" y="178" width="410" height="84" index="2" locked="true" zIndex="2">
@@ -190,8 +190,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones3_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Galaxy Buds2" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones3_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones3_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Galaxy Buds2" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" zIndex="1" />
+                    <hg_label id="headphones3_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones3_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphone4_item" x="0" y="267" width="410" height="84" index="3" locked="true" zIndex="3">
@@ -206,8 +206,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones4_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Beats Studio3" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones4_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones4_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Beats Studio3" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" zIndex="1" />
+                    <hg_label id="headphones4_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones4_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphone5_item" x="0" y="356" width="410" height="84" index="4" locked="true" zIndex="4">
@@ -222,8 +222,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones5_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Jabra Elite 85h" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones5_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones5_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Jabra Elite 85h" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" zIndex="1" />
+                    <hg_label id="headphones5_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones5_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphone6_item" x="0" y="445" width="410" height="84" index="5" locked="true" zIndex="5">
@@ -238,8 +238,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones6_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC35 II" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones6_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones6_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC35 II" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" zIndex="1" />
+                    <hg_label id="headphones6_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones6_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="bt_headphone7_item" x="0" y="534" width="410" height="84" index="6" locked="true" zIndex="6">
@@ -254,8 +254,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="headphones7_name_label" x="40" y="19" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sennheiser HD 450BT" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="headphones7_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="headphones7_name_label" x="40" y="10" width="297" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sennheiser HD 450BT" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="36" enableScroll="true" scrollEndOffset="200" scrollStartOffset="50" zIndex="1" />
+                    <hg_label id="headphones7_status_label" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Not Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="headphones7_icon" x="352" y="19" width="18" height="18" src="assets/app_control_center/headphones_icon_disconnected.png" zIndex="2" />
                 </hg_list_item>
             </hg_list>
@@ -282,8 +282,8 @@
         </hg_view>
         <hg_view id="app_control_centerBtUnbindView" x="1230" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="hidden" entry="false" zIndex="0">
             <hg_image id="unbind_bt_icon" x="183" y="72" width="44" height="44" src="assets/app_control_center/bluetooth_icon.png" zIndex="0" />
-            <hg_label id="unbind_title_label" x="0" y="148" width="410" height="52" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove Device Pairing?" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-            <hg_label id="unbind_sub_label" x="24" y="210" width="362" height="64" hAlign="CENTER" vAlign="TOP" color="#8E8E93" letterSpacing="0" lineSpacing="8" wordWrap="true" wordBreak="false" text="This device will be removed from your paired devices list." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+            <hg_label id="unbind_title_label" x="0" y="148" width="410" height="52" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove Device Pairing?" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="1" />
+            <hg_label id="unbind_sub_label" x="24" y="210" width="362" height="75" hAlign="CENTER" vAlign="TOP" color="#8E8E93" letterSpacing="0" lineSpacing="8" wordWrap="true" wordBreak="false" text="This device will be removed from your paired devices list." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
             <hg_rect id="unbind_divider" x="24" y="298" width="362" height="1" fillColor="#3A3A3C" opacity="255" zIndex="1" />
             <hg_rect id="unbind_confirm_bg" x="24" y="318" width="362" height="80" borderRadius="16" fillColor="#FF3B30" opacity="255" zIndex="1">
                 <events>
@@ -293,7 +293,7 @@
                     </event>
                 </events>
             </hg_rect>
-            <hg_label id="unbind_confirm_label" x="24" y="338" width="362" height="50" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="2" />
+            <hg_label id="unbind_confirm_label" x="24" y="338" width="362" height="50" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="2" />
             <hg_rect id="unbind_cancel_bg" x="24" y="414" width="362" height="80" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="1">
                 <events>
                     <event type="onClick">
@@ -302,10 +302,10 @@
                     </event>
                 </events>
             </hg_rect>
-            <hg_label id="unbind_cancel_label" x="24" y="434" width="362" height="50" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Cancel" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="2" />
+            <hg_label id="unbind_cancel_label" x="24" y="434" width="362" height="50" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Cancel" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="2" />
         </hg_view>
         <hg_view id="app_control_centerBtSearchView" x="1640" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
-            <hg_label id="found_devices_section_label" x="30" y="162" width="260" height="43" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="FOUND DEVICES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="33" zIndex="0" />
+            <hg_label id="found_devices_section_label" x="30" y="162" width="260" height="43" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="FOUND DEVICES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
             <hg_list id="bt_search_list" x="0" y="199" width="410" height="303" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="2" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="true" useUserNoteDesign="true" userNoteDesignFunc="bt_search_list_note_design" zIndex="0" showOverflow="true">
                 <events>
                     <event type="onMessage" message="bt/inquiry_result">
@@ -326,8 +326,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="found_device1_name" x="40" y="22" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JBL Tune 510BT" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="found_device1_status" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="found_device1_name" x="40" y="10" width="316" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JBL Tune 510BT" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="34" zIndex="1" />
+                    <hg_label id="found_device1_status" x="40" y="56" width="200" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="bt_found2_item" x="0" y="89" width="410" height="84" index="1" locked="true" zIndex="1">
                     <hg_rect id="found_device2_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
@@ -337,8 +337,8 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="found_device2_name" x="40" y="22" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC45" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="found_device2_status" x="40" y="52" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="found_device2_name" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bose QC45" fontFile="/font/NotoSansSC_Regular.ttf" fontSize="34" zIndex="1" />
+                    <hg_label id="found_device2_status" x="40" y="56" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Available" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="bt_search_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
@@ -370,12 +370,12 @@
                     <hg_button id="wifi_toggle_btn" x="316" y="26" width="56" height="32" text="Button" toggleMode="true" initialState="off" imageOn="assets/app_control_center/toggle_on.png" imageOff="assets/app_control_center/toggle_off.png" onCallback="wifi_toggle_on" offCallback="wifi_toggle_off" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="wifi_saved_section_item" x="0" y="89" width="410" height="84" index="1" locked="true" zIndex="1">
-                    <hg_label id="saved_networks_label" x="32" y="52" width="250" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SAVED NETWORKS" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
+                    <hg_label id="saved_networks_label" x="32" y="50" width="250" height="42" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SAVED NETWORKS" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
                 </hg_list_item>
                 <hg_list_item id="wifi_saved_item" x="0" y="178" width="410" height="84" index="2" locked="true" zIndex="2">
                     <hg_rect id="saved_network_item_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="saved_network_name_label" x="40" y="8" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Home_WiFi_5G" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="saved_network_status_label" x="40" y="52" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#4CD964" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="saved_network_name_label" x="40" y="10" width="260" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Home_WiFi_5G" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
+                    <hg_label id="saved_network_status_label" x="40" y="56" width="200" height="42" hAlign="LEFT" vAlign="TOP" color="#4CD964" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
                     <hg_image id="saved_network_icon" x="341" y="30" width="18" height="18" src="assets/app_control_center/wifi_icon.png" zIndex="2" />
                 </hg_list_item>
             </hg_list>
@@ -404,28 +404,28 @@
             <hg_list id="settings_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" useUserNoteDesign="true" userNoteDesignFunc="setting_list_note_design" zIndex="0" showOverflow="true">
                 <hg_list_item id="settings_device_name_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="device_name_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="device_name_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Device Name" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
-                    <hg_label id="device_name_value" x="40" y="30" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Apple Watch S9" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="device_name_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Device Name" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
+                    <hg_label id="device_name_value" x="40" y="32" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Apple Watch S9" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="settings_bt_address_item" x="0" y="94" width="410" height="84" index="1" locked="true" zIndex="1">
                     <hg_rect id="bt_address_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="bt_address_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="BT Address" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
-                    <hg_label id="bt_address_value" x="40" y="30" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="A4:B1:C2:D3:E4:F5" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="bt_address_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="BT Address" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
+                    <hg_label id="bt_address_value" x="40" y="32" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="A4:B1:C2:D3:E4:F5" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="settings_bt_version_item" x="0" y="188" width="410" height="84" index="2" locked="true" zIndex="2">
                     <hg_rect id="bt_version_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="bt_version_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="BT Version" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
-                    <hg_label id="bt_version_value" x="40" y="30" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth 5.3" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="bt_version_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="BT Version" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
+                    <hg_label id="bt_version_value" x="40" y="32" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth 5.3" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="settings_wifi_ip_item" x="0" y="282" width="410" height="84" index="3" locked="true" zIndex="3">
                     <hg_rect id="wifi_ip_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="wifi_ip_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi IP" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
-                    <hg_label id="wifi_ip_value" x="40" y="30" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="192.168.1.42" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="wifi_ip_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi IP" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
+                    <hg_label id="wifi_ip_value" x="40" y="32" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="192.168.1.42" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="settings_wifi_version_item" x="0" y="376" width="410" height="84" index="4" locked="true" zIndex="4">
                     <hg_rect id="wifi_version_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
-                    <hg_label id="wifi_version_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi Version" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
-                    <hg_label id="wifi_version_value" x="40" y="30" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="802.11ac (Wi-Fi 5)" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                    <hg_label id="wifi_version_label" x="40" y="6" width="300" height="38" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Wi-Fi Version" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
+                    <hg_label id="wifi_version_value" x="40" y="32" width="300" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="802.11ac (Wi-Fi 5)" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="settings_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">
