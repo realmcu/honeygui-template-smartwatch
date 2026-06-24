@@ -5,17 +5,53 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_stopwatch_view" x="0" y="0" width="410" height="502" backgroundColor="#000000"  zIndex="0">
-            <hg_label id="text_dev" x="0" y="220" width="410" height="85" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Developing..." fontFile="/font/Inter24pt-Medium.ttf" fontSize="40" zIndex="1">
+        <hg_view id="app_stopwatch_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" entry="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;app_stopwatch_view_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="0">
+            <events>
+                <event type="onKeyShortPress" keyName="Home">
+                    <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+                <event type="onKeyShortPress" keyName="Menu">
+                    <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                </event>
+            </events>
+            <hg_list id="lst_stopwatch" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="2" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;list timer&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;lst_stopwatch_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" locked="true" zIndex="0" showOverflow="true">
+                <hg_list_item id="lst_stopwatch_item_0" x="0" y="0" width="410" height="502" index="0" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;stopwatch_page_0_timer_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:false}]" zIndex="0">
+                    <hg_image id="img_27" x="30" y="76" width="350" height="350" transform="{}" src="assets/stopwatch/stopwatch_sec_container_big.png" blendMode="IMG_COVER_MODE" zIndex="0" />
+                    <hg_image id="img_28" x="154" y="128" width="100" height="100" src="assets/stopwatch/stopwatch_min_container.png" blendMode="IMG_SRC_OVER_MODE" zIndex="1" />
+                    <hg_image id="sec_hand_big_0" x="196" y="78" width="16" height="202" transform="{&quot;focusX&quot;:7,&quot;focusY&quot;:170,&quot;translateX&quot;:0,&quot;translateY&quot;:0}" src="assets/stopwatch/stopwatch_hand_big.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFEC602A" zIndex="2" />
+                    <hg_image id="min_hand_0" x="200" y="132" width="7" height="50" transform="{&quot;translateX&quot;:0,&quot;translateY&quot;:0,&quot;scaleX&quot;:1,&quot;scaleY&quot;:1,&quot;focusX&quot;:3,&quot;focusY&quot;:46}" src="assets/stopwatch/stopwatch_hand_s.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFEC602A" zIndex="3" />
+                    <hg_label id="lbl_14" x="110" y="282" width="282" height="48" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="00:00.00" fontFile="/font/Inter24pt-Medium.ttf" fontSize="44" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:.&quot;}]" zIndex="99999" />
+                    <hg_image id="sec_hand_big_1" x="196" y="78" width="16" height="202" transform="{&quot;focusX&quot;:7,&quot;focusY&quot;:170,&quot;translateX&quot;:7,&quot;translateY&quot;:170}" src="assets/stopwatch/stopwatch_hand_big.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF7B81DD" visible="false" zIndex="2" />
+                </hg_list_item>
+                <hg_list_item id="lst_stopwatch_item_1" x="0" y="502" width="410" height="502" index="1" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:10,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;stopwatch_page_1_timer_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="1">
+                    <hg_image id="img_29" x="24" y="100" width="100" height="100" src="assets/stopwatch/stopwatch_min_container.png" zIndex="1" />
+                    <hg_image id="img_30" x="155" y="100" width="100" height="100" src="assets/stopwatch/stopwatch_sec_container.png" zIndex="2" />
+                    <hg_image id="img_31" x="286" y="100" width="100" height="100" src="assets/stopwatch/stopwatch_milsec_container.png" zIndex="3" />
+                    <hg_image id="min_hand_1" x="70" y="104" width="7" height="50" transform="{&quot;translateX&quot;:0,&quot;translateY&quot;:0,&quot;scaleX&quot;:1,&quot;scaleY&quot;:1,&quot;focusX&quot;:3,&quot;focusY&quot;:46}" src="assets/stopwatch/stopwatch_hand_s.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFEC602A" zIndex="3" />
+                    <hg_image id="sec_hand_1" x="201" y="103" width="7" height="50" transform="{&quot;translateX&quot;:0,&quot;translateY&quot;:0,&quot;scaleX&quot;:1,&quot;scaleY&quot;:1,&quot;focusX&quot;:3,&quot;focusY&quot;:46}" src="assets/stopwatch/stopwatch_hand_s.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFEC602A" zIndex="3" />
+                    <hg_image id="milsec_hand_1" x="332" y="103" width="7" height="50" transform="{&quot;translateX&quot;:0,&quot;translateY&quot;:0,&quot;scaleX&quot;:1,&quot;scaleY&quot;:1,&quot;focusX&quot;:3,&quot;focusY&quot;:46}" src="assets/stopwatch/stopwatch_hand_s.png" highQuality="true" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFEC602A" zIndex="3" />
+                    <hg_label id="lbl_15" x="36" y="240" width="350" height="90" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="00:00.00" fontFile="/font/Inter24pt-Medium.ttf" fontSize="80" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:.&quot;}]" zIndex="99999" />
+                </hg_list_item>
+            </hg_list>
+            <hg_image id="dot_0" x="394" y="60" width="10" height="10" src="assets/scrollbar/scrollbar_s.png" blendMode="IMG_2D_SW_FIX_A8_FG" zIndex="1" />
+            <hg_time_label id="tm_lbl_3" x="0" y="18" width="390" height="42" hAlign="RIGHT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontSize="32" fontFile="/font/Inter24pt_SemiBold.ttf" timeFormat="HH:mm" zIndex="2" />
+            <hg_image id="bg_l" x="18" y="414" width="72" height="72" src="assets/stopwatch/stopwatch_button_bg.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFFB7B7B7" zIndex="3">
                 <events>
-                    <event type="onKeyShortPress" keyName="Home">
-                        <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_NONE_ANIMATION" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
-                    </event>
-                    <event type="onKeyShortPress" keyName="Menu">
-                        <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
+                    <event type="onClick">
+                        <action type="callFunction" functionName="click_button_l" />
                     </event>
                 </events>
-            </hg_label>
+            </hg_image>
+            <hg_image id="icon_l" x="39" y="435" width="35" height="30" src="assets/stopwatch/stopwatch_button_mark.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF000000" visible="false" zIndex="4" />
+            <hg_image id="bg_r" x="320" y="414" width="72" height="72" src="assets/stopwatch/stopwatch_button_bg.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF65DC7B" zIndex="5">
+                <events>
+                    <event type="onClick">
+                        <action type="callFunction" functionName="click_button_r" />
+                    </event>
+                </events>
+            </hg_image>
+            <hg_image id="icon_r" x="345" y="435" width="26" height="30" src="assets/stopwatch/stopwatch_button_start.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF000000" zIndex="6" />
+            <hg_image id="dot_1" x="394" y="74" width="10" height="10" src="assets/scrollbar/scrollbar_s.png" blendMode="IMG_2D_SW_FIX_A8_FG" fgColor="0xFF808080" zIndex="1" />
         </hg_view>
     </view>
 </hml>

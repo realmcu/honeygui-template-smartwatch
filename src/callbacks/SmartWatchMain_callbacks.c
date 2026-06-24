@@ -93,7 +93,7 @@ void hg_time_label_hh_time_update_cb(void *p)
         return;
     }
     
-    sprintf(hg_time_label_hh_time_str, "%02d", t->tm_hour);
+    snprintf(hg_time_label_hh_time_str, sizeof(hg_time_label_hh_time_str), "%02d", t->tm_hour);
     
     gui_text_content_set((gui_text_t *)hg_time_label_hh, hg_time_label_hh_time_str, strlen(hg_time_label_hh_time_str));
 }
@@ -109,7 +109,7 @@ void hg_time_label_mm_time_update_cb(void *p)
         return;
     }
     
-    sprintf(hg_time_label_mm_time_str, "%02d", t->tm_min);
+    snprintf(hg_time_label_mm_time_str, sizeof(hg_time_label_mm_time_str), "%02d", t->tm_min);
     
     gui_text_content_set((gui_text_t *)hg_time_label_mm, hg_time_label_mm_time_str, strlen(hg_time_label_mm_time_str));
 }
@@ -125,7 +125,7 @@ void hg_time_label_1772765275313_pgx4_time_update_cb(void *p)
         return;
     }
     
-    sprintf(hg_time_label_1772765275313_pgx4_time_str, "%02d:%02d", t->tm_hour, t->tm_min);
+    snprintf(hg_time_label_1772765275313_pgx4_time_str, sizeof(hg_time_label_1772765275313_pgx4_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
     
     gui_text_content_set((gui_text_t *)hg_time_label_1772765275313_pgx4, hg_time_label_1772765275313_pgx4_time_str, strlen(hg_time_label_1772765275313_pgx4_time_str));
 }
@@ -141,7 +141,7 @@ void hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_update_cb(void *
         return;
     }
     
-    sprintf(hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_str, "%02d:%02d", t->tm_hour, t->tm_min);
+    snprintf(hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_str, sizeof(hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
     
     gui_text_content_set((gui_text_t *)hg_time_label_1772765275313_pgx4_copy_1772765661189_2, hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_str, strlen(hg_time_label_1772765275313_pgx4_copy_1772765661189_2_time_str));
 }

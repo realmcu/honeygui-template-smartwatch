@@ -118,7 +118,7 @@ void tm_lbl_1_time_update_cb(void *p)
         return;
     }
     
-    sprintf(tm_lbl_1_time_str, "%02d:%02d", t->tm_hour, t->tm_min);
+    snprintf(tm_lbl_1_time_str, sizeof(tm_lbl_1_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
     
     gui_text_content_set((gui_text_t *)tm_lbl_1, tm_lbl_1_time_str, strlen(tm_lbl_1_time_str));
 }
@@ -134,7 +134,7 @@ void tm_lbl_2_time_update_cb(void *p)
         return;
     }
     
-    sprintf(tm_lbl_2_time_str, "%02d:%02d", t->tm_hour, t->tm_min);
+    snprintf(tm_lbl_2_time_str, sizeof(tm_lbl_2_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
     
     gui_text_content_set((gui_text_t *)tm_lbl_2, tm_lbl_2_time_str, strlen(tm_lbl_2_time_str));
 }

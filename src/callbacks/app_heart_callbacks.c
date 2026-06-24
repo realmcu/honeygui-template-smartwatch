@@ -40,7 +40,7 @@ void hg_time_label_heart_time_update_cb(void *p)
         return;
     }
     
-    sprintf(hg_time_label_heart_time_str, "%02d:%02d", t->tm_hour, t->tm_min);
+    snprintf(hg_time_label_heart_time_str, sizeof(hg_time_label_heart_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
     
     gui_text_content_set((gui_text_t *)hg_time_label_heart, hg_time_label_heart_time_str, strlen(hg_time_label_heart_time_str));
 }

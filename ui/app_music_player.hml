@@ -14,8 +14,8 @@
                     <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                 </event>
             </events>
-            <hg_label id="song_title_label" x="69" y="68" width="300" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Let Me Know" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
-            <hg_label id="artist_label" x="55" y="100" width="300" height="28" hAlign="CENTER" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No Wyld" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
+            <hg_label id="song_title_label" x="55" y="51" width="300" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Let Me Know" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
+            <hg_label id="artist_label" x="55" y="89" width="300" height="38" hAlign="CENTER" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No Wyld" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
             <hg_arc id="progress_ring_bg" x="100" y="122" width="210" height="210" radius="96" startAngle="0" endAngle="360" strokeWidth="6" color="#F9D342" opacity="38" zIndex="1" />
             <hg_arc id="progress_ring" x="100" y="122" width="210" height="210" radius="96" startAngle="-90" endAngle="-90" strokeWidth="6" color="#F9D342" opacity="255" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;progress_anim&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:28,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;music_progress_timer_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:false,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="2" />
             <hg_image id="album_cover" x="115" y="137" width="180" height="180" borderRadius="90" src="assets/app_music_player/cover_1.png" zIndex="3" />
@@ -59,7 +59,7 @@
                 <hg_label id="volume_title_label" x="155" y="175" width="100" height="24" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Volume" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="18" zIndex="1" />
                 <hg_rect id="volume_bar_bg" x="85" y="211" width="240" height="10" borderRadius="5" fillColor="#262626" opacity="255" zIndex="1" />
                 <hg_rect id="volume_bar_fill" x="85" y="211" width="168" height="10" borderRadius="5" fillColor="#F9D342" opacity="255" zIndex="2" />
-                <hg_label id="volume_percent_label" x="173" y="253" width="64" height="40" hAlign="CENTER" vAlign="MID" color="#F9D342" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="70%" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                <hg_label id="volume_percent_label" x="173" y="253" width="64" height="50" hAlign="CENTER" vAlign="MID" color="#F9D342" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="70%" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                 <hg_image id="vol_minus_btn" x="69" y="237" width="72" height="72" src="assets/app_music_player/minus_btn.png" zIndex="1">
                     <events>
                         <event type="onClick">
@@ -92,7 +92,7 @@
             </hg_window>
         </hg_view>
         <hg_view id="app_music_playerPlaylistView" x="410" y="0" width="410" height="502" backgroundColor="#292826" borderRadius="0" padding="0" overflow="auto" zIndex="0">
-            <hg_list id="playlist_list" x="0" y="80" width="410" height="502" itemWidth="410" itemHeight="84" space="4" direction="VERTICAL" style="LIST_CLASSIC" noteNum="6" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
+            <hg_list id="playlist_list" x="0" y="80" width="410" height="502" itemWidth="410" itemHeight="84" space="4" direction="VERTICAL" style="LIST_CLASSIC" noteNum="6" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="pl_song_1" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <events>
                         <event type="onClick">
@@ -101,8 +101,8 @@
                     </events>
                     <hg_rect id="pl_song_1_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_1_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_1_small.png" zIndex="1" />
-                    <hg_label id="pl_song_1_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Let Me Know" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_1_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No Wyld" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_1_title" x="108" y="10" width="275" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Let Me Know" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_1_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No Wyld" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="pl_song_2" x="0" y="88" width="410" height="84" index="1" locked="true" zIndex="1">
                     <events>
@@ -112,8 +112,8 @@
                     </events>
                     <hg_rect id="pl_song_2_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_2_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_2_small.png" zIndex="1" />
-                    <hg_label id="pl_song_2_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Midnight City" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_2_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="M83" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_2_title" x="108" y="10" width="268" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Midnight City" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_2_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="M83" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="pl_song_3" x="0" y="176" width="410" height="84" index="2" locked="true" zIndex="2">
                     <events>
@@ -123,8 +123,8 @@
                     </events>
                     <hg_rect id="pl_song_3_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_3_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_3_small.png" zIndex="1" />
-                    <hg_label id="pl_song_3_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Golden Hour" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_3_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JVKE" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_3_title" x="108" y="10" width="287" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Golden Hour" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_3_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="JVKE" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="pl_song_4" x="0" y="264" width="410" height="84" index="3" locked="true" zIndex="3">
                     <events>
@@ -134,8 +134,8 @@
                     </events>
                     <hg_rect id="pl_song_4_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_4_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_4_small.png" zIndex="1" />
-                    <hg_label id="pl_song_4_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Ocean Drive" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_4_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Duke Dumont" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_4_title" x="108" y="10" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Ocean Drive" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_4_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Duke Dumont" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="pl_song_5" x="0" y="352" width="410" height="84" index="4" locked="true" zIndex="4">
                     <events>
@@ -145,8 +145,8 @@
                     </events>
                     <hg_rect id="pl_song_5_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_5_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_5_small.png" zIndex="1" />
-                    <hg_label id="pl_song_5_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Starlight" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_5_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Muse" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_5_title" x="108" y="10" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Starlight" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_5_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Muse" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="pl_song_6" x="0" y="440" width="410" height="84" index="5" locked="true" zIndex="5">
                     <events>
@@ -156,8 +156,8 @@
                     </events>
                     <hg_rect id="pl_song_6_bg" x="32" y="0" width="346" height="76" borderRadius="16" fillColor="#00000000" opacity="0" zIndex="0" />
                     <hg_image id="pl_song_6_cover" x="48" y="16" width="44" height="44" borderRadius="22" src="assets/app_music_player/cover_6_small.png" zIndex="1" />
-                    <hg_label id="pl_song_6_title" x="108" y="16" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Vinyl Dreams" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
-                    <hg_label id="pl_song_6_artist" x="108" y="56" width="220" height="28" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Retro Wave" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="1" />
+                    <hg_label id="pl_song_6_title" x="108" y="10" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Vinyl Dreams" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="pl_song_6_artist" x="108" y="49" width="220" height="38" hAlign="LEFT" vAlign="MID" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Retro Wave" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="20" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="playlist_window" x="0" y="0" width="410" height="80" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="2">
@@ -169,7 +169,7 @@
                         <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
-                <hg_label id="playlist_title_label" x="130" y="24" width="150" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Playlist" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                <hg_label id="playlist_title_label" x="130" y="24" width="150" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Playlist" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                 <hg_window id="win_6" x="0" y="0" width="100" height="100" showBackground="false" backgroundColor="#808080" enableBlur="false" blurDegree="225" zIndex="1">
                     <events>
                         <event type="onClick">

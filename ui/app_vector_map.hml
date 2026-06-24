@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <hml>
     <meta>
         <project name="app_vector_map" appId="com.honeygui.smartwatch" resolution="410X502" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="RGB565" />

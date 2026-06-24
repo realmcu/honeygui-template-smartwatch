@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <hml>
     <meta>
         <project name="SmartWatchTemplate" description="HoneyGUI Project" version="1.0.0" resolution="410X502" minSdk="API 2: HoneyGUI V1.1.0" pixelMode="ARGB8888" />
@@ -25,13 +25,13 @@
                 </hg_window>
                 <hg_time_label id="wifi_home_time" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
             </hg_window>
-            <hg_label id="wifi_home_title" x="24" y="73" width="362" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="WiFi Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
+            <hg_label id="wifi_home_title" x="24" y="73" width="362" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="WiFi Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_list id="wifi_home_list" x="0" y="123" width="410" height="379" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="4" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="wifi_home_status_card" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="wifi_home_status_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="wifi_home_wifi_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_wifi_connected.png" zIndex="1" />
                     <hg_label id="wifi_home_status_text" x="128" y="12" width="220" height="24" hAlign="LEFT" vAlign="MID" color="#999999" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Connected" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="16" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
-                    <hg_label id="wifi_home_ip_text" x="128" y="42" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" enableScroll="true" zIndex="2" />
+                    <hg_label id="wifi_home_ip_text" x="128" y="42" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" enableScroll="true" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="wifi_home_iperf_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
                     <events>
@@ -41,7 +41,7 @@
                     </events>
                     <hg_rect id="wifi_home_iperf_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="wifi_home_iperf_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_iperf.png" zIndex="1" />
-                    <hg_label id="wifi_home_iperf_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="wifi_home_iperf_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="wifi_home_file_btn" x="0" y="188" width="410" height="84" index="2" zIndex="2">
                     <events>
@@ -51,7 +51,7 @@
                     </events>
                     <hg_rect id="wifi_home_file_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="wifi_home_file_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_file_transfer.png" zIndex="1" />
-                    <hg_label id="wifi_home_file_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Transfer" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="wifi_home_file_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Transfer" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="wifi_home_custom_btn" x="0" y="282" width="410" height="84" index="3" zIndex="3">
                     <events>
@@ -61,7 +61,7 @@
                     </events>
                     <hg_rect id="wifi_home_custom_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="wifi_home_custom_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_custom_tests.png" zIndex="1" />
-                    <hg_label id="wifi_home_custom_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Tests" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="wifi_home_custom_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Tests" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
             </hg_list>
         </hg_view>
@@ -85,7 +85,7 @@
                 </hg_window>
                 <hg_time_label id="iperf_menu_time" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="2" />
             </hg_window>
-            <hg_label id="iperf_menu_title" x="24" y="137" width="362" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
+            <hg_label id="iperf_menu_title" x="24" y="137" width="362" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_list id="iperf_menu_list" x="0" y="187" width="410" height="220" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="2" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="iperf_menu_upload_btn" x="0" y="0" width="410" height="84" index="0" zIndex="0">
                     <events>
@@ -95,7 +95,7 @@
                     </events>
                     <hg_rect id="iperf_menu_upload_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="iperf_menu_upload_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_upload.png" zIndex="1" />
-                    <hg_label id="iperf_menu_upload_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="iperf_menu_upload_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="iperf_menu_download_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
                     <hg_rect id="iperf_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0">
@@ -107,7 +107,7 @@
                         </events>
                     </hg_rect>
                     <hg_image id="iperf_menu_download_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_download_green.png" zIndex="1" />
-                    <hg_label id="iperf_menu_download_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="iperf_menu_download_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
             </hg_list>
         </hg_view>
@@ -419,7 +419,7 @@
                 </hg_window>
                 <hg_time_label id="file_menu_time" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="2" />
             </hg_window>
-            <hg_label id="file_menu_title" x="24" y="137" width="362" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Transfer" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
+            <hg_label id="file_menu_title" x="24" y="137" width="362" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Transfer" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_list id="file_menu_list" x="0" y="187" width="410" height="220" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="2" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="file_menu_upload_btn" x="0" y="0" width="410" height="84" index="0" zIndex="0">
                     <events>
@@ -429,7 +429,7 @@
                     </events>
                     <hg_rect id="file_menu_upload_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="file_menu_upload_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_file_upload.png" zIndex="1" />
-                    <hg_label id="file_menu_upload_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="file_menu_upload_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Upload Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="file_menu_download_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
                     <hg_rect id="file_menu_download_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0">
@@ -441,7 +441,7 @@
                         </events>
                     </hg_rect>
                     <hg_image id="file_menu_download_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_file_download.png" zIndex="1" />
-                    <hg_label id="file_menu_download_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="file_menu_download_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Download Test" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
             </hg_list>
         </hg_view>
@@ -732,7 +732,7 @@
                 <hg_label id="file_dl_data" x="130" y="55" width="150" height="50" hAlign="CENTER" vAlign="MID" color="#5856D6" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="0" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;data_tick&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:500,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;file_dl_data_tick_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:false,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" zIndex="2" />
                 <hg_label id="file_dl_unit" x="130" y="100" width="150" height="24" hAlign="CENTER" vAlign="MID" color="#999999" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="KByte" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="16" zIndex="2" />
             </hg_window>
-            <hg_label id="file_dl_connect_timer_host" x="0" y="0" width="1" height="1" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="1" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;connect_delay&quot;,&quot;enabled&quot;:false,&quot;interval&quot;:2000,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;file_dl_connect_delay_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" visible="false" zIndex="0" />
+            <hg_label id="file_dl_connect_timer_host" x="0" y="0" width="1" height="11" hAlign="LEFT" vAlign="TOP" color="#000000" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="1" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;connect_delay&quot;,&quot;enabled&quot;:false,&quot;interval&quot;:2000,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;file_dl_connect_delay_cb&quot;,&quot;duration&quot;:0,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[]}]" visible="false" zIndex="0" />
         </hg_view>
         <hg_view id="app_wifi_testCustomMenuView" x="3690" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
             <events>
@@ -754,7 +754,7 @@
                 </hg_window>
                 <hg_time_label id="custom_menu_time" x="300" y="20" width="80" height="32" hAlign="RIGHT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="2" />
             </hg_window>
-            <hg_label id="custom_menu_title" x="24" y="90" width="362" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Tests" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
+            <hg_label id="custom_menu_title" x="24" y="90" width="362" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Tests" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_list id="custom_menu_list" x="0" y="140" width="410" height="282" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="true" zIndex="1" showOverflow="true">
                 <hg_list_item id="custom_menu_test1_btn" x="0" y="0" width="410" height="84" index="0" zIndex="0">
                     <events>
@@ -764,7 +764,7 @@
                     </events>
                     <hg_rect id="custom_menu_test1_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="custom_menu_test1_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_custom_1.png" zIndex="1" />
-                    <hg_label id="custom_menu_test1_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 1" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="custom_menu_test1_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 1" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="custom_menu_test2_btn" x="0" y="94" width="410" height="84" index="1" zIndex="1">
                     <events>
@@ -774,7 +774,7 @@
                     </events>
                     <hg_rect id="custom_menu_test2_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="custom_menu_test2_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_custom_2.png" zIndex="1" />
-                    <hg_label id="custom_menu_test2_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 2" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="custom_menu_test2_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 2" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
                 <hg_list_item id="custom_menu_test3_btn" x="0" y="188" width="410" height="84" index="2" zIndex="2">
                     <events>
@@ -784,7 +784,7 @@
                     </events>
                     <hg_rect id="custom_menu_test3_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
                     <hg_image id="custom_menu_test3_icon" x="40" y="6" width="72" height="72" src="assets/app_wifi_test/icon_custom_3.png" zIndex="1" />
-                    <hg_label id="custom_menu_test3_label" x="128" y="22" width="220" height="40" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 3" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
+                    <hg_label id="custom_menu_test3_label" x="128" y="22" width="220" height="50" hAlign="LEFT" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Custom Test 3" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="2" />
                 </hg_list_item>
             </hg_list>
         </hg_view>

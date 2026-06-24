@@ -5,13 +5,13 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_weatherMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000"  zIndex="0">
-            <hg_list id="hg_list_weather" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" showOverflow="true" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
+        <hg_view id="app_weatherMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" zIndex="0">
+            <hg_list id="hg_list_weather" x="0" y="0" width="410" height="502" itemWidth="410" itemHeight="502" space="0" direction="VERTICAL" style="LIST_FADE" cardStackLocation="0" noteNum="3" offset="0" outScope="0" autoAlign="true" inertia="false" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="hg_list_weather_item_1" x="0" y="0" width="410" height="502" index="0" locked="true" zIndex="0">
                     <hg_image id="hg_image_weather_bg1" x="0" y="0" width="410" height="502" src="assets/weather/weather_background1.png" zIndex="0" />
-                    <hg_label id="hg_label_city" x="130" y="145" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sonoma" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="43" fontType="bitmap" renderMode="2" zIndex="1" />
-                    <hg_label id="hg_label_temperature1" x="130" y="187" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="103" fontType="bitmap" renderMode="2" zIndex="2" />
-                    <hg_label id="hg_label_temperature_degree1" x="189" y="179" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="3" />
+                    <hg_label id="hg_label_city" x="130" y="145" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sonoma" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" fontType="bitmap" renderMode="2" zIndex="1" />
+                    <hg_label id="hg_label_temperature1" x="130" y="187" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="90" fontType="bitmap" renderMode="2" zIndex="2" />
+                    <hg_label id="hg_label_temperature_degree1" x="186" y="179" width="177" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="80" fontType="bitmap" renderMode="2" zIndex="3" />
                     <hg_label id="hg_label_weather_condition1" x="130" y="276" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Sunny" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="33" fontType="bitmap" renderMode="2" zIndex="4" />
                     <hg_label id="hg_label_temperature_range" x="130" y="316" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="H:88° L:57°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="33" fontType="bitmap" renderMode="2" zIndex="5" />
                     <hg_image id="hg_image_weather_row" x="166" y="419" width="78" height="34" src="assets/weather/Wind_Arrow.png" zIndex="6" />
@@ -32,7 +32,7 @@
                     <hg_image id="hg_image_weather_ring" x="22" y="72" width="366" height="361" src="assets/weather/weather_dial.png" zIndex="1" />
                     <hg_label id="hg_label_temperature_range2" x="130" y="266" width="150" height="45" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="H:88° L:57°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="23" fontType="bitmap" renderMode="2" zIndex="2" />
                     <hg_label id="hg_label_temperature2" x="130" y="175" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="76" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="3" />
-                    <hg_label id="hg_label_temperature_degree2" x="187" y="175" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="83" fontType="bitmap" renderMode="2" zIndex="4" />
+                    <hg_label id="hg_label_temperature_degree2" x="193" y="175" width="150" height="105" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="°" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="80" fontType="bitmap" renderMode="2" zIndex="4" />
                     <hg_image id="hg_image_weather_condition12" x="183" y="115" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="5" />
                     <hg_image id="hg_image_weather_condition1" x="253" y="133" width="44" height="31" src="assets/weather/weather_condition_partly_cloudy.png" zIndex="6" />
                     <hg_image id="hg_image_weather_condition2" x="297" y="174" width="33" height="33" src="assets/weather/weather_condition_sunny.png" zIndex="7" />
@@ -113,7 +113,7 @@
                 </events>
                 <hg_image id="hg_image_weather_function" x="13" y="14" width="75" height="75" src="assets/weather/weather_left_control.png" zIndex="0" />
                 <hg_image id="hg_image_weather_right" x="322" y="14" width="75" height="75" src="assets/weather/weather_right_control.png" zIndex="1" />
-                <hg_time_label id="hg_time_label_weather" x="155" y="34" width="120" height="35" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="35" zIndex="2" />
+                <hg_time_label id="hg_time_label_weather" x="155" y="34" width="120" height="35" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH:mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="2" />
             </hg_window>
         </hg_view>
     </view>
