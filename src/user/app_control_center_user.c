@@ -859,10 +859,8 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
 #endif
 
     /* Check if widget already exists by name */
-    gui_obj_t *existing_status = NULL;
-    gui_obj_t *existing_name = NULL;
-    gui_obj_tree_get_widget_by_name((gui_obj_t *)note, "phone_status_label", &existing_status);
-    gui_obj_tree_get_widget_by_name((gui_obj_t *)note, "phone_name_label",   &existing_name);
+    gui_obj_t *existing_status = gui_obj_get_handle((gui_obj_t *)note, "phone_status_label");
+    gui_obj_t *existing_name = gui_obj_get_handle((gui_obj_t *)note, "phone_name_label");
 
     if (existing_status != NULL || existing_name != NULL)
     {
@@ -981,13 +979,12 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
 #endif
 
     /* Check if widget already exists */
-    gui_obj_t *existing_status = NULL;
-    gui_obj_t *existing_name = NULL;
+    
     char name_buf[32];
     snprintf(name_buf, sizeof(name_buf), "headphones%d_status_label", index + 1);
-    gui_obj_tree_get_widget_by_name((gui_obj_t *)note, name_buf, &existing_status);
+    gui_obj_t *existing_status = gui_obj_get_handle((gui_obj_t *)note, name_buf);
     snprintf(name_buf, sizeof(name_buf), "headphones%d_name_label", index + 1);
-    gui_obj_tree_get_widget_by_name((gui_obj_t *)note, name_buf, &existing_name);
+    gui_obj_t *existing_name = gui_obj_get_handle((gui_obj_t *)note, name_buf);
 
     if (existing_status != NULL || existing_name != NULL)
     {
@@ -1005,9 +1002,8 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
             }
         }
 
-        gui_obj_t *existing_icon = NULL;
         snprintf(name_buf, sizeof(name_buf), "headphones%d_icon", index + 1);
-        gui_obj_tree_get_widget_by_name((gui_obj_t *)note, name_buf, &existing_icon);
+        gui_obj_t *existing_icon = gui_obj_get_handle((gui_obj_t *)note, name_buf);
         if (existing_icon != NULL)
         {
             gui_img_set_src((gui_img_t *)existing_icon,
