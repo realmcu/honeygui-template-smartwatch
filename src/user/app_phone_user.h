@@ -1,28 +1,20 @@
+/*
+ * Copyright (c) 2026, Realtek Semiconductor Corporation
+ *
+ * SPDX-License-Identifier: LicenseRef-Realtek-5-Clause
+ */
+
 #ifndef APP_PHONE_USER_H
 #define APP_PHONE_USER_H
 
 #include "../callbacks/app_phone_callbacks.h"
 #include "../ui/app_phone_ui.h"
-#ifndef _HONEYGUI_SIMULATOR_
-#include "app_common_event.h"
-#endif
-/* Phone app events for GUI communication */
-typedef enum
-{
-    PHONE_APP_INCOMING_CALL,     // Incoming call detected
-    PHONE_APP_CALL_ANSWERED,    // Call answered (active)
-    PHONE_APP_CALLER_ID_UPDATED, // Caller ID received from PBAP
-    PHONE_APP_CALL_ENDED,       // Call ended (idle)
-    PHONE_APP_VOLUME_CHANGED,   // Volume changed
-} PHONE_APP_EVENT;
 
-/**
- * @brief Unified entry point for phone app to GUI communication
- * @param event the phone event type
- * @param data optional event data
- * @param len data length
- */
-void phone_app_to_gui(PHONE_APP_EVENT event, void *data, uint16_t len);
+/* Phone call view-switch and DISPLAY_ON wakeup are now driven from
+ * phone_call_topic_state_cb() inside app_phone_user.c, in reaction to
+ * call_state transitions delivered by bridge_phone_call. The bridge no
+ * longer reaches into user-layer code; PHONE_APP_EVENT / phone_app_to_gui
+ * are intentionally removed. */
 
 /* Dial key callbacks */
 void dial_key_0_cb(void *obj, gui_event_t *e);
@@ -46,6 +38,7 @@ void volume_down_cb(void *obj, gui_event_t *e);
 
 /* Timer/init callbacks */
 void incoming_view_init_cb_impl(void);
+void calling_view_init_cb_impl(void);
 void call_timer_tick_impl(void);
 void incoming_ring_timer_cb_impl(void);
 
@@ -72,9 +65,13 @@ const char *get_dialed_number(void);
 void phone_switch_to_dialer_view(void);
 
 /**
- * @brief Set current call number before switching to calling view
- * @param number the phone number to display
+ * @brief Initialize phone user-layer state subscriptions.
+ *
+ * Registers a permanent gui_msg_subscribe() on gui_obj_get_root() so phone
+ * call state transitions (notably HFP_INCOMING that arrive while the user is
+ * on the watchface) drive the appropriate view switch + screen wakeup. Call
+ * this once after the GUI root and main view exist, e.g. from app_init().
  */
-void phone_set_current_call_number(const char *number);
+void app_phone_user_init(void);
 
 #endif // APP_PHONE_USER_H
