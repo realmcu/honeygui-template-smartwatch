@@ -163,15 +163,6 @@ static void send_bt_toggle_msg_to_app(bool enable)
 #ifndef _HONEYGUI_SIMULATOR_
 /**
  * @brief Try to flush pending headphone connect request.
- *
- * Called when receiving a headphone disconnect event.
- * If a pending connect request exists and all BR links are down,
- * send IO_MSG_CONNECT_BREDR_DEVICE to the app task to connect the
- * pending headphone, then clear the flag.
- *
- * @note Must be called from GUI thread (single-thread access to flag).
- * @note This function is idempotent — if no pending request exists,
- *       it returns immediately. Safe to call multiple times.
  */
 static void try_flush_pending_headphone_connect(void)
 {
@@ -896,7 +887,8 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
                                         352, 28, 28, 28);
 
     /* Create phone_name_label */
-    phone_name_label = gui_text_create((gui_obj_t *)note, "phone_name_label", 40, 19, 260, 40);
+    /* Aligned with headphones list: y=10, h=50 (fontSize 40 unchanged) */
+    phone_name_label = gui_text_create((gui_obj_t *)note, "phone_name_label", 40, 10, 260, 50);
 #ifndef _HONEYGUI_SIMULATOR_
     if (phone_bond->device_name_len > 0)
     {
@@ -922,19 +914,20 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
     gui_obj_show((gui_obj_t *)phone_name_label, true);
 
     /* Create phone_status_label */
-    phone_status_label = gui_text_create((gui_obj_t *)note, "phone_status_label", 40, 52, 200, 32);
+    /* Aligned with headphones list: y=56, h=32, fontSize 24 */
+    phone_status_label = gui_text_create((gui_obj_t *)note, "phone_status_label", 40, 56, 200, 32);
     if (phone_used)
     {
         gui_text_set(phone_status_label, "Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(76, 217, 100), 9, 28);
+                     gui_rgb(76, 217, 100), 9, 24);
     }
     else
     {
         gui_text_set(phone_status_label, "Not Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 13, 28);
+                     gui_rgb(102, 102, 102), 13, 24);
     }
     gui_text_type_set(phone_status_label,
-                      "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin", FONT_SRC_FILESYS);
+                      "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin", FONT_SRC_FILESYS);
     gui_text_mode_set(phone_status_label, LEFT);
     gui_text_extra_letter_spacing_set(phone_status_label, 0);
     gui_text_extra_line_spacing_set(phone_status_label, 0);
@@ -979,7 +972,7 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
 #endif
 
     /* Check if widget already exists */
-    
+
     char name_buf[32];
     snprintf(name_buf, sizeof(name_buf), "headphones%d_status_label", index + 1);
     gui_obj_t *existing_status = gui_obj_get_handle((gui_obj_t *)note, name_buf);
@@ -1054,9 +1047,10 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
                            352, 28, 28, 28);
 
     /* Create name label */
+    /* Aligned with HTML: y=10, h=50 (fontSize 40 unchanged) */
     char name_label_name[32];
     snprintf(name_label_name, sizeof(name_label_name), "headphones%d_name_label", index + 1);
-    gui_text_t *name_label = gui_text_create((gui_obj_t *)note, name_label_name, 40, 19, 260, 40);
+    gui_text_t *name_label = gui_text_create((gui_obj_t *)note, name_label_name, 40, 10, 260, 50);
 #ifndef _HONEYGUI_SIMULATOR_
     if (headphone_bond->device_name_len > 0)
     {
@@ -1082,21 +1076,22 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
     gui_obj_show((gui_obj_t *)name_label, true);
 
     /* Create status label */
+    /* Aligned with HTML: y=56, h=32, fontSize 24 */
     char status_label_name[32];
     snprintf(status_label_name, sizeof(status_label_name), "headphones%d_status_label", index + 1);
-    gui_text_t *status_label = gui_text_create((gui_obj_t *)note, status_label_name, 40, 52, 200, 32);
+    gui_text_t *status_label = gui_text_create((gui_obj_t *)note, status_label_name, 40, 56, 200, 32);
     if (hp_used)
     {
         gui_text_set(status_label, "Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(76, 217, 100), 9, 28);
+                     gui_rgb(76, 217, 100), 9, 24);
     }
     else
     {
         gui_text_set(status_label, "Not Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 13, 28);
+                     gui_rgb(102, 102, 102), 13, 24);
     }
     gui_text_type_set(status_label,
-                      "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin", FONT_SRC_FILESYS);
+                      "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin", FONT_SRC_FILESYS);
     gui_text_mode_set(status_label, LEFT);
     gui_text_extra_letter_spacing_set(status_label, 0);
     gui_text_extra_line_spacing_set(status_label, 0);
@@ -1133,8 +1128,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     case 0:
         device_bg = gui_rect_create((gui_obj_t *)note, "found_device1_bg", 24, 0, 362, 84, 12,
                                     gui_rgb(44, 44, 46));
-        found_device1_name = gui_text_create((gui_obj_t *)note, "found_device1_name", 40, 19, 260, 40);
-        found_device1_status = gui_text_create((gui_obj_t *)note, "found_device1_status", 40, 52, 200, 32);
+        /* Aligned with headphones list: name y=10 h=50, status y=56 h=32 */
+        found_device1_name = gui_text_create((gui_obj_t *)note, "found_device1_name", 40, 10, 260, 50);
+        found_device1_status = gui_text_create((gui_obj_t *)note, "found_device1_status", 40, 56, 200, 32);
         icon = gui_img_create_from_fs((gui_obj_t *)note, "found_device1_icon",
                                       "/app_control_center/headphones_icon_disconnected.bin",
                                       352, 19, 18, 18);
@@ -1146,8 +1142,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     case 1:
         device_bg = gui_rect_create((gui_obj_t *)note, "found_device2_bg", 24, 0, 362, 84, 12,
                                     gui_rgb(44, 44, 46));
-        found_device2_name = gui_text_create((gui_obj_t *)note, "found_device2_name", 40, 19, 260, 40);
-        found_device2_status = gui_text_create((gui_obj_t *)note, "found_device2_status", 40, 52, 200, 32);
+        /* Aligned with headphones list: name y=10 h=50, status y=56 h=32 */
+        found_device2_name = gui_text_create((gui_obj_t *)note, "found_device2_name", 40, 10, 260, 50);
+        found_device2_status = gui_text_create((gui_obj_t *)note, "found_device2_status", 40, 56, 200, 32);
         icon = gui_img_create_from_fs((gui_obj_t *)note, "found_device2_icon",
                                       "/app_control_center/headphones_icon_disconnected.bin",
                                       352, 19, 18, 18);
@@ -1169,7 +1166,7 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
         gui_text_set(name_label, (char *)sim_name, GUI_FONT_SRC_BMP,
                      gui_rgb(255, 255, 255), strlen(sim_name), 40);
         gui_text_type_set(name_label,
-                          "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin",
+                          "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
                           FONT_SRC_FILESYS);
 #else
         if (dev->nam_len > 0)
@@ -1177,6 +1174,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
             gui_text_encoding_set(name_label, UTF_16);
             gui_text_set(name_label, (char *)dev->device_name,
                          GUI_FONT_SRC_BMP, gui_rgb(255, 255, 255), dev->nam_len * 2, 40);
+            gui_text_type_set(name_label,
+                              "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
+                              FONT_SRC_FILESYS);
         }
         else
         {
@@ -1188,7 +1188,7 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
             gui_text_set(name_label, addr_str, GUI_FONT_SRC_BMP,
                          gui_rgb(255, 255, 255), strlen(addr_str), 40);
             gui_text_type_set(name_label,
-                              "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin",
+                              "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
                               FONT_SRC_FILESYS);
         }
 #endif
@@ -1202,9 +1202,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     if (status_label != NULL)
     {
         gui_text_set(status_label, "Available", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 9, 28);
+                     gui_rgb(102, 102, 102), 9, 24);
         gui_text_type_set(status_label,
-                          "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin",
+                          "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin",
                           FONT_SRC_FILESYS);
         gui_text_mode_set(status_label, LEFT);
         gui_text_extra_letter_spacing_set(status_label, 0);
@@ -1384,7 +1384,7 @@ void setting_list_note_design(gui_obj_t *obj, void *param)
 
             // Create wifi_version_value
             gui_text_t *wifi_version_value = gui_text_create((gui_obj_t *)note, "wifi_version_value",
-                                                             40, 30, 300, 40);
+                                                             40, 30, 306, 40);
             gui_text_set((gui_text_t *)wifi_version_value, "802.11ac (Wi-Fi 5)", GUI_FONT_SRC_BMP,
                          gui_rgb(255, 255, 255), 18, 40);
             gui_text_type_set((gui_text_t *)wifi_version_value,

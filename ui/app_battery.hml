@@ -17,7 +17,7 @@
                         <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
-                <hg_label id="hg_label_1768201705164_a9tv_copy_1768201975824" x="279" y="55" width="100" height="42" hAlign="RIGHT" vAlign="TOP" color="#4ac21e" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Battery" fontSize="28" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="3" />
+                <hg_label id="hg_label_1768201705164_a9tv_copy_1768201975824" x="264" y="55" width="115" height="42" hAlign="RIGHT" vAlign="TOP" color="#4ac21e" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Battery" fontSize="28" fontFile="/font/Inter_24pt_Regular.ttf" zIndex="3" />
                 <hg_image id="hg_image_1768201691713_mmkg" x="20" y="10" width="72" height="72" src="assets/app_music/delete_icon.png" zIndex="2">
                     <events>
                         <event type="onClick">
