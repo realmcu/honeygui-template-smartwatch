@@ -5,9 +5,22 @@
 #include "gui_text.h"
 #include "gui_obj_focus.h"
 
-// Timer animation counters (defined in callbacks.c)
-extern uint16_t active_timer_text_timer_cnt;
-extern uint16_t active_arc_timer_cnt;
+// Deprecated compatibility API; scheduled for removal in the next major version.
+// For preset animations, assigning 0 requests a restart. Custom timer state is user-owned.
+#if defined(APP_TIMER_CALLBACKS_H_IMPLEMENTATION)
+#define HONEYGUI_DESIGN_DEPRECATED(message)
+#elif defined(__clang__) || defined(__GNUC__)
+#define HONEYGUI_DESIGN_DEPRECATED(message) __attribute__((deprecated(message)))
+#elif defined(_MSC_VER)
+#define HONEYGUI_DESIGN_DEPRECATED(message) __declspec(deprecated(message))
+#else
+#define HONEYGUI_DESIGN_DEPRECATED(message)
+#endif
+HONEYGUI_DESIGN_DEPRECATED("remove direct use; custom timer state is user-owned") extern uint16_t
+active_timer_text_timer_cnt;
+HONEYGUI_DESIGN_DEPRECATED("remove direct use; custom timer state is user-owned") extern uint16_t
+active_arc_timer_cnt;
+#undef HONEYGUI_DESIGN_DEPRECATED
 
 // Event callback function declarations
 void app_timer_view_key_0_cb(void *obj, gui_event_t *e);

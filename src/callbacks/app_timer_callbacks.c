@@ -1,4 +1,6 @@
+#define APP_TIMER_CALLBACKS_H_IMPLEMENTATION
 #include "app_timer_callbacks.h"
+#undef APP_TIMER_CALLBACKS_H_IMPLEMENTATION
 #include "../ui/app_timer_ui.h"
 #include "../user/app_timer_user.h"
 #include <stdio.h>
@@ -9,7 +11,7 @@
 extern char tm_lbl_1_time_str[10];
 extern char tm_lbl_2_time_str[10];
 
-// Timer animation counters
+// Deprecated animation counter (restart request flag, not a frame counter)
 uint16_t active_timer_text_timer_cnt = 0;
 uint16_t active_arc_timer_cnt = 0;
 
@@ -22,11 +24,13 @@ void app_timer_view_key_0_cb(void *obj, gui_event_t *e)
     // Check key name
     if (strcmp(e->indev_name, "Home") == 0)
     {
-        gui_view_switch_direct(gui_view_get_current(), "SmartWatchTemplateMainView", SWITCH_OUT_ANIMATION_FADE, SWITCH_IN_ANIMATION_FADE);
+        gui_view_switch_direct(gui_view_get_current(), "SmartWatchTemplateMainView",
+                               SWITCH_OUT_ANIMATION_FADE, SWITCH_IN_ANIMATION_FADE);
     }
     else if (strcmp(e->indev_name, "Menu") == 0)
     {
-        gui_view_switch_direct(gui_view_get_current(), "app_menu_view", SWITCH_OUT_ANIMATION_FADE, SWITCH_IN_ANIMATION_FADE);
+        gui_view_switch_direct(gui_view_get_current(), "app_menu_view", SWITCH_OUT_ANIMATION_FADE,
+                               SWITCH_IN_ANIMATION_FADE);
     }
 }
 
@@ -90,14 +94,16 @@ void bg_cancel_clicked_cb(void *obj, gui_event_t *e)
 {
     GUI_UNUSED(obj);
     GUI_UNUSED(e);
-    gui_view_switch_direct(gui_view_get_current(), "app_menu_view", SWITCH_OUT_ANIMATION_FADE, SWITCH_IN_ANIMATION_FADE);
+    gui_view_switch_direct(gui_view_get_current(), "app_menu_view", SWITCH_OUT_ANIMATION_FADE,
+                           SWITCH_IN_ANIMATION_FADE);
 }
 
 void img_25_clicked_cb(void *obj, gui_event_t *e)
 {
     GUI_UNUSED(obj);
     GUI_UNUSED(e);
-    gui_view_switch_direct(gui_view_get_current(), "app_timer_view", SWITCH_OUT_NONE_ANIMATION, SWITCH_IN_NONE_ANIMATION);
+    gui_view_switch_direct(gui_view_get_current(), "app_timer_view", SWITCH_OUT_NONE_ANIMATION,
+                           SWITCH_IN_NONE_ANIMATION);
 }
 
 void bg_play_clicked_cb(void *obj, gui_event_t *e)
@@ -110,32 +116,32 @@ void bg_play_clicked_cb(void *obj, gui_event_t *e)
 void tm_lbl_1_time_update_cb(void *p)
 {
     GUI_UNUSED(p);
-    
+
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     if (t == NULL)
     {
         return;
     }
-    
+
     snprintf(tm_lbl_1_time_str, sizeof(tm_lbl_1_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
-    
+
     gui_text_content_set((gui_text_t *)tm_lbl_1, tm_lbl_1_time_str, strlen(tm_lbl_1_time_str));
 }
 
 void tm_lbl_2_time_update_cb(void *p)
 {
     GUI_UNUSED(p);
-    
+
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     if (t == NULL)
     {
         return;
     }
-    
+
     snprintf(tm_lbl_2_time_str, sizeof(tm_lbl_2_time_str), "%02d:%02d", t->tm_hour, t->tm_min);
-    
+
     gui_text_content_set((gui_text_t *)tm_lbl_2, tm_lbl_2_time_str, strlen(tm_lbl_2_time_str));
 }
 
