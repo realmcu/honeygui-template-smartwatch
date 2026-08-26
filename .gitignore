@@ -37,3 +37,7 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Generated agent files
+/.claude/skills/
+/AGENTS.md
