@@ -130,7 +130,6 @@ void hg_image_1769146380658_kvde_timer_0_cb(void *obj)
 void app_heart_circel0_timer_0_cb(void *obj)
 {
     GUI_UNUSED(obj);
-    GUI_UNUSED(app_heart_circel0_timer_cnt);
     if (list_heart->offset > -251)
     {
         gui_circle_set_color(app_heart_circel0, gui_rgb(255, 255, 255));

@@ -369,7 +369,6 @@ void app_menu_list_timer_0_cb(void *obj)
 {
     GUI_UNUSED(obj);
     gui_list_t *list = obj;
-    app_menu_list_timer_cnt++;
     gui_view_t *view_next = gui_view_get_next();
     if (view_next && strcmp("SmartWatchTemplateMainView", gui_view_get_current()->base.name))
     {
