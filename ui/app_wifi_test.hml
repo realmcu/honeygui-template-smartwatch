@@ -391,7 +391,7 @@
             </hg_window>
             <hg_label id="iperf_download_title" x="0" y="80" width="410" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="iPerf Download" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_rect id="iperf_download_soc_ip_bg" x="24" y="140" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
-            <hg_label id="iperf_download_soc_ip" x="24" y="140" width="362" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
+            <hg_label id="iperf_download_soc_ip" x="-16" y="137" width="438" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="1" />
             <hg_window id="iperf_dl_running_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="3">
                 <hg_arc id="iperf_dl_ring_bg" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#4CD964" opacity="40" zIndex="0" />
                 <hg_arc id="iperf_dl_ring" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#4CD964" opacity="255" zIndex="1" />
@@ -725,7 +725,7 @@
             </hg_window>
             <hg_label id="file_download_title" x="0" y="80" width="410" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="File Download" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" enableScroll="true" scrollPreview="false" zIndex="1" />
             <hg_rect id="file_download_soc_ip_bg" x="24" y="140" width="362" height="84" borderRadius="16" fillColor="#FFFFFF" opacity="20" zIndex="0" />
-            <hg_label id="file_download_soc_ip" x="24" y="140" width="362" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+            <hg_label id="file_download_soc_ip" x="-9" y="140" width="438" height="84" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="SoC IP: 192.168.1.100" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
             <hg_window id="file_dl_running_win" x="0" y="230" width="410" height="230" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="0" zIndex="3">
                 <hg_arc id="file_dl_ring_bg" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#5856D6" opacity="40" zIndex="0" />
                 <hg_arc id="file_dl_ring" x="115" y="5" width="180" height="180" radius="86" startAngle="0" endAngle="360" strokeWidth="4" color="#5856D6" opacity="255" zIndex="1" />
