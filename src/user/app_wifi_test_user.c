@@ -526,8 +526,8 @@ static void update_wifi_home_ui(void)
                                      : "/app_wifi_test/icon_wifi_disconnected.bin");
     set_text_content_safe(wifi_home_status_text, wifiConnected ? "Connected" : "Not Connected");
     set_text_color_safe(wifi_home_status_text, wifiConnected ? color_secondary_text() : gui_rgb(255, 59, 48));
-    set_text_content_safe(wifi_home_ip_text, wifiConnected ? "IP: 192.168.1.100" : "IP: ---.---.---.---");
-    set_text_color_safe(wifi_home_ip_text, color_primary_text());
+    set_text_content_safe(&wifi_home_ip_text->base, wifiConnected ? "IP: 192.168.1.100" : "IP: ---.---.---.---");
+    set_text_color_safe(&wifi_home_ip_text->base, color_primary_text());
 }
 
 static void update_upload_target(gui_text_t *targetLabel,
