@@ -25,7 +25,7 @@
                     <hg_image id="dialer_back_btn" x="32" y="28" width="32" height="32" src="assets/app_phone/back_icon.png" zIndex="0" />
                 </hg_window>
             </hg_window>
-            <hg_label id="number_display_label" x="30" y="116" width="350" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="2" lineSpacing="0" wordWrap="false" wordBreak="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="30" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789*# +-()&quot;}]" zIndex="1" />
+            <hg_label id="number_display_label" x="30" y="116" width="374" height="40" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="2" lineSpacing="0" wordWrap="false" wordBreak="false" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="30" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789*# +-()&quot;}]" zIndex="1" />
             <hg_image id="dial_key_1" x="48" y="162" width="100" height="60" src="assets/app_phone/dial_key_1.png" zIndex="1">
                 <events>
                     <event type="onClick">

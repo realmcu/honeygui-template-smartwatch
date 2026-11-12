@@ -15,7 +15,7 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="contact_name1" x="42" y="0" width="204" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="contact_name1" x="42" y="0" width="226" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="contact_main_list_item_2" x="0" y="107" width="410" height="102" index="1" locked="true" zIndex="1">
                     <hg_rect id="contact_main_list_bg2" x="15" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1">
@@ -25,7 +25,7 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="contact_name2" x="42" y="0" width="204" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="contact_name2" x="42" y="0" width="226" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
                 </hg_list_item>
                 <hg_list_item id="contact_main_list_item_3" x="0" y="214" width="410" height="102" index="2" locked="true" zIndex="2">
                     <hg_rect id="contact_main_list_bg3" x="15" y="0" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1">
@@ -35,7 +35,7 @@
                             </event>
                         </events>
                     </hg_rect>
-                    <hg_label id="contact_name3" x="42" y="0" width="204" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
+                    <hg_label id="contact_name3" x="42" y="0" width="226" height="100" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Taylor Swift" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="1" />
                 </hg_list_item>
             </hg_list>
             <hg_window id="app_contact_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="true" blurDegree="225" zIndex="1">

@@ -169,7 +169,7 @@
                         <action type="switchView" target="app_menu_view" switchOutStyle="SWITCH_OUT_ANIMATION_FADE" switchInStyle="SWITCH_IN_ANIMATION_FADE" />
                     </event>
                 </events>
-                <hg_label id="playlist_title_label" x="130" y="24" width="150" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Playlist" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
+                <hg_label id="playlist_title_label" x="130" y="24" width="186" height="50" hAlign="CENTER" vAlign="MID" color="#f2f2f2" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Playlist" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="40" zIndex="1" />
                 <hg_window id="win_6" x="0" y="0" width="100" height="100" showBackground="false" backgroundColor="#808080" enableBlur="false" blurDegree="225" zIndex="1">
                     <events>
                         <event type="onClick">

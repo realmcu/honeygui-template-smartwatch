@@ -63,7 +63,7 @@
         </hg_view>
         <hg_view id="app_reminder_today_view" x="1049" y="221" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="1">
             <hg_rect id="hg_rect_1768381023374_vc4v" x="58" y="345" width="300" height="100" borderRadius="50" fillColor="#3775ca" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="1" />
-            <hg_label id="hg_label_1768381142245_i2iu_copy_1768381267042" x="40" y="208" width="330" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No reminder items" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="3" />
+            <hg_label id="hg_label_1768381142245_i2iu_copy_1768381267042" x="40" y="208" width="342" height="40" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="No reminder items" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="3" />
             <hg_label id="hg_label_1768381142245_i2iu" x="57" y="347" width="301" height="96" hAlign="CENTER" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Add reminder items" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="28" zIndex="4" />
             <hg_window id="app_reminder_today_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="1">
                 <events>

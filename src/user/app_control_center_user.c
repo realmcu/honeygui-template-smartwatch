@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2026, Realtek Semiconductor Corporation
+ *
+ * SPDX-License-Identifier: LicenseRef-Realtek-5-Clause
+ */
+
 #include "app_control_center_user.h"
 #include "../ui/app_control_center_ui.h"
 #include "../callbacks/app_control_center_callbacks.h"
@@ -19,8 +25,8 @@
 #include "app_gap.h"
 #include "app_link_util.h"
 #include "gap.h"
-#include "app_common_event.h"
-#include "event_bus.h"
+#include "app_bt_policy_api.h"
+#include "bridge_bt_control.h"
 #else
 /* Mock types for simulator */
 typedef struct
@@ -39,10 +45,7 @@ typedef struct
 /* Pending device index for remove operation (0xFF = none) */
 static uint8_t pending_remove_device_index = 0xFF;
 
-/* Pending headphone to connect after current device disconnects */
 #ifndef _HONEYGUI_SIMULATOR_
-static bool pending_headphone_connect_after_disconnect = false;
-static uint8_t pending_headphone_connect_addr[6] = {0};
 static char search_addr_buffer[MAX_SEARCH_DEVICES][18];  /* For bt_search_list address display */
 #endif
 
@@ -140,96 +143,26 @@ static gui_list_note_t *get_list_note_by_index(gui_obj_t *list, uint16_t index)
 static void send_bt_toggle_msg_to_app(bool enable)
 {
 #ifndef _HONEYGUI_SIMULATOR_
-    T_IO_MSG msg;
-    msg.type = IO_MSG_TYPE_WRISTBNAD;
-    msg.subtype = IO_MSG_BT_TOGGLE;
-    msg.u.param = enable ? 1 : 0;
-    app_send_msg_to_apptask(&msg);
+    T_BT_CONTROL_TOGGLE_DATA toggle = { .enable = enable ? 1u : 0u };
+    bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_TOGGLE,
+                          &toggle, sizeof(toggle));
 
     /* If BT enable and have bonded phone, reconnect to phone */
-    if (enable && app_db.bond_device[0].exist_addr_flag)
+    if (enable)
     {
-        T_IO_MSG con_msg;
-        con_msg.type = IO_MSG_TYPE_WRISTBNAD;
-        con_msg.subtype = IO_MSG_CONNECT_PHONE;
-        con_msg.u.buf = app_db.bond_device[0].bd_addr;
-        app_send_msg_to_apptask(&con_msg);
+        const T_BT_CONTROL_DEVICE *phone = &bridge_bt_control_get_state()->bonded[0];
+        if (phone->exist)
+        {
+            T_BT_CONTROL_ADDR_DATA addr;
+            memcpy(addr.bd_addr, phone->bd_addr, 6);
+            bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_CONNECT_PHONE,
+                                  &addr, sizeof(addr));
+        }
     }
 #else
     GUI_UNUSED(enable);
 #endif
 }
-
-#ifndef _HONEYGUI_SIMULATOR_
-/**
- * @brief Try to flush pending headphone connect request.
- *
- * Called when receiving a headphone disconnect event.
- * If a pending connect request exists and all BR links are down,
- * send IO_MSG_CONNECT_BREDR_DEVICE to the app task to connect the
- * pending headphone, then clear the flag.
- *
- * @note Must be called from GUI thread (single-thread access to flag).
- * @note This function is idempotent — if no pending request exists,
- *       it returns immediately. Safe to call multiple times.
- */
-static void try_flush_pending_headphone_connect(void)
-{
-    if (!pending_headphone_connect_after_disconnect)
-    {
-        return;
-    }
-
-    /* Safety: verify the pending address is valid (non-zero) */
-    bool has_addr = false;
-    for (int i = 0; i < 6; i++)
-    {
-        if (pending_headphone_connect_addr[i] != 0) { has_addr = true; break; }
-    }
-    if (!has_addr)
-    {
-        pending_headphone_connect_after_disconnect = false;
-        return;
-    }
-
-    /* Defensive check: any other active BR link still up? */
-    for (uint8_t i = 1; i <= 7; i++)
-    {
-        T_APP_BOND_DEVICE *b = &app_db.bond_device[i];
-        if (b->exist_addr_flag)
-        {
-            /* Skip pending target itself */
-            if (memcmp(b->bd_addr, pending_headphone_connect_addr, 6) == 0)
-            {
-                continue;
-            }
-            if (app_find_br_link(b->bd_addr) != NULL)
-            {
-                /* Some other link still alive, defer (keep pending flag). */
-                return;
-            }
-        }
-    }
-
-    T_IO_MSG msg;
-    msg.type = IO_MSG_TYPE_WRISTBNAD;
-    msg.subtype = IO_MSG_CONNECT_BREDR_DEVICE;
-    msg.u.buf = pending_headphone_connect_addr;
-    app_send_msg_to_apptask(&msg);
-
-    pending_headphone_connect_after_disconnect = false;
-}
-
-/**
- * @brief Clear the pending headphone connect state.
- */
-static void clear_pending_headphone_connect(void)
-{
-    pending_headphone_connect_after_disconnect = false;
-    memset(pending_headphone_connect_addr, 0, 6);
-}
-#endif
-
 
 /**
  * @brief Helper function to connect or disconnect a headphone (for bond list)
@@ -238,64 +171,28 @@ static void clear_pending_headphone_connect(void)
 static void headphone_connect_or_disconnect(uint8_t index)
 {
 #ifndef _HONEYGUI_SIMULATOR_
-    if (index < 1 || index > 7)
+    if (index < 1 || index > 7) { return; }
+
+    const T_BT_CONTROL_STATE  *bt_state = bridge_bt_control_get_state();
+    const T_BT_CONTROL_DEVICE *bond     = &bt_state->bonded[index];
+    if (!bond->exist) { return; }
+
+    T_BT_CONTROL_ADDR_DATA addr;
+    memcpy(addr.bd_addr, bond->bd_addr, 6);
+
+    if (bond->connected)
     {
-        return;
-    }
-
-    T_APP_BOND_DEVICE *bond = &app_db.bond_device[index];
-    if (!bond->exist_addr_flag)
-    {
-        return;
-    }
-
-    T_IO_MSG msg;
-    msg.type = IO_MSG_TYPE_WRISTBNAD;
-
-    T_APP_BR_LINK *p_link = app_find_br_link(bond->bd_addr);
-    if (p_link != NULL)
-    {
-        /* Currently connected → user wants to disconnect it */
-        msg.subtype = IO_MSG_DISCONNECT_BREDR_DEVICE;
-        msg.u.buf = bond->bd_addr;
-
-        /* Clear any stale pending request — user does NOT want auto-reconnect */
-        clear_pending_headphone_connect();
+        /* Currently connected → user wants to disconnect it. */
+        bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_DISCONNECT,
+                              &addr, sizeof(addr));
     }
     else
     {
-        /* Check if another headphone is connected */
-        bool another_connected = false;
-        for (uint8_t i = 1; i <= 7; i++)
-        {
-            if (i == index) { continue; }
-            T_APP_BOND_DEVICE *other_bond = &app_db.bond_device[i];
-            if (other_bond->exist_addr_flag &&
-                app_find_br_link(other_bond->bd_addr) != NULL)
-            {
-                another_connected = true;
-                break;
-            }
-        }
-
-        if (another_connected)
-        {
-            /* app_task will auto-disconnect the active one; we must resend
-             * CONNECT once that disconnect completes. Save pending address. */
-            pending_headphone_connect_after_disconnect = true;
-            memcpy(pending_headphone_connect_addr, bond->bd_addr, 6);
-        }
-        else
-        {
-            /* No pending needed — app_task will connect directly */
-            clear_pending_headphone_connect();
-        }
-
-        msg.subtype = IO_MSG_CONNECT_BREDR_DEVICE;
-        msg.u.buf = bond->bd_addr;
+        /* Bridge decides whether a swap is needed (another active earphone)
+         * and orchestrates disconnect-then-connect across views. */
+        bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_SWAP_TO,
+                              &addr, sizeof(addr));
     }
-
-    app_send_msg_to_apptask(&msg);
 #else
     GUI_UNUSED(index);
 #endif
@@ -324,43 +221,15 @@ static void headphone_search_connect_common(uint8_t index)
     if (get_search_status() == SEARCH_START)
     {
         app_bt_bond_temp_cache_save_to_search();
-
-        T_IO_MSG dis_inquiry_msg;
-        dis_inquiry_msg.type = IO_MSG_TYPE_WRISTBNAD;
-        dis_inquiry_msg.subtype = IO_MSG_INQUIRY_STOP;
-        app_send_msg_to_apptask(&dis_inquiry_msg);
+        bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_INQUIRY_STOP, NULL, 0);
     }
 
-    /* Check if another headphone is already connected */
-    bool another_connected = false;
-    for (uint8_t i = 1; i <= 7; i++)
-    {
-        T_APP_BOND_DEVICE *other_bond = &app_db.bond_device[i];
-        if (other_bond->exist_addr_flag &&
-            app_find_br_link(other_bond->bd_addr) != NULL)
-        {
-            another_connected = true;
-            break;
-        }
-    }
-
-    if (another_connected)
-    {
-        /* app_task will auto-disconnect the active one; we must resend
-         * CONNECT once that disconnect completes via pending flush. */
-        pending_headphone_connect_after_disconnect = true;
-        memcpy(pending_headphone_connect_addr, addr, 6);
-    }
-    else
-    {
-        clear_pending_headphone_connect();
-    }
-
-    T_IO_MSG msg;
-    msg.type = IO_MSG_TYPE_WRISTBNAD;
-    msg.subtype = IO_MSG_CONNECT_BREDR_DEVICE;
-    msg.u.buf = addr;
-    app_send_msg_to_apptask(&msg);
+    /* Bridge handles swap orchestration; works across view boundaries because
+     * the pending state lives in the bridge, not in any view's widget tree. */
+    T_BT_CONTROL_ADDR_DATA cmd_addr;
+    memcpy(cmd_addr.bd_addr, addr, 6);
+    bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_SWAP_TO,
+                          &cmd_addr, sizeof(cmd_addr));
 }
 #endif
 
@@ -392,7 +261,7 @@ void bluetooth_toggle_on(void *obj, gui_event_t *e)
     uint16_t note_count = 0;
 
 #ifndef _HONEYGUI_SIMULATOR_
-    if (app_db.bond_device[0].exist_addr_flag)
+    if (bridge_bt_control_get_state()->bonded[0].exist)
     {
         note_count = 1;  /* Show phone item */
     }
@@ -418,11 +287,6 @@ void bluetooth_toggle_off(void *obj, gui_event_t *e)
 
     /* Send BT toggle off message to app task */
     send_bt_toggle_msg_to_app(false);
-
-#ifndef _HONEYGUI_SIMULATOR_
-    /* Clear any pending headphone connect request — BT is going off */
-    clear_pending_headphone_connect();
-#endif
 
     /* Hide headphones entry and phone section widgets */
     if (bt_headphones_entry_bg != NULL)
@@ -456,11 +320,18 @@ void bluetooth_search_devices(void *obj, gui_event_t *e)
     GUI_UNUSED(e);
 
 #ifndef _HONEYGUI_SIMULATOR_
-    /* Start Bluetooth search */
-    T_IO_MSG inquiry_msg;
-    inquiry_msg.type = IO_MSG_TYPE_WRISTBNAD;
-    inquiry_msg.subtype = IO_MSG_INQUIRY_START;
-    app_send_msg_to_apptask(&inquiry_msg);
+    /* Clear stale results from a previous inquiry that may not have reached
+     * inquiry_cmpl (e.g. user left the view mid-scan). */
+    found_device_count = 0;
+    memset(found_devices, 0, sizeof(found_devices));
+    if (bt_search_list != NULL)
+    {
+        gui_obj_show((gui_obj_t *)bt_search_list, false);
+        gui_list_set_note_num(bt_search_list, 0);
+    }
+
+    /* Start Bluetooth search via bridge cmd */
+    bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_INQUIRY_START, NULL, 0);
 #else
     /* Simulator: populate 2 mock found devices */
     found_device_count = MAX_SEARCH_DEVICES;
@@ -515,26 +386,15 @@ void phone_linkback_and_disconnect(void *obj, gui_event_t *e)
     GUI_UNUSED(e);
 
 #ifndef _HONEYGUI_SIMULATOR_
-    T_APP_BOND_DEVICE *phone_bond = &app_db.bond_device[0];
-    if (!phone_bond->exist_addr_flag)
-    {
-        return;
-    }
+    const T_BT_CONTROL_DEVICE *phone = &bridge_bt_control_get_state()->bonded[0];
+    if (!phone->exist) { return; }
 
-    T_IO_MSG msg;
-    msg.type = IO_MSG_TYPE_WRISTBNAD;
+    T_BT_CONTROL_ADDR_DATA addr;
+    memcpy(addr.bd_addr, phone->bd_addr, 6);
 
-    if (phone_bond->used)
-    {
-        msg.subtype = IO_MSG_DISCONNECT_BREDR_DEVICE;
-    }
-    else
-    {
-        msg.subtype = IO_MSG_CONNECT_PHONE;
-    }
-
-    msg.u.buf = phone_bond->bd_addr;
-    app_send_msg_to_apptask(&msg);
+    const char *topic = phone->connected ? EVENT_BUS_TOPIC_BT_CONTROL_CMD_DISCONNECT
+                        : EVENT_BUS_TOPIC_BT_CONTROL_CMD_CONNECT_PHONE;
+    bt_control_gui_to_app(topic, &addr, sizeof(addr));
 #endif
 
     gui_fb_change();
@@ -655,21 +515,9 @@ void remove_paired_device_confirm(void *obj, gui_event_t *e)
 #ifndef _HONEYGUI_SIMULATOR_
     if (pending_remove_device_index <= 7)
     {
-        /* If the device being removed is the pending connect target,
-         * clear pending state to avoid ghost re-connect after removal. */
-        T_APP_BOND_DEVICE *b = &app_db.bond_device[pending_remove_device_index];
-        if (pending_headphone_connect_after_disconnect &&
-            b->exist_addr_flag &&
-            memcmp(b->bd_addr, pending_headphone_connect_addr, 6) == 0)
-        {
-            clear_pending_headphone_connect();
-        }
-
-        T_IO_MSG msg;
-        msg.type = IO_MSG_TYPE_WRISTBNAD;
-        msg.subtype = IO_MSG_REMOVE_BOND_DEVICE;
-        msg.u.param = pending_remove_device_index;
-        app_send_msg_to_apptask(&msg);
+        T_BT_CONTROL_REMOVE_DATA remove = { .index = pending_remove_device_index };
+        bt_control_gui_to_app(EVENT_BUS_TOPIC_BT_CONTROL_CMD_REMOVE_BOND,
+                              &remove, sizeof(remove));
     }
 #endif
 
@@ -704,19 +552,39 @@ void headphone2_connect(void *obj, gui_event_t *e)
 
 void update_phone_list(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
 {
-    GUI_UNUSED(obj); GUI_UNUSED(topic); GUI_UNUSED(data); GUI_UNUSED(len);
+    GUI_UNUSED(obj); GUI_UNUSED(topic);
 
 #ifndef _HONEYGUI_SIMULATOR_
-    if (app_db.bond_device[0].exist_addr_flag)
+    const T_BT_CONTROL_STATE *s = (data != NULL && len >= sizeof(T_BT_CONTROL_STATE))
+                                  ? (const T_BT_CONTROL_STATE *)data
+                                  : bridge_bt_control_get_state();
+    if (s->bonded[0].exist)
     {
         gui_obj_show((gui_obj_t *)bt_list, true);
         gui_list_set_note_num(bt_list, 1);
+
+        /* note_design only re-runs when count changes; refresh status label
+         * directly so connect/disconnect events update the visible text. */
+        if (phone_status_label != NULL)
+        {
+            if (s->bonded[0].connected)
+            {
+                gui_text_content_set(phone_status_label, "Connected", 9);
+                gui_text_color_set(phone_status_label, gui_rgb(76, 217, 100));
+            }
+            else
+            {
+                gui_text_content_set(phone_status_label, "Not Connected", 13);
+                gui_text_color_set(phone_status_label, gui_rgb(102, 102, 102));
+            }
+        }
     }
     else
     {
         gui_list_set_note_num(bt_list, 0);
     }
 #else
+    GUI_UNUSED(data); GUI_UNUSED(len);
     /* Simulator: always show 1 phone item (iPhone 15 Pro) */
     gui_obj_show((gui_obj_t *)bt_list, true);
     gui_list_set_note_num(bt_list, 1);
@@ -727,19 +595,54 @@ void update_phone_list(gui_obj_t *obj, const char *topic, void *data, uint16_t l
 
 void update_headphone_list(gui_obj_t *obj, const char *topic, void *data, uint16_t len)
 {
-    GUI_UNUSED(obj); GUI_UNUSED(topic); GUI_UNUSED(data); GUI_UNUSED(len);
+    GUI_UNUSED(obj); GUI_UNUSED(topic);
 
     if (headphone_list != NULL)
     {
 #ifndef _HONEYGUI_SIMULATOR_
-        uint8_t headphone_count = 0;
-        for (int i = 1; i <= 7; i++)
-        {
-            if (app_db.bond_device[i].exist_addr_flag) { headphone_count++; }
-        }
+        const T_BT_CONTROL_STATE *s = (data != NULL && len >= sizeof(T_BT_CONTROL_STATE))
+                                      ? (const T_BT_CONTROL_STATE *)data
+                                      : bridge_bt_control_get_state();
         gui_obj_show((gui_obj_t *)headphone_list, true);
-        gui_list_set_note_num(headphone_list, headphone_count);
+        gui_list_set_note_num(headphone_list, s->headphone_count);
+
+        /* Refresh each existing headphone status label / icon directly so
+         * connect/disconnect events update visible widgets even when note
+         * count is unchanged (note_design only re-runs on count change). */
+        for (uint8_t slot = 1; slot < BT_CONTROL_MAX_BONDED; slot++)
+        {
+            const T_BT_CONTROL_DEVICE *hp = &s->bonded[slot];
+            if (!hp->exist) { continue; }
+
+            char widget_name[32];
+            snprintf(widget_name, sizeof(widget_name),"headphones%d_status_label", slot);
+            gui_obj_t *status_obj = gui_obj_get_handle((gui_obj_t *)headphone_list, widget_name);
+            snprintf(widget_name, sizeof(widget_name), "headphones%d_icon", slot);
+            gui_obj_t *icon_obj = gui_obj_get_handle((gui_obj_t *)headphone_list, widget_name);
+            if (status_obj != NULL)
+            {
+                if (hp->connected)
+                {
+                    gui_text_content_set((gui_text_t *)status_obj, "Connected", 9);
+                    gui_text_color_set((gui_text_t *)status_obj, gui_rgb(76, 217, 100));
+                }
+                else
+                {
+                    gui_text_content_set((gui_text_t *)status_obj, "Not Connected", 13);
+                    gui_text_color_set((gui_text_t *)status_obj, gui_rgb(102, 102, 102));
+                }
+            }
+            if (icon_obj != NULL)
+            {
+                gui_img_set_src((gui_img_t *)icon_obj,
+                                hp->connected
+                                ? "/app_control_center/headphones_icon_connected.bin"
+                                : "/app_control_center/headphones_icon_disconnected.bin",
+                                IMG_SRC_FILESYS);
+            }
+        }
 #else
+        GUI_UNUSED(data); GUI_UNUSED(len);
         gui_obj_show((gui_obj_t *)headphone_list, true);
         gui_list_set_note_num(headphone_list, SIM_HEADPHONE_COUNT);
 #endif
@@ -788,54 +691,6 @@ void update_search_list(gui_obj_t *obj, const char *topic, void *data, uint16_t 
     gui_fb_change();
 }
 
-/**
- * @brief Event bus callback for BT connection events (strong override)
- * @note Overrides weak symbol in app_common_event.c
- */
-#ifndef _HONEYGUI_SIMULATOR_
-int32_t bt_event_bus_callback(T_EVENT_BUS_EVENT_DATA *event_data)
-{
-    if (event_data == NULL || event_data->topic == NULL)
-    {
-        return EVENT_BUS_ERR_INVALID_PARAM;
-    }
-
-    if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_PHONE_CONN) == 0)
-    {
-        gui_msg_publish("bt/phone_conn", event_data->data, event_data->data_len);
-    }
-    else if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_PHONE_DISCONN) == 0)
-    {
-        gui_msg_publish("bt/phone_disconn", event_data->data, event_data->data_len);
-    }
-    else if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_HEADPHONE_CONN) == 0)
-    {
-        gui_msg_publish("bt/headphone_conn", event_data->data, event_data->data_len);
-    }
-    else if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_HEADPHONE_DISCONN) == 0)
-    {
-        gui_msg_publish("bt/headphone_disconn", event_data->data, event_data->data_len);
-
-        /* Always try to flush pending headphone connect request, regardless of
-         * which UI page is currently active. This ensures that after the old
-         * earphone disconnects, the pending connection to the new earphone
-         * (triggered from search page or headphone list page) proceeds. */
-        try_flush_pending_headphone_connect();
-    }
-    else if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_INQUIRY_RESULT) == 0)
-    {
-        gui_msg_publish("bt/inquiry_result", event_data->data, event_data->data_len);
-    }
-    else if (strcmp(event_data->topic, EVENT_BUS_TOPIC_BT_INQUIRY_CMPL) == 0)
-    {
-        gui_msg_publish("bt/inquiry_cmpl", event_data->data, event_data->data_len);
-    }
-
-    return EVENT_BUS_OK;
-}
-
-#endif
-
 void bt_phone_list_note_design(gui_obj_t *obj, void *param)
 {
     GUI_UNUSED(param);
@@ -847,38 +702,25 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
 
     /* Resolve data source */
     const char *phone_name_ascii = NULL;
-    bool phone_used = false;
+    bool phone_connected = false;
 
 #ifndef _HONEYGUI_SIMULATOR_
-    T_APP_BOND_DEVICE *phone_bond = &app_db.bond_device[0];
-    if (!phone_bond->exist_addr_flag) { return; }
-    phone_used = phone_bond->used;
+    const T_BT_CONTROL_DEVICE *phone_dev = &bridge_bt_control_get_state()->bonded[0];
+    if (!phone_dev->exist) { return; }
+    phone_connected = phone_dev->connected;
 #else
     phone_name_ascii = sim_phone_name;  /* "iPhone 15 Pro" */
-    phone_used = false;                 /* Not Connected */
+    phone_connected = false;            /* Not Connected */
 #endif
 
-    /* Check if widget already exists by name */
+    /* Skip recreate when widgets already exist; status text is kept in sync
+     * by update_phone_list on every event_bus snapshot. */
     gui_obj_t *existing_status = gui_obj_get_handle((gui_obj_t *)note, "phone_status_label");
     gui_obj_t *existing_name = gui_obj_get_handle((gui_obj_t *)note, "phone_name_label");
-
     if (existing_status != NULL || existing_name != NULL)
     {
-        if (existing_status != NULL)
-        {
-            phone_status_label = (gui_text_t *)existing_status;
-            if (phone_used)
-            {
-                gui_text_content_set(phone_status_label, "Connected", 9);
-                gui_text_color_set(phone_status_label, gui_rgb(76, 217, 100));
-            }
-            else
-            {
-                gui_text_content_set(phone_status_label, "Not Connected", 13);
-                gui_text_color_set(phone_status_label, gui_rgb(102, 102, 102));
-            }
-        }
-        if (existing_name != NULL) { phone_name_label = (gui_text_t *)existing_name; }
+        if (existing_status != NULL) { phone_status_label = (gui_text_t *)existing_status; }
+        if (existing_name   != NULL) { phone_name_label   = (gui_text_t *)existing_name;   }
         return;
     }
 
@@ -896,14 +738,15 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
                                         352, 28, 28, 28);
 
     /* Create phone_name_label */
-    phone_name_label = gui_text_create((gui_obj_t *)note, "phone_name_label", 40, 19, 260, 40);
+    /* Aligned with headphones list: y=10, h=50 (fontSize 40 unchanged) */
+    phone_name_label = gui_text_create((gui_obj_t *)note, "phone_name_label", 40, 10, 260, 50);
 #ifndef _HONEYGUI_SIMULATOR_
-    if (phone_bond->device_name_len > 0)
+    if (phone_dev->device_name_len > 0)
     {
         gui_text_encoding_set(phone_name_label, UTF_16);
-        gui_text_set(phone_name_label, (char *)phone_bond->device_name,
+        gui_text_set(phone_name_label, (char *)phone_dev->device_name,
                      GUI_FONT_SRC_BMP, gui_rgb(255, 255, 255),
-                     phone_bond->device_name_len * 2, 40);
+                     phone_dev->device_name_len * 2, 40);
     }
     else
     {
@@ -922,19 +765,19 @@ void bt_phone_list_note_design(gui_obj_t *obj, void *param)
     gui_obj_show((gui_obj_t *)phone_name_label, true);
 
     /* Create phone_status_label */
-    phone_status_label = gui_text_create((gui_obj_t *)note, "phone_status_label", 40, 52, 200, 32);
-    if (phone_used)
+    phone_status_label = gui_text_create((gui_obj_t *)note, "phone_status_label", 40, 56, 200, 32);
+    if (phone_connected)
     {
         gui_text_set(phone_status_label, "Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(76, 217, 100), 9, 28);
+                     gui_rgb(76, 217, 100), 9, 24);
     }
     else
     {
         gui_text_set(phone_status_label, "Not Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 13, 28);
+                     gui_rgb(102, 102, 102), 13, 24);
     }
     gui_text_type_set(phone_status_label,
-                      "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin", FONT_SRC_FILESYS);
+                      "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin", FONT_SRC_FILESYS);
     gui_text_mode_set(phone_status_label, LEFT);
     gui_text_extra_letter_spacing_set(phone_status_label, 0);
     gui_text_extra_line_spacing_set(phone_status_label, 0);
@@ -952,67 +795,36 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
 
     /* Resolve data source */
     const char *hp_name_ascii = NULL;
-    bool hp_used = false;
+    bool hp_connected = false;
 
 #ifndef _HONEYGUI_SIMULATOR_
-    T_APP_BOND_DEVICE *headphone_bond = &app_db.bond_device[index + 1];
+    const T_BT_CONTROL_STATE  *bt_state    = bridge_bt_control_get_state();
+    const T_BT_CONTROL_DEVICE *headphone_dev = &bt_state->bonded[index + 1];
 
-    if (!headphone_bond->exist_addr_flag)
+    if (!headphone_dev->exist)
     {
         if (headphone_list != NULL)
         {
-            uint8_t headphone_count = 0;
-            for (int i = 1; i <= 7; i++)
-            {
-                if (app_db.bond_device[i].exist_addr_flag) { headphone_count++; }
-            }
             gui_obj_show((gui_obj_t *)headphone_list, true);
-            gui_list_set_note_num(headphone_list, headphone_count);
+            gui_list_set_note_num(headphone_list, bt_state->headphone_count);
         }
         return;
     }
-    hp_used = headphone_bond->used;
+    hp_connected = headphone_dev->connected;
 #else
     if (index >= SIM_HEADPHONE_COUNT) { return; }
     hp_name_ascii = sim_headphones[index].name;
-    hp_used = sim_headphones[index].connected;
+    hp_connected = sim_headphones[index].connected;
 #endif
 
-    /* Check if widget already exists */
-    
+    /* Skip recreate when widgets already exist; status text/icon are kept in
+     * sync by update_headphone_list on every event_bus snapshot. */
     char name_buf[32];
     snprintf(name_buf, sizeof(name_buf), "headphones%d_status_label", index + 1);
     gui_obj_t *existing_status = gui_obj_get_handle((gui_obj_t *)note, name_buf);
     snprintf(name_buf, sizeof(name_buf), "headphones%d_name_label", index + 1);
     gui_obj_t *existing_name = gui_obj_get_handle((gui_obj_t *)note, name_buf);
-
-    if (existing_status != NULL || existing_name != NULL)
-    {
-        if (existing_status != NULL)
-        {
-            if (hp_used)
-            {
-                gui_text_content_set((gui_text_t *)existing_status, "Connected", 9);
-                gui_text_color_set((gui_text_t *)existing_status, gui_rgb(76, 217, 100));
-            }
-            else
-            {
-                gui_text_content_set((gui_text_t *)existing_status, "Not Connected", 13);
-                gui_text_color_set((gui_text_t *)existing_status, gui_rgb(102, 102, 102));
-            }
-        }
-
-        snprintf(name_buf, sizeof(name_buf), "headphones%d_icon", index + 1);
-        gui_obj_t *existing_icon = gui_obj_get_handle((gui_obj_t *)note, name_buf);
-        if (existing_icon != NULL)
-        {
-            gui_img_set_src((gui_img_t *)existing_icon,
-                            hp_used ? "/app_control_center/headphones_icon_connected.bin"
-                            : "/app_control_center/headphones_icon_disconnected.bin",
-                            IMG_SRC_FILESYS);
-        }
-        return;
-    }
+    if (existing_status != NULL || existing_name != NULL) { return; }
 
     /* Create background */
     char bg_name[32];
@@ -1049,21 +861,22 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
     char icon_name[32];
     snprintf(icon_name, sizeof(icon_name), "headphones%d_icon", index + 1);
     gui_img_create_from_fs((gui_obj_t *)note, icon_name,
-                           hp_used ? "/app_control_center/headphones_icon_connected.bin"
+                           hp_connected ? "/app_control_center/headphones_icon_connected.bin"
                            : "/app_control_center/headphones_icon_disconnected.bin",
                            352, 28, 28, 28);
 
     /* Create name label */
+    /* Aligned with HTML: y=10, h=50 (fontSize 40 unchanged) */
     char name_label_name[32];
     snprintf(name_label_name, sizeof(name_label_name), "headphones%d_name_label", index + 1);
-    gui_text_t *name_label = gui_text_create((gui_obj_t *)note, name_label_name, 40, 19, 260, 40);
+    gui_text_t *name_label = gui_text_create((gui_obj_t *)note, name_label_name, 40, 10, 260, 50);
 #ifndef _HONEYGUI_SIMULATOR_
-    if (headphone_bond->device_name_len > 0)
+    if (headphone_dev->device_name_len > 0)
     {
         gui_text_encoding_set(name_label, UTF_16);
-        gui_text_set(name_label, (char *)headphone_bond->device_name,
+        gui_text_set(name_label, (char *)headphone_dev->device_name,
                      GUI_FONT_SRC_BMP, gui_rgb(255, 255, 255),
-                     headphone_bond->device_name_len * 2, 40);
+                     headphone_dev->device_name_len * 2, 40);
     }
     else
     {
@@ -1082,21 +895,22 @@ void bt_headphone_list_note_design(gui_obj_t *obj, void *param)
     gui_obj_show((gui_obj_t *)name_label, true);
 
     /* Create status label */
+    /* Aligned with HTML: y=56, h=32, fontSize 24 */
     char status_label_name[32];
     snprintf(status_label_name, sizeof(status_label_name), "headphones%d_status_label", index + 1);
-    gui_text_t *status_label = gui_text_create((gui_obj_t *)note, status_label_name, 40, 52, 200, 32);
-    if (hp_used)
+    gui_text_t *status_label = gui_text_create((gui_obj_t *)note, status_label_name, 40, 56, 200, 32);
+    if (hp_connected)
     {
         gui_text_set(status_label, "Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(76, 217, 100), 9, 28);
+                     gui_rgb(76, 217, 100), 9, 24);
     }
     else
     {
         gui_text_set(status_label, "Not Connected", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 13, 28);
+                     gui_rgb(102, 102, 102), 13, 24);
     }
     gui_text_type_set(status_label,
-                      "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin", FONT_SRC_FILESYS);
+                      "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin", FONT_SRC_FILESYS);
     gui_text_mode_set(status_label, LEFT);
     gui_text_extra_letter_spacing_set(status_label, 0);
     gui_text_extra_line_spacing_set(status_label, 0);
@@ -1133,8 +947,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     case 0:
         device_bg = gui_rect_create((gui_obj_t *)note, "found_device1_bg", 24, 0, 362, 84, 12,
                                     gui_rgb(44, 44, 46));
-        found_device1_name = gui_text_create((gui_obj_t *)note, "found_device1_name", 40, 19, 260, 40);
-        found_device1_status = gui_text_create((gui_obj_t *)note, "found_device1_status", 40, 52, 200, 32);
+        /* Aligned with headphones list: name y=10 h=50, status y=56 h=32 */
+        found_device1_name = gui_text_create((gui_obj_t *)note, "found_device1_name", 40, 10, 260, 50);
+        found_device1_status = gui_text_create((gui_obj_t *)note, "found_device1_status", 40, 56, 200, 32);
         icon = gui_img_create_from_fs((gui_obj_t *)note, "found_device1_icon",
                                       "/app_control_center/headphones_icon_disconnected.bin",
                                       352, 19, 18, 18);
@@ -1146,8 +961,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     case 1:
         device_bg = gui_rect_create((gui_obj_t *)note, "found_device2_bg", 24, 0, 362, 84, 12,
                                     gui_rgb(44, 44, 46));
-        found_device2_name = gui_text_create((gui_obj_t *)note, "found_device2_name", 40, 19, 260, 40);
-        found_device2_status = gui_text_create((gui_obj_t *)note, "found_device2_status", 40, 52, 200, 32);
+        /* Aligned with headphones list: name y=10 h=50, status y=56 h=32 */
+        found_device2_name = gui_text_create((gui_obj_t *)note, "found_device2_name", 40, 10, 260, 50);
+        found_device2_status = gui_text_create((gui_obj_t *)note, "found_device2_status", 40, 56, 200, 32);
         icon = gui_img_create_from_fs((gui_obj_t *)note, "found_device2_icon",
                                       "/app_control_center/headphones_icon_disconnected.bin",
                                       352, 19, 18, 18);
@@ -1169,7 +985,7 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
         gui_text_set(name_label, (char *)sim_name, GUI_FONT_SRC_BMP,
                      gui_rgb(255, 255, 255), strlen(sim_name), 40);
         gui_text_type_set(name_label,
-                          "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin",
+                          "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
                           FONT_SRC_FILESYS);
 #else
         if (dev->nam_len > 0)
@@ -1177,6 +993,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
             gui_text_encoding_set(name_label, UTF_16);
             gui_text_set(name_label, (char *)dev->device_name,
                          GUI_FONT_SRC_BMP, gui_rgb(255, 255, 255), dev->nam_len * 2, 40);
+            gui_text_type_set(name_label,
+                              "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
+                              FONT_SRC_FILESYS);
         }
         else
         {
@@ -1188,7 +1007,7 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
             gui_text_set(name_label, addr_str, GUI_FONT_SRC_BMP,
                          gui_rgb(255, 255, 255), strlen(addr_str), 40);
             gui_text_type_set(name_label,
-                              "/font/Inter_24pt_Regular_size40_bits4_bitmap.bin",
+                              "/font/NotoSansSC_Regular_size40_bits4_bitmap.bin",
                               FONT_SRC_FILESYS);
         }
 #endif
@@ -1202,9 +1021,9 @@ void bt_search_list_note_design(gui_obj_t *obj, void *param)
     if (status_label != NULL)
     {
         gui_text_set(status_label, "Available", GUI_FONT_SRC_BMP,
-                     gui_rgb(102, 102, 102), 9, 28);
+                     gui_rgb(102, 102, 102), 9, 24);
         gui_text_type_set(status_label,
-                          "/font/Inter_24pt_Regular_size28_bits4_bitmap.bin",
+                          "/font/Inter_24pt_Regular_size24_bits4_bitmap.bin",
                           FONT_SRC_FILESYS);
         gui_text_mode_set(status_label, LEFT);
         gui_text_extra_letter_spacing_set(status_label, 0);
@@ -1384,7 +1203,7 @@ void setting_list_note_design(gui_obj_t *obj, void *param)
 
             // Create wifi_version_value
             gui_text_t *wifi_version_value = gui_text_create((gui_obj_t *)note, "wifi_version_value",
-                                                             40, 30, 300, 40);
+                                                             40, 30, 306, 40);
             gui_text_set((gui_text_t *)wifi_version_value, "802.11ac (Wi-Fi 5)", GUI_FONT_SRC_BMP,
                          gui_rgb(255, 255, 255), 18, 40);
             gui_text_type_set((gui_text_t *)wifi_version_value,
@@ -1432,7 +1251,7 @@ void app_control_centerBluetoothView_timer_0_cb_impl(void)
          * index 0: phone item (show if phone bonded) */
         uint16_t note_count = 0;
 #ifndef _HONEYGUI_SIMULATOR_
-        if (app_db.bond_device[0].exist_addr_flag)
+        if (bridge_bt_control_get_state()->bonded[0].exist)
         {
             note_count = 1;
         }
