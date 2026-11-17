@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="SmartWatchTemplateMainView" x="-3776" y="-887" width="410" height="502" backgroundColor="#000000" entry="false" zIndex="0">
+        <hg_view id="SmartWatchTemplateMainView" x="-3776" y="-887" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
             <events>
                 <event type="onSwipeDown">
                     <action type="switchView" target="app_top_view" switchOutStyle="SWITCH_OUT_STILL_USE_BLUR" switchInStyle="SWITCH_IN_FROM_TOP_USE_TRANSLATION" />
