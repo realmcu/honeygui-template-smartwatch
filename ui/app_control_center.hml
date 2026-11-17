@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" zIndex="0">
+        <hg_view id="app_control_centerMainView" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entranceAnim="fromBottom" zIndex="0">
             <hg_list id="main_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="16" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="main_bt_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="bluetooth_item_bg" x="24" y="0" width="362" height="84" borderRadius="16" fillColor="#2C2C2E" opacity="255" zIndex="0">
@@ -62,7 +62,7 @@
                 </hg_window>
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerBluetoothView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:100,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;app_control_centerBluetoothView_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" zIndex="0">
+        <hg_view id="app_control_centerBluetoothView" x="410" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:100,&quot;reload&quot;:false,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;app_control_centerBluetoothView_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" entranceAnim="fromBottom" zIndex="0">
             <hg_rect id="bt_toggle_bg" x="24" y="110" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
             <hg_label id="bt_toggle_label" x="44" y="132" width="200" height="50" hAlign="LEFT" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="34" locked="true" zIndex="1" />
             <hg_button id="bt_toggle_btn" x="300" y="136" width="56" height="32" text="Button" toggleMode="true" initialState="on" imageOn="assets/app_control_center/toggle_on.png" imageOff="assets/app_control_center/toggle_off.png" onCallback="bluetooth_toggle_on" offCallback="bluetooth_toggle_off" zIndex="2" />
@@ -123,7 +123,7 @@
                 <hg_label id="bt_title_label" x="245" y="63" width="135" height="34" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Bluetooth" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerHeadphonesView" x="820" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+        <hg_view id="app_control_centerHeadphonesView" x="820" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" entranceAnim="fromBottom" zIndex="0">
             <hg_rect id="search_item_bg" x="24" y="114" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0">
                 <events>
                     <event type="onClick">
@@ -280,7 +280,7 @@
                 <hg_label id="headphones_title_label" x="230" y="63" width="155" height="34" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Headphones" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerBtUnbindView" x="1230" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="hidden" entry="false" zIndex="0">
+        <hg_view id="app_control_centerBtUnbindView" x="1230" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="hidden" entry="false" entranceAnim="fromBottom" zIndex="0">
             <hg_image id="unbind_bt_icon" x="183" y="72" width="44" height="44" src="assets/app_control_center/bluetooth_icon.png" zIndex="0" />
             <hg_label id="unbind_title_label" x="0" y="148" width="410" height="52" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Remove Device Pairing?" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="1" />
             <hg_label id="unbind_sub_label" x="24" y="210" width="362" height="75" hAlign="CENTER" vAlign="TOP" color="#8E8E93" letterSpacing="0" lineSpacing="8" wordWrap="true" wordBreak="false" text="This device will be removed from your paired devices list." fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="1" />
@@ -304,7 +304,7 @@
             </hg_rect>
             <hg_label id="unbind_cancel_label" x="24" y="434" width="362" height="50" hAlign="CENTER" vAlign="TOP" color="#ffffff" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Cancel" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="36" zIndex="2" />
         </hg_view>
-        <hg_view id="app_control_centerBtSearchView" x="1640" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+        <hg_view id="app_control_centerBtSearchView" x="1640" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" entranceAnim="fromBottom" zIndex="0">
             <hg_label id="found_devices_section_label" x="30" y="162" width="260" height="43" hAlign="LEFT" vAlign="TOP" color="#666666" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="FOUND DEVICES" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="32" zIndex="0" />
             <hg_list id="bt_search_list" x="0" y="199" width="410" height="303" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="2" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="true" useUserNoteDesign="true" userNoteDesignFunc="bt_search_list_note_design" zIndex="0" showOverflow="true">
                 <events>
@@ -362,7 +362,7 @@
                 <hg_label id="bt_search_title_label" x="214" y="63" width="171" height="34" hAlign="RIGHT" vAlign="TOP" color="#E98F36" letterSpacing="0" lineSpacing="0" wordWrap="false" wordBreak="false" text="Found Devices" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="24" zIndex="2" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerWifiView" x="2050" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" locked="true" zIndex="0">
+        <hg_view id="app_control_centerWifiView" x="2050" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" entranceAnim="fromBottom" locked="true" zIndex="0">
             <hg_list id="wifi_list" x="-16" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="5" direction="VERTICAL" style="LIST_CLASSIC" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="wifi_toggle_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="wifi_toggle_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />
@@ -400,7 +400,7 @@
                 </hg_window>
             </hg_window>
         </hg_view>
-        <hg_view id="app_control_centerSettingsView" x="2460" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" zIndex="0">
+        <hg_view id="app_control_centerSettingsView" x="2460" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="0" overflow="auto" entry="false" entranceAnim="fromBottom" zIndex="0">
             <hg_list id="settings_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="84" space="10" direction="VERTICAL" style="LIST_CLASSIC" noteNum="5" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" useUserNoteDesign="true" userNoteDesignFunc="setting_list_note_design" zIndex="0" showOverflow="true">
                 <hg_list_item id="settings_device_name_item" x="0" y="0" width="410" height="84" index="0" locked="true" zIndex="0">
                     <hg_rect id="device_name_bg" x="24" y="0" width="362" height="84" borderRadius="12" fillColor="#2C2C2E" opacity="255" zIndex="0" />

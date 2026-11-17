@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #ifndef WATCHFACE_SPORT_USER_H
 #define WATCHFACE_SPORT_USER_H
 

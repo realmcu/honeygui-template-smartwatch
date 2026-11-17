@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_wifi_test_user.h"
 
 #include "gui_img.h"

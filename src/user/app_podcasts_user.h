@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #ifndef APP_PODCASTS_USER_H
 #define APP_PODCASTS_USER_H
 

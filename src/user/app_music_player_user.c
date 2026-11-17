@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_music_player_user.h"
 #include "../ui/app_music_player_ui.h"
 #include "gui_rect.h"

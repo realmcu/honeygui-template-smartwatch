@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_video_call_user.h"
 #include "../ui/app_video_call_ui.h"
 #include "gui_img.h"

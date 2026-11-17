@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #ifndef APP_AUDIO_BOOK_USER_H
 #define APP_AUDIO_BOOK_USER_H
 

@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_intercom_user.h"
 #include "../ui/app_intercom_ui.h"
 #include "gui_list.h"

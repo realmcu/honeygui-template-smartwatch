@@ -5,7 +5,7 @@
         <author name="HoneyGUI Design" />
     </meta>
     <view>
-        <hg_view id="SmartWatchTemplateMainView" x="-3776" y="-887" width="410" height="502" backgroundColor="#000000" entry="true" zIndex="0">
+        <hg_view id="SmartWatchTemplateMainView" x="-3776" y="-887" width="410" height="502" backgroundColor="#000000" entry="false" zIndex="0">
             <events>
                 <event type="onSwipeDown">
                     <action type="switchView" target="app_top_view" switchOutStyle="SWITCH_OUT_STILL_USE_BLUR" switchInStyle="SWITCH_IN_FROM_TOP_USE_TRANSLATION" />
@@ -32,7 +32,7 @@
             <hg_time_label id="hg_time_label_hh" x="50" y="0" width="360" height="300" hAlign="RIGHT" vAlign="TOP" color="#FEF974" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="HH" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="250" useAccuratePreview="true" zIndex="4" />
             <hg_time_label id="hg_time_label_mm" x="50" y="225" width="360" height="300" hAlign="RIGHT" vAlign="MID" color="#FEF974" letterSpacing="0" lineSpacing="0" wordWrap="false" timeFormat="mm" characterSets="[{&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;0123456789:- &quot;}]" fontFile="/font/Inter_24pt_Regular.ttf" fontSize="250" useAccuratePreview="true" zIndex="5" />
         </hg_view>
-        <hg_view id="app_bottom_view" x="-3776" y="-255" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="1">
+        <hg_view id="app_bottom_view" x="-3776" y="-255" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entranceAnim="fromBottom" zIndex="1">
             <events>
                 <event type="onSwipeDown">
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_TO_BOTTOM_USE_TRANSLATION" switchInStyle="SWITCH_INIT_STATE" />
@@ -119,7 +119,7 @@ MAR
                 <hg_label id="text_date_small" x="50" y="8" width="410" height="60" hAlign="LEFT" vAlign="MID" color="#ffffff" letterSpacing="0" lineSpacing="10" wordWrap="true" wordBreak="false" text="FRI 6" fontFile="/font/Inter24pt-Medium.ttf" fontSize="24" fontType="bitmap" timers="[{&quot;id&quot;:&quot;timer_0&quot;,&quot;name&quot;:&quot;动画 1&quot;,&quot;enabled&quot;:true,&quot;interval&quot;:1000,&quot;reload&quot;:true,&quot;mode&quot;:&quot;custom&quot;,&quot;callback&quot;:&quot;text_date_small_timer_0_cb&quot;,&quot;duration&quot;:1000,&quot;stopOnComplete&quot;:true,&quot;delayStart&quot;:0,&quot;actions&quot;:[],&quot;segments&quot;:[],&quot;runImmediately&quot;:true}]" characterSets="[{&quot;type&quot;:&quot;range&quot;,&quot;value&quot;:&quot;0x20-0x7E&quot;}]" zIndex="2" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_top_view" x="-3776" y="-1506" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="2">
+        <hg_view id="app_top_view" x="-3776" y="-1506" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entranceAnim="fromBottom" zIndex="2">
             <events>
                 <event type="onSwipeUp">
                     <action type="switchView" target="SmartWatchTemplateMainView" switchOutStyle="SWITCH_OUT_TO_TOP_USE_TRANSLATION" switchInStyle="SWITCH_IN_STILL_USE_BLUR" />

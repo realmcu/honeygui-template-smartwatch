@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_music_user.h"
 #ifndef _HONEYGUI_SIMULATOR_
 #include "app_task.h"

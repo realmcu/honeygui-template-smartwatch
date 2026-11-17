@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #include "app_control_center_user.h"
 #include "../ui/app_control_center_ui.h"
 #include "../callbacks/app_control_center_callbacks.h"

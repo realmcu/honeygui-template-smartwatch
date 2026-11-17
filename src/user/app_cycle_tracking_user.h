@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #ifndef APP_CYCLE_TRACKING_USER_H
 #define APP_CYCLE_TRACKING_USER_H
 

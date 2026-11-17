@@ -1,3 +1,7 @@
+/**
+ * USER-OWNED FILE - GENERATED ONCE BY HONEYGUI AUTOGEN.
+ * This file is not overwritten after creation; edit it freely.
+ */
 #ifndef SMARTWATCHMAIN_USER_H
 #define SMARTWATCHMAIN_USER_H
 

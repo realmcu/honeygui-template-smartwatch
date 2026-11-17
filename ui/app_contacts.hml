@@ -5,7 +5,7 @@
         <author name="Anonymous" />
     </meta>
     <view>
-        <hg_view id="app_contacts_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" zIndex="1">
+        <hg_view id="app_contacts_view" x="0" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entranceAnim="fromBottom" zIndex="1">
             <hg_list id="contact_main_list" x="0" y="110" width="410" height="502" itemWidth="410" itemHeight="102" space="5" direction="VERTICAL" style="LIST_CLASSIC" cardStackLocation="0" noteNum="3" offset="0" outScope="80" autoAlign="false" inertia="true" loop="false" createBar="false" enableAreaDisplay="false" keepNoteAlive="false" zIndex="0" showOverflow="true">
                 <hg_list_item id="contact_main_list_item_1" x="0" y="0" width="410" height="102" index="0" locked="true" zIndex="0">
                     <hg_rect id="rect_1" x="15" y="2" width="380" height="100" borderRadius="20" fillColor="#2C2C2E" opacity="255" useGradient="false" gradientDirection="horizontal" zIndex="0">
@@ -53,7 +53,7 @@
                 <hg_image id="app_contact_add_icon" x="36" y="26" width="40" height="40" src="assets/app_phone/phone_add_icon.png" zIndex="1" />
             </hg_window>
         </hg_view>
-        <hg_view id="app_contacts_c_view" x="565" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" zIndex="1">
+        <hg_view id="app_contacts_c_view" x="565" y="0" width="410" height="502" backgroundColor="#000000" borderRadius="0" padding="12" overflow="auto" entry="false" entranceAnim="fromBottom" zIndex="1">
             <hg_image id="hg_image_1770691020367_567a" x="0" y="0" width="410" height="502" src="assets/app_contacts/Taylor_Swift.jpg" zIndex="0" />
             <hg_window id="app_contacts_c_window" x="0" y="0" width="410" height="110" backgroundColor="#808080" showBackground="false" enableBlur="false" blurDegree="225" zIndex="1">
                 <events>
